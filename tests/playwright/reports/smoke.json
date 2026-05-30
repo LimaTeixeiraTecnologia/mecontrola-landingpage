@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-05-30T23:51:22.126Z",
+  "project": "chromium-desktop-1280x800",
+  "status": "passed",
+  "checks": ["200 OK", "title", "sections", "anchors", "data-tracks"]
+}

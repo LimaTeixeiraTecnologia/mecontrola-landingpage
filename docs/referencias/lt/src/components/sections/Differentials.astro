@@ -1,0 +1,65 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import Icon from '../ui/Icon.astro';
+import { differentials } from '../../lib/content';
+---
+
+<section
+  id="diferenciais"
+  aria-labelledby="diferenciais-heading"
+  class="py-20 lg:py-28 bg-surface/30"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <SectionHeader
+          id="diferenciais-heading"
+          eyebrow="Diferenciais"
+          title="Por que escolher a Lima Teixeira Consulting?"
+        />
+
+        <ul class="space-y-6">
+          {
+            differentials.map((item) => (
+              <li class="flex items-start gap-4">
+                <div class="shrink-0 size-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mt-0.5">
+                  <Icon name={item.icon} class="size-5" />
+                </div>
+                <div>
+                  <h3 class="text-foreground font-semibold mb-1">{item.title}</h3>
+                  <p class="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="relative hidden lg:block" aria-hidden="true">
+        <div
+          class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 border border-border"
+        >
+        </div>
+        <div class="relative p-8">
+          <div class="grid grid-cols-2 gap-4">
+            {
+              differentials.map((item, i) => (
+                <div
+                  class:list={[
+                    'rounded-xl p-4 border border-border bg-surface/60',
+                    i === 0 && 'col-span-2',
+                  ]}
+                >
+                  <div class="size-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-3">
+                    <Icon name={item.icon} class="size-4 text-primary-foreground" />
+                  </div>
+                  <p class="text-foreground text-sm font-semibold">{item.title}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

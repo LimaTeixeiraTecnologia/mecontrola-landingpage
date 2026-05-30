@@ -1,0 +1,102 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileStickyBar from '../components/MobileStickyBar.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = 'https://mecontrola.app.br/og-image.png',
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://mecontrola.app.br');
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
+
+const organizationNode = {
+  '@type': 'Organization',
+  name: 'MeControla',
+  url: 'https://mecontrola.app.br',
+  email: 'contato@limateixeira.com.br',
+  taxID: '52.162.759/0001-74',
+  legalName: '',
+  sameAs: ['https://www.instagram.com/limateixeiraconsulting/'],
+};
+
+const websiteNode = {
+  '@type': 'WebSite',
+  '@id': 'https://mecontrola.app.br#website',
+  url: 'https://mecontrola.app.br',
+  name: 'MeControla',
+  inLanguage: 'pt-BR',
+};
+
+const webPageNode = {
+  '@type': 'WebPage',
+  url: canonicalUrl,
+  name: title,
+  description,
+  inLanguage: 'pt-BR',
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [organizationNode, websiteNode, webPageNode],
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0D0D0D" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Schema.org JSON-LD (TODO: legalName vazio — preencher antes de campanhas pagas) -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body class="bg-background text-foreground font-sans antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold"
+    >
+      Pular para o conteúdo
+    </a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <MobileStickyBar />
+    <CookieConsent />
+  </body>
+</html>

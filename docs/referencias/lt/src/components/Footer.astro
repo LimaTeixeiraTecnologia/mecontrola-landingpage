@@ -1,0 +1,85 @@
+---
+import Logo from './Logo.astro';
+import { footer } from '../lib/content';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-surface/40 border-t border-border" id="contato">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div class="lg:col-span-1">
+        <Logo class="h-10 mb-4" />
+        <p class="text-muted-foreground text-sm leading-relaxed">{footer.slogan}</p>
+      </div>
+
+      <div>
+        <h3 class="text-foreground font-semibold text-sm mb-4 tracking-wide">Links</h3>
+        <ul class="space-y-2">
+          {
+            footer.nav.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-muted-foreground text-sm hover:text-accent transition-colors duration-150"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-foreground font-semibold text-sm mb-4 tracking-wide">Contato</h3>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href={`mailto:${footer.email}`}
+              class="text-muted-foreground text-sm hover:text-accent transition-colors duration-150"
+            >
+              {footer.email}
+            </a>
+          </li>
+          <li>
+            <a
+              href={footer.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-muted-foreground text-sm hover:text-accent transition-colors duration-150"
+            >
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-foreground font-semibold text-sm mb-4 tracking-wide">Empresa</h3>
+        <address class="not-italic text-muted-foreground text-sm space-y-2">
+          <p>{footer.address}</p>
+          <p>CNPJ: {footer.cnpj}</p>
+        </address>
+        <div class="mt-4 space-y-2">
+          {
+            footer.legal.map((item) => (
+              <a
+                href={item.href}
+                class="block text-muted-foreground text-sm hover:text-accent transition-colors duration-150"
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-border text-center">
+      <p class="text-muted-foreground text-sm">
+        &copy; {year} Lima Teixeira Consulting &middot; Todos os direitos reservados.
+      </p>
+    </div>
+  </div>
+</footer>

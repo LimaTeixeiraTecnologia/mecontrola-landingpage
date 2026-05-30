@@ -1,0 +1,56 @@
+@import 'tailwindcss' source(none);
+
+@source "../**/*.{astro,ts}";
+
+@theme {
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-foreground: #f8fafc;
+  --color-muted-foreground: rgba(248, 250, 252, 0.65);
+  --color-primary: #2563eb;
+  --color-primary-foreground: #f8fafc;
+  --color-accent: #14b8a6;
+  --color-accent-foreground: #0f172a;
+  --color-border: rgba(248, 250, 252, 0.08);
+  --font-sans: 'Manrope Variable', system-ui, sans-serif;
+  --shadow-glow-primary: 0 0 120px rgba(37, 99, 235, 0.4);
+  --shadow-glow-accent: 0 0 110px rgba(20, 184, 166, 0.35);
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth motion-reduce:scroll-auto;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  *,
+  *::before,
+  *::after {
+    @apply border-border;
+  }
+
+  :where([id]) {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

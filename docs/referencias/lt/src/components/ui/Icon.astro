@@ -1,0 +1,311 @@
+---
+import type { IconName } from '../../lib/content';
+
+interface Props {
+  name: IconName;
+  class?: string;
+  label?: string;
+}
+
+type IconShape =
+  | 'spark'
+  | 'screen'
+  | 'globe'
+  | 'phone'
+  | 'link'
+  | 'shield'
+  | 'bolt'
+  | 'scale'
+  | 'arrow'
+  | 'check'
+  | 'heart'
+  | 'truck'
+  | 'gear'
+  | 'code'
+  | 'refresh'
+  | 'user'
+  | 'minus'
+  | 'columns'
+  | 'graduation'
+  | 'factory'
+  | 'briefcase'
+  | 'coin'
+  | 'rocket'
+  | 'headset'
+  | 'compass'
+  | 'cube'
+  | 'plug'
+  | 'lightbulb'
+  | 'trending';
+
+const iconShapes = {
+  ai: 'spark',
+  ux: 'screen',
+  web: 'globe',
+  app: 'phone',
+  governance: 'shield',
+  integration: 'link',
+  security: 'shield',
+  performance: 'bolt',
+  support: 'headset',
+  scale: 'scale',
+  innovation: 'lightbulb',
+  'arrow-right': 'arrow',
+  check: 'check',
+  health: 'heart',
+  education: 'graduation',
+  logistics: 'truck',
+  operations: 'briefcase',
+  finance: 'coin',
+  industry: 'factory',
+  digital: 'rocket',
+  government: 'columns',
+  strategy: 'compass',
+  architecture: 'cube',
+  development: 'code',
+  evolution: 'refresh',
+  reduce: 'minus',
+  gain: 'trending',
+  modernize: 'bolt',
+  integrate: 'plug',
+  experience: 'user',
+  automate: 'gear',
+} as const satisfies Record<IconName, IconShape>;
+
+const { name, class: className = '', label } = Astro.props;
+const shape = iconShapes[name];
+---
+
+<svg
+  class={className}
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.7"
+  stroke="currentColor"
+  aria-hidden={label ? undefined : 'true'}
+  aria-label={label}
+  role={label ? 'img' : undefined}
+>
+  {
+    shape === 'spark' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"
+      />
+    )
+  }
+  {
+    shape === 'screen' && (
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16v10H4V6Zm5 14h6" />
+    )
+  }
+  {
+    shape === 'globe' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"
+      />
+    )
+  }
+  {
+    shape === 'phone' && (
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 3h8v18H8V3Zm3 15h2" />
+    )
+  }
+  {
+    shape === 'link' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 8l-3 3a4 4 0 0 0 6 6l1-1M15 16l3-3a4 4 0 0 0-6-6l-1 1"
+      />
+    )
+  }
+  {
+    shape === 'shield' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"
+      />
+    )
+  }
+  {
+    shape === 'bolt' && (
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 2 5 14h6l-1 8 9-13h-6l0-7Z" />
+    )
+  }
+  {
+    shape === 'scale' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 4v16M5 8h14M7 8l-4 7h8L7 8Zm10 0-4 7h8l-4-7Z"
+      />
+    )
+  }
+  {
+    shape === 'arrow' && (
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 12h15m-6-6 6 6-6 6" />
+    )
+  }
+  {shape === 'check' && <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7" />}
+  {
+    shape === 'heart' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 20s-8-4.5-8-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6.5-8 11-8 11Z"
+      />
+    )
+  }
+  {
+    shape === 'truck' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3 7h11v9H3V7Zm11 3h4l3 3v3h-7v-6ZM7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
+      />
+    )
+  }
+  {
+    shape === 'gear' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-5v3m0 12v3M3 12h3m12 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"
+      />
+    )
+  }
+  {
+    shape === 'code' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m8 8-4 4 4 4m8-8 4 4-4 4m-2-10-4 12"
+      />
+    )
+  }
+  {
+    shape === 'refresh' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M20 8a8 8 0 0 0-14-3L4 7m0 0h5M4 7V2m0 14a8 8 0 0 0 14 3l2-2m0 0h-5m5 0v5"
+      />
+    )
+  }
+  {
+    shape === 'user' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 9a7 7 0 0 1 14 0"
+      />
+    )
+  }
+  {shape === 'minus' && <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />}
+  {
+    shape === 'columns' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3 21h18M4 21V10m4 11V10m4 11V10m4 11V10m4 11V10M2 10h20l-3-5H5l-3 5Z"
+      />
+    )
+  }
+  {
+    shape === 'graduation' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m2 9 10-5 10 5-10 5L2 9Zm4 2.5V16c0 1.5 2.5 3 6 3s6-1.5 6-3v-4.5M21 9v6"
+      />
+    )
+  }
+  {
+    shape === 'factory' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3 21V11l5 3V11l5 3V11l5 3v7H3Zm0 0h18M7 21v-3m4 3v-3m4 3v-3M16 7V3h3v4"
+      />
+    )
+  }
+  {
+    shape === 'briefcase' && (
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18v11H3V8Zm6 0V5h6v3M3 13h18" />
+    )
+  }
+  {
+    shape === 'coin' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 6v12m3-9.5c-.5-1-1.5-1.5-3-1.5s-3 .5-3 2 2 1.7 3 2c1 .3 3 .5 3 2s-1.5 2-3 2-2.5-.5-3-1.5M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"
+      />
+    )
+  }
+  {
+    shape === 'rocket' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4.5 16.5c-1.5 1-2 5-2 5s4-.5 5-2c.5-1 .5-2 0-3-1-.5-2-.5-3 0Zm5-2.5L15 8c2-2 5-3 6.5-3 0 1.5-1 4.5-3 6.5L13 17l-3.5-3Zm5-5 3 3M9.5 14 7 11.5 9 9l3 3-2.5 2Z"
+      />
+    )
+  }
+  {
+    shape === 'headset' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4 14v-2a8 8 0 0 1 16 0v2m0 0v3a3 3 0 0 1-3 3h-2v-7h5ZM4 14v3h3v-7H4v4Z"
+      />
+    )
+  }
+  {
+    shape === 'compass' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm3.5-12.5L13 13l-4.5 2.5L11 11l4.5-2.5Z"
+      />
+    )
+  }
+  {
+    shape === 'cube' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m12 3 9 5v8l-9 5-9-5V8l9-5Zm0 0v18m9-13-9 5m-9-5 9 5"
+      />
+    )
+  }
+  {
+    shape === 'plug' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 2v4m6-4v4M7 6h10v6a5 5 0 0 1-5 5 5 5 0 0 1-5-5V6Zm5 11v5"
+      />
+    )
+  }
+  {
+    shape === 'lightbulb' && (
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 18h6m-5 3h4M12 3a6 6 0 0 0-4 10.5c1 1 1.5 2 1.5 3.5h5c0-1.5.5-2.5 1.5-3.5A6 6 0 0 0 12 3Z"
+      />
+    )
+  }
+  {
+    shape === 'trending' && (
+      <path stroke-linecap="round" stroke-linejoin="round" d="m3 17 6-6 4 4 8-8m0 0h-5m5 0v5" />
+    )
+  }
+</svg>

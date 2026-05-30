@@ -1,0 +1,42 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import Icon from '../ui/Icon.astro';
+import { results } from '../../lib/content';
+---
+
+<section
+  id="resultados"
+  aria-labelledby="resultados-heading"
+  class="py-20 lg:py-28 relative overflow-hidden"
+>
+  <div
+    aria-hidden="true"
+    class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[400px] bg-(--color-accent) opacity-5 blur-3xl motion-reduce:hidden"
+  >
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeader
+      id="resultados-heading"
+      eyebrow="Impacto"
+      title="Resultados que transformam operações."
+      align="center"
+    />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        results.map((item) => (
+          <div class="flex items-start gap-4 p-6 rounded-2xl border border-border bg-surface/40 hover:border-accent/40 transition-colors duration-200 motion-reduce:transition-none">
+            <div class="shrink-0 size-11 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
+              <Icon name={item.icon} class="size-5" />
+            </div>
+            <div>
+              <h3 class="text-foreground font-semibold mb-1">{item.title}</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

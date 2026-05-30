@@ -1,0 +1,6 @@
+docs/referencias/
+tests/playwright/evidences/
+tests/playwright/reports/
+dist/
+node_modules/
+.astro/

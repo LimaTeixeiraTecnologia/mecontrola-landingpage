@@ -1,0 +1,45 @@
+---
+import { cn } from '../../lib/cn';
+
+interface Props {
+  variant?: 'primary' | 'outline' | 'ghost';
+  href?: string;
+  target?: '_blank' | '_self';
+  rel?: string;
+  class?: string;
+}
+
+const { variant = 'primary', href, target, rel, class: className } = Astro.props;
+const computedRel = target === '_blank' ? (rel ?? 'noopener noreferrer') : rel;
+
+const base = [
+  'inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3',
+  'font-semibold text-sm transition-all duration-200',
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent',
+  'motion-reduce:transition-none',
+];
+
+const variants = {
+  primary: [
+    'bg-primary text-primary-foreground',
+    'hover:bg-primary/90',
+    'shadow-[0_0_40px_-12px_var(--color-primary)]',
+  ],
+  outline: ['border border-border text-foreground', 'hover:border-accent hover:text-accent'],
+  ghost: ['text-muted-foreground hover:text-foreground'],
+};
+
+const classes = cn(...base, ...variants[variant], className);
+---
+
+{
+  href ? (
+    <a href={href} class={classes} target={target} rel={computedRel}>
+      <slot />
+    </a>
+  ) : (
+    <button type="button" class={classes}>
+      <slot />
+    </button>
+  )
+}

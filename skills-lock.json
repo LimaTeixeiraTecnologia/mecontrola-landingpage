@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "prompt-enricher": {
+      "source": "JailtonJunior94/skills",
+      "sourceType": "github",
+      "skillPath": "skills/prompt-enricher/SKILL.md",
+      "computedHash": "82b5b202db856a08c6a84cfde534a639648fb37aa910ea84c14fbcb5cc929bd7"
+    },
+    "tailwindcss": {
+      "source": "pedronauck/skills",
+      "sourceType": "github",
+      "skillPath": "skills/mine/tailwindcss/SKILL.md",
+      "computedHash": "dceee5494ff22a53dfcb803b7b0252eff4cc805bdc1d0df20898f1d5e8cf9557"
+    }
+  }
+}

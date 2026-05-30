@@ -1,0 +1,102 @@
+/* Poppins self-hosted — somente pesos usados na landing */
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+@import '@fontsource/poppins/800.css';
+
+@import 'tailwindcss' source(none);
+
+@source "../**/*.{astro,ts}";
+
+@theme {
+  /* Cores de fundo/superfície/texto/borda */
+  --color-background: #0d0d0d;
+  --color-foreground: #ffffff;
+  --color-surface: #1f1f1f;
+  --color-card: #1f1f1f;
+  --color-card-foreground: #ffffff;
+  --color-muted-foreground: #b8b8b8;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Cores de ação — primary = neon (#C6FF00), accent = roxo (#7861FF) */
+  --color-primary: #c6ff00;
+  --color-primary-foreground: #0d0d0d;
+  --color-accent: #7861ff;
+  --color-accent-foreground: #ffffff;
+  --color-ring: #c6ff00;
+
+  /* Tipografia */
+  --font-sans: 'Poppins', system-ui, sans-serif;
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+
+  /* Sombras glow */
+  --shadow-glow-primary: 0 0 24px rgb(198 255 0 / 0.35);
+  --shadow-glow-accent: 0 0 24px rgb(120 97 255 / 0.35);
+
+  /* Gradiente roxo FinalCta */
+  --gradient-final-cta: linear-gradient(160deg, #7861ff 0%, #4b39c0 100%);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  [id] {
+    scroll-margin-top: 80px;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.45;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: var(--tracking-tight);
+    line-height: 1.15;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dot {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

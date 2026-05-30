@@ -1,0 +1,56 @@
+{
+  "name": "mecontrola-landingpage",
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.1.2",
+  "engines": {
+    "node": "24.15.0",
+    "pnpm": "11.1.2"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "prepare": "husky",
+    "test": "playwright test",
+    "test:smoke": "playwright test smoke",
+    "test:responsive": "playwright test responsive",
+    "test:a11y": "playwright test a11y",
+    "test:seo": "playwright test seo",
+    "test:perf": "playwright test perf"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
+    "@fontsource/poppins": "^5.2.6",
+    "@tailwindcss/vite": "4.3.0",
+    "astro": "5.18.1",
+    "tailwindcss": "4.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.9",
+    "@axe-core/playwright": "^4.11.3",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.8.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "5.9.3"
+  },
+  "lint-staged": {
+    "*.{astro,ts,tsx,js,mjs,cjs,json,md,css}": [
+      "prettier --write"
+    ]
+  },
+  "pnpm": {
+    "allowBuilds": {
+      "esbuild": true,
+      "sharp": true,
+      "@tailwindcss/vite": true,
+      "astro": true
+    }
+  }
+}

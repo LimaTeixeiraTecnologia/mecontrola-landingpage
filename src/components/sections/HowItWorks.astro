@@ -1,0 +1,23 @@
+---
+import { howItWorks } from '../../lib/content';
+import SectionHeader from '../ui/SectionHeader.astro';
+---
+
+<section id="como-funciona" class="py-14 md:py-20">
+  <div class="max-w-5xl mx-auto px-5">
+    <SectionHeader title={howItWorks.heading} />
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {
+        howItWorks.steps.map((step) => (
+          <div class="flex gap-4 items-start bg-card border border-border rounded-[18px] p-5">
+            <span class="flex-none w-[38px] h-[38px] rounded-xl bg-primary text-primary-foreground font-extrabold grid place-items-center text-[1.05rem]">
+              {step.number}
+            </span>
+            <p class="font-semibold pt-[6px] text-foreground">{step.body}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="mt-[22px] text-muted-foreground font-medium text-center">{howItWorks.closing}</p>
+  </div>
+</section>

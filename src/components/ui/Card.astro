@@ -1,0 +1,21 @@
+---
+import { cn } from '../../lib/cn';
+
+interface Props {
+  featured?: boolean;
+  as?: 'div' | 'article';
+  class?: string;
+}
+
+const { featured = false, as: Tag = 'div', class: className } = Astro.props;
+
+const classes = cn(
+  'bg-card border rounded-2xl p-6 md:p-8',
+  featured ? 'border-primary shadow-glow-primary' : 'border-border',
+  className,
+);
+---
+
+<Tag class={classes}>
+  <slot />
+</Tag>

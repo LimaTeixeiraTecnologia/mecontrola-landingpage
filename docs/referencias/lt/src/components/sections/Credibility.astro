@@ -1,0 +1,41 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import Card from '../ui/Card.astro';
+import Icon from '../ui/Icon.astro';
+import { credibility, services } from '../../lib/content';
+---
+
+<section id="solucoes" aria-labelledby="solucoes-heading" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeader
+      id="solucoes-heading"
+      eyebrow="Soluções"
+      title={credibility.title}
+      subtitle={credibility.description}
+      align="center"
+    />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        services.map((service, i) => (
+          <Card>
+            <div class="flex items-start gap-4">
+              <div
+                class:list={[
+                  'shrink-0 size-11 rounded-xl flex items-center justify-center',
+                  i % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-accent/10 text-accent',
+                ]}
+              >
+                <Icon name={service.icon} class="size-5" />
+              </div>
+              <div>
+                <h3 class="text-foreground font-semibold mb-2">{service.title}</h3>
+                <p class="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+              </div>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

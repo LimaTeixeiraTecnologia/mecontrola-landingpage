@@ -1,0 +1,63 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permissões mínimas necessárias
+permissions:
+  contents: read
+  deployments: write
+
+# Evita deploys sobrepostos: um novo push cancela o anterior em andamento
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # Instala o pnpm. A versão é lida do campo "packageManager" do package.json (pnpm@11.1.2).
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      # Node LTS pinado conforme engines do projeto; cacheia o store do pnpm.
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.15.0
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Chama o binário diretamente: contorna o quirk de aprovação de build-scripts do pnpm v11.
+      # PUBLIC_GA_ID é opcional — sem valor, o Google Analytics simplesmente não é renderizado.
+      - name: Build
+        run: ./node_modules/.bin/astro build
+        env:
+          PUBLIC_GA_ID: ${{ secrets.PUBLIC_GA_ID }}
+
+      # Instala o wrangler GLOBALMENTE, isolado do node_modules gerenciado pelo pnpm.
+      # Instalar dentro do projeto falha de duas formas: via pnpm bate no gate de
+      # build-scripts (ERR_PNPM_IGNORED_BUILDS no `workerd`); via npm o arborist
+      # quebra ao reconciliar o node_modules simbólico do pnpm. Global evita ambos.
+      - name: Install Wrangler
+        run: npm install -g wrangler@4
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          # Cria o projeto Pages se ainda não existir (idempotente)
+          wrangler pages project list | grep -qw "limateixeira-landingpage" \
+            || wrangler pages project create limateixeira-landingpage --production-branch=main
+          wrangler pages deploy dist --project-name=limateixeira-landingpage --branch=main

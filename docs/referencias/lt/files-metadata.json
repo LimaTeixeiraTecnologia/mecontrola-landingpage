@@ -1,0 +1,165 @@
+{
+  "package.json": {
+    "status": "ok",
+    "sha": "b1197a2e804dabdde5b2b2eeb6d1e134e60218be",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/package.json"
+  },
+  "astro.config.mjs": {
+    "status": "ok",
+    "sha": "969d3d736a94e7a9985e8825b6cb017a245c501e",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/astro.config.mjs"
+  },
+  "tsconfig.json": {
+    "status": "ok",
+    "sha": "c0df5bfb5cb73a99281655598e0d434dc8ce9caa",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/tsconfig.json"
+  },
+  "wrangler.toml": {
+    "status": "ok",
+    "sha": "e3bf769fe2fef12a34c593b222c3c0ad419aad6a",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/wrangler.toml"
+  },
+  "Makefile": {
+    "status": "ok",
+    "sha": "e358c2b62f50fde314fc4186a80d790ce3ae2159",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/Makefile"
+  },
+  ".gitignore": {
+    "status": "ok",
+    "sha": "023cd1482c82771b61843025b724b9303b20361c",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/.gitignore"
+  },
+  ".prettierrc": {
+    "status": "not_found"
+  },
+  "README.md": {
+    "status": "ok",
+    "sha": "35c2558b5e11c1ea4ee47b3d9b16fed1333e4868",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/README.md"
+  },
+  "public/_headers": {
+    "status": "ok",
+    "sha": "de2805bae9d19a3323ab5f51b6623f05c50ee7e7",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/public/_headers"
+  },
+  "public/robots.txt": {
+    "status": "ok",
+    "sha": "465f2d1db16f92b72131d3517c42cee9ffca6ae5",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/public/robots.txt"
+  },
+  "src/styles/global.css": {
+    "status": "ok",
+    "sha": "0032787ba3312edae772bb35e9cffbfc8ee153ad",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/styles/global.css"
+  },
+  "src/layouts/Layout.astro": {
+    "status": "ok",
+    "sha": "4cf3b0f9b6c3c4e9bbb627df420e70398a65471b",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/layouts/Layout.astro"
+  },
+  "src/components/Header.astro": {
+    "status": "ok",
+    "sha": "a98f5122f14f250c3ef180656192763fa80f7b16",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/Header.astro"
+  },
+  "src/components/Footer.astro": {
+    "status": "ok",
+    "sha": "4a94dc8d8d3a5105075cd16d614a450f5e67f508",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/Footer.astro"
+  },
+  "src/components/Logo.astro": {
+    "status": "ok",
+    "sha": "1c09bdabb69fa673572a214fb5b5f448d018be9e",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/Logo.astro"
+  },
+  "src/components/ui/Button.astro": {
+    "status": "ok",
+    "sha": "5176079123985da5df6141b2ecac1ba4437c532a",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/ui/Button.astro"
+  },
+  "src/components/ui/Card.astro": {
+    "status": "ok",
+    "sha": "1c6f1a2caf274e71e0c679a9da2a2e09f2c4e19e",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/ui/Card.astro"
+  },
+  "src/components/ui/Icon.astro": {
+    "status": "ok",
+    "sha": "579e0e4ec7fa65fd6b44b1874f5a55156ce0fc38",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/ui/Icon.astro"
+  },
+  "src/components/ui/SectionHeader.astro": {
+    "status": "ok",
+    "sha": "b1be7e86c6a12bd756a16931330a6f17983257c4",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/ui/SectionHeader.astro"
+  },
+  "src/lib/content.ts": {
+    "status": "ok",
+    "sha": "fc79d16197b49b765ebb261d7351c6a078c9655e",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/lib/content.ts"
+  },
+  "src/lib/cn.ts": {
+    "status": "ok",
+    "sha": "a065a752a830bb30a7ebce988554260518b446ee",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/lib/cn.ts"
+  },
+  "src/pages/index.astro": {
+    "status": "ok",
+    "sha": "3ffeef67403320153a4a88c00e4a44551dcb5018",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/pages/index.astro"
+  },
+  ".github/workflows/deploy.yml": {
+    "status": "ok",
+    "sha": "f8e1f4c917873a332cf3de4eb40cba12d45ea4fe",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/.github/workflows/deploy.yml"
+  },
+  "docs/DEPLOY.md": {
+    "status": "ok",
+    "sha": "9a1cae1a5a3c6dc9578e77ba7c4524f93e3f94a2",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/docs/DEPLOY.md"
+  },
+  "src/components/sections/Content.astro": {
+    "status": "ok",
+    "sha": "3e67eaee2b09f13c396ba2a1233b9f7a787e9347",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/sections/Content.astro"
+  },
+  "src/components/sections/Credibility.astro": {
+    "status": "ok",
+    "sha": "483459d45f679fe19d87a5a092f2faef68480daf",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/sections/Credibility.astro"
+  },
+  "src/components/sections/Differentials.astro": {
+    "status": "ok",
+    "sha": "12576100096243ad2da3f5f035f2dd227f71c9c2",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/sections/Differentials.astro"
+  },
+  "src/components/sections/FinalCta.astro": {
+    "status": "ok",
+    "sha": "8bba2a5b67433dd8619b6217a8bb2fe999d6081c",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/sections/FinalCta.astro"
+  },
+  "src/components/sections/Hero.astro": {
+    "status": "ok",
+    "sha": "47fdb5c375d4224d317ff3ad319f7c0fd1668eba",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/sections/Hero.astro"
+  },
+  "src/components/sections/Institutional.astro": {
+    "status": "ok",
+    "sha": "e0c632d29e007e112f9b83577fce4473df04ca00",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/sections/Institutional.astro"
+  },
+  "src/components/sections/Methodology.astro": {
+    "status": "ok",
+    "sha": "2ebab6abd4fde72a52d581cfbb6a64db1b4b6dfa",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/sections/Methodology.astro"
+  },
+  "src/components/sections/Results.astro": {
+    "status": "ok",
+    "sha": "05c5cbfb1dce27e0f5b4c857387065e9097fce37",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/sections/Results.astro"
+  },
+  "src/components/sections/Segments.astro": {
+    "status": "ok",
+    "sha": "31ab8bcf2aaf82d170dcc2fbbcbcd97e6cad1349",
+    "url": "gh api repos/LimaTeixeiraTecnologia/limateixeira-landingpage/contents/src/components/sections/Segments.astro"
+  }
+}

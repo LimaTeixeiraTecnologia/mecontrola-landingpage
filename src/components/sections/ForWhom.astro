@@ -1,0 +1,23 @@
+---
+import { forWhom } from '../../lib/content';
+import SectionHeader from '../ui/SectionHeader.astro';
+---
+
+<section
+  class="py-14 md:py-20"
+  style="background: linear-gradient(160deg, rgba(120,97,255,.18), rgba(13,13,13,0))"
+>
+  <div class="max-w-5xl mx-auto px-5">
+    <SectionHeader title={forWhom.heading} />
+    <ul class="list-none flex flex-col gap-[14px] p-0 max-w-[760px]">
+      {
+        forWhom.items.map((item) => (
+          <li class="flex gap-[14px] items-start font-semibold text-foreground">
+            <span class="text-[1.2rem] flex-none mt-0.5">💚</span>
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

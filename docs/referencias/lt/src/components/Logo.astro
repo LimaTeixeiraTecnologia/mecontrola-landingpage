@@ -1,0 +1,25 @@
+---
+import rawSvg from '../assets/lima_teixeira_logo_premium.svg?raw';
+
+interface Props {
+  variant?: 'full' | 'mark';
+  class?: string;
+}
+
+const { variant = 'full', class: className = '' } = Astro.props;
+
+const sourceSvg =
+  variant === 'mark' ? rawSvg.replace(/viewBox="[^"]*"/, 'viewBox="40 20 340 290"') : rawSvg;
+
+const inlineSvg = sourceSvg.replace(/<svg\b[^>]*>/, (match) =>
+  match
+    .replace(/\swidth="[^"]*"/, '')
+    .replace(/\sheight="[^"]*"/, '')
+    .replace(
+      /<svg\b/,
+      `<svg class="${className}" role="img" aria-label="Lima Teixeira Consulting"`,
+    ),
+);
+---
+
+<Fragment set:html={inlineSvg} />

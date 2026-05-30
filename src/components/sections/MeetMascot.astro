@@ -1,0 +1,141 @@
+---
+import type { MeetMascotContent, MascotStripGoalContent } from '../../lib/content';
+import { meetMascot } from '../../lib/content';
+import Button from '../ui/Button.astro';
+import Tag from '../ui/Tag.astro';
+
+interface Props {
+  reverse?: boolean;
+  content?: MeetMascotContent | MascotStripGoalContent;
+}
+
+const { reverse = false, content = meetMascot } = Astro.props;
+
+const isMeetMascot = (c: MeetMascotContent | MascotStripGoalContent): c is MeetMascotContent =>
+  'bullets' in c && 'cta' in c;
+
+const hasHeadingHighlight = (
+  c: MeetMascotContent | MascotStripGoalContent,
+): c is MeetMascotContent => 'headingHighlight' in c;
+
+const imageSrc = `/images/${content.image}.jpeg`;
+
+const imageAlt =
+  content.image === 'brand-mascote-resumo-mes'
+    ? "Mascote do MeControla com o painel 'Como foi seu mês?' ao lado, mostrando entradas, gastos e quanto sobrou no bolso."
+    : 'Mascote do MeControla comemorando uma meta concluída: celular novo, R$ 2.800, 100% atingido.';
+---
+
+<section class="bg-[#000] py-14 md:py-20">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-[54px]">
+      {
+        reverse ? (
+          <>
+            <div class="meet-copy">
+              <Tag>{content.tag}</Tag>
+              <h2
+                class="text-[1.9rem] md:text-[2.4rem] font-extrabold mt-3 mb-[14px]"
+                style="letter-spacing:var(--tracking-tight);line-height:1.15"
+              >
+                {hasHeadingHighlight(content) ? (
+                  <>
+                    {content.heading}
+                    <span class="text-primary">{content.headingHighlight}</span>
+                  </>
+                ) : (
+                  content.heading
+                )}
+              </h2>
+              <p class="text-muted-foreground font-medium mb-[18px]">{content.body}</p>
+              {isMeetMascot(content) && (
+                <ul class="list-none flex flex-col gap-[10px] mb-6 p-0">
+                  {content.bullets.map((bullet: string) => (
+                    <li class="flex items-center gap-[10px] font-semibold">
+                      <span class="text-accent">💚</span>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {isMeetMascot(content) && (
+                <Button
+                  variant="primary"
+                  size="lg"
+                  href={content.cta.href}
+                  dataTrack={content.cta.trackId}
+                >
+                  {content.cta.label}
+                </Button>
+              )}
+            </div>
+
+            <figure class="m-0 max-w-[480px] mx-auto md:mx-0">
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                width="480"
+                height="480"
+                loading="lazy"
+                decoding="async"
+                style="display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);"
+              />
+            </figure>
+          </>
+        ) : (
+          <>
+            <figure class="m-0 max-w-[480px] mx-auto md:mx-0">
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                width="480"
+                height="480"
+                loading="lazy"
+                decoding="async"
+                style="display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);"
+              />
+            </figure>
+
+            <div class="meet-copy">
+              <Tag>{content.tag}</Tag>
+              <h2
+                class="text-[1.9rem] md:text-[2.4rem] font-extrabold mt-3 mb-[14px]"
+                style="letter-spacing:var(--tracking-tight);line-height:1.15"
+              >
+                {hasHeadingHighlight(content) ? (
+                  <>
+                    {content.heading}
+                    <span class="text-primary">{content.headingHighlight}</span>
+                  </>
+                ) : (
+                  content.heading
+                )}
+              </h2>
+              <p class="text-muted-foreground font-medium mb-[18px]">{content.body}</p>
+              {isMeetMascot(content) && (
+                <ul class="list-none flex flex-col gap-[10px] mb-6 p-0">
+                  {content.bullets.map((bullet: string) => (
+                    <li class="flex items-center gap-[10px] font-semibold">
+                      <span class="text-accent">💚</span>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {isMeetMascot(content) && (
+                <Button
+                  variant="primary"
+                  size="lg"
+                  href={content.cta.href}
+                  dataTrack={content.cta.trackId}
+                >
+                  {content.cta.label}
+                </Button>
+              )}
+            </div>
+          </>
+        )
+      }
+    </div>
+  </div>
+</section>

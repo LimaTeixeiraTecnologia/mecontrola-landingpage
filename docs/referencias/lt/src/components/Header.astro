@@ -1,0 +1,98 @@
+---
+import Logo from './Logo.astro';
+import Button from './ui/Button.astro';
+import { contact } from '../lib/content';
+
+const navLinks = [
+  { label: 'Home', href: '/#hero' },
+  { label: 'Soluções', href: '/#solucoes' },
+  { label: 'Segmentos', href: '/#segmentos' },
+  { label: 'Sobre', href: '/#institucional' },
+  { label: 'Conteúdo', href: '/#conteudo' },
+];
+---
+
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/#hero" aria-label="Lima Teixeira Consulting — início">
+        <Logo class="h-9" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1" aria-label="Navegação principal">
+        {
+          navLinks.map(({ label, href }) => (
+            <a
+              href={href}
+              class="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-150 rounded-md hover:bg-surface/50"
+            >
+              {label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="hidden md:block">
+        <Button href={contact.whatsappUrl} target="_blank" variant="primary"
+          >Falar com um especialista</Button
+        >
+      </div>
+
+      <details class="md:hidden group">
+        <summary
+          class="list-none cursor-pointer p-2 text-muted-foreground hover:text-foreground"
+          aria-label="Abrir menu"
+        >
+          <svg
+            class="size-6 group-open:hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+          </svg>
+          <svg
+            class="size-6 hidden group-open:block"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+          </svg>
+        </summary>
+        <nav
+          class="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border p-4 flex flex-col gap-1"
+          aria-label="Navegação mobile"
+        >
+          {
+            navLinks.map(({ label, href }) => (
+              <a
+                href={href}
+                class="px-3 py-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-150 rounded-md hover:bg-surface/50"
+              >
+                {label}
+              </a>
+            ))
+          }
+          <div class="pt-2 border-t border-border mt-2">
+            <Button
+              href={contact.whatsappUrl}
+              target="_blank"
+              variant="primary"
+              class="w-full justify-center"
+            >
+              Falar com um especialista
+            </Button>
+          </div>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

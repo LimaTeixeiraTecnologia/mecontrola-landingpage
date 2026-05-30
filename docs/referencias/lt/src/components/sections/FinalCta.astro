@@ -1,0 +1,61 @@
+---
+import Button from '../ui/Button.astro';
+import { finalCta, contact } from '../../lib/content';
+
+const { whatsappUrl } = contact;
+---
+
+<section id="cta-final" aria-labelledby="cta-final-heading" class="py-20 lg:py-28 bg-surface/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="relative rounded-3xl border border-border bg-surface overflow-hidden text-center p-12 lg:p-20"
+    >
+      <div
+        aria-hidden="true"
+        class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent"
+      >
+      </div>
+      <div
+        aria-hidden="true"
+        class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent"
+      >
+      </div>
+
+      <div
+        aria-hidden="true"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] rounded-full bg-(--color-primary) opacity-10 blur-3xl motion-reduce:hidden"
+      >
+      </div>
+      <div
+        aria-hidden="true"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[400px] rounded-full bg-(--color-accent) opacity-10 blur-3xl motion-reduce:hidden"
+      >
+      </div>
+
+      <div class="relative z-10">
+        <h2
+          id="cta-final-heading"
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8 max-w-3xl mx-auto"
+        >
+          {finalCta.title}
+        </h2>
+        <Button href={whatsappUrl} target="_blank" variant="primary">
+          {finalCta.button}
+          <svg
+            class="size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+          </svg>
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>

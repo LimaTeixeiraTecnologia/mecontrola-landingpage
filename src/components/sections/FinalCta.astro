@@ -1,0 +1,28 @@
+---
+import { finalCta } from '../../lib/content';
+import Button from '../ui/Button.astro';
+---
+
+<section class="py-14 md:py-20 px-5">
+  <div class="max-w-5xl mx-auto">
+    <div
+      class="bg-[image:var(--gradient-final-cta)] rounded-[28px] px-[26px] py-[54px] text-center"
+    >
+      <h2
+        class="font-extrabold text-foreground max-w-[620px] mx-auto mb-[14px] text-[1.8rem] md:text-[2.2rem]"
+        style="letter-spacing:var(--tracking-tight);line-height:1.15"
+      >
+        {finalCta.heading}
+      </h2>
+      <p class="text-foreground/85 max-w-[520px] mx-auto mb-7 font-medium">{finalCta.body}</p>
+      <Button
+        variant="primary"
+        size="lg"
+        href={finalCta.ctaHref}
+        {...finalCta.trackId ? { dataTrack: finalCta.trackId } : {}}
+      >
+        {finalCta.ctaLabel}
+      </Button>
+    </div>
+  </div>
+</section>

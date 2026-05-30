@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0D0D0D"/>
+
+  <!-- Neon accent line top -->
+  <rect x="0" y="0" width="1200" height="4" fill="#C6FF00"/>
+
+  <!-- Logo mark (mc-face) -->
+  <g transform="translate(80, 60) scale(1.2)">
+    <path d="M16 8 H48 A8 8 0 0 1 56 16 V36 A8 8 0 0 1 48 44 H30 L18 56 V44 H16 A8 8 0 0 1 8 36 V16 A8 8 0 0 1 16 8 Z" fill="#0D0D0D" stroke="#C6FF00" stroke-width="3.5" stroke-linejoin="round"/>
+    <ellipse cx="25" cy="23" rx="3.4" ry="5" fill="#FFFFFF"/>
+    <path d="M35 21 q4.5 3.2 9 0.2" fill="none" stroke="#C6FF00" stroke-width="3" stroke-linecap="round"/>
+    <path d="M22 31 q10 9 20 0" fill="none" stroke="#C6FF00" stroke-width="3.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Logo text -->
+  <text x="162" y="105" font-family="system-ui, sans-serif" font-weight="800" font-size="36" fill="#FFFFFF">Me</text>
+  <text x="200" y="105" font-family="system-ui, sans-serif" font-weight="800" font-size="36" fill="#C6FF00">Controla</text>
+
+  <!-- Tag line -->
+  <text x="80" y="220" font-family="system-ui, sans-serif" font-weight="700" font-size="20" fill="#C6FF00" letter-spacing="3">MENOS CAOS. MAIS CONQUISTAS.</text>
+
+  <!-- Main headline -->
+  <text x="80" y="310" font-family="system-ui, sans-serif" font-weight="800" font-size="58" fill="#FFFFFF">Sua vida financeira</text>
+  <text x="80" y="378" font-family="system-ui, sans-serif" font-weight="800" font-size="58" fill="#FFFFFF">organizada,</text>
+  <text x="80" y="446" font-family="system-ui, sans-serif" font-weight="800" font-size="58" fill="#C6FF00">direto no WhatsApp.</text>
+
+  <!-- Domain -->
+  <text x="80" y="590" font-family="system-ui, sans-serif" font-weight="500" font-size="22" fill="#B8B8B8">mecontrola.app.br</text>
+
+  <!-- Right side decoration: neon glow circle -->
+  <circle cx="1050" cy="315" r="180" fill="none" stroke="#C6FF00" stroke-width="1" opacity="0.15"/>
+  <circle cx="1050" cy="315" r="120" fill="none" stroke="#7861FF" stroke-width="1" opacity="0.2"/>
+  <circle cx="1050" cy="315" r="60" fill="#7861FF" opacity="0.1"/>
+</svg>

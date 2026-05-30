@@ -1,0 +1,178 @@
+---
+import '@fontsource-variable/manrope/wght.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { contact, footer, hero, services } from '../lib/content';
+
+interface Breadcrumb {
+  name: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  breadcrumbs?: ReadonlyArray<Breadcrumb>;
+}
+
+const { title, description, canonical, breadcrumbs } = Astro.props;
+const siteUrl = Astro.site ?? new URL('https://limateixeira.com.br');
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = new URL('/og-image.png', siteUrl).href;
+const gaId = import.meta.env.PUBLIC_GA_ID as string | undefined;
+
+const organizationNode = {
+  '@type': ['Organization', 'ProfessionalService'],
+  '@id': `${siteUrl}#organization`,
+  name: 'Lima Teixeira Consulting',
+  url: String(siteUrl),
+  logo: `${siteUrl}lima_teixeira_logo_premium.svg`,
+  description: hero.subtitle,
+  taxID: footer.cnpj,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'São Paulo',
+    addressRegion: 'SP',
+    addressCountry: 'BR',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    email: contact.email,
+    availableLanguage: 'Portuguese',
+  },
+  sameAs: [contact.linkedin],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Soluções de Transformação Digital',
+    itemListElement: services.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: s.title,
+        description: s.description,
+      },
+    })),
+  },
+};
+
+const websiteNode = {
+  '@type': 'WebSite',
+  '@id': `${siteUrl}#website`,
+  url: String(siteUrl),
+  name: 'Lima Teixeira Consulting',
+  description: hero.subtitle,
+  publisher: { '@id': `${siteUrl}#organization` },
+  inLanguage: 'pt-BR',
+};
+
+const webPageNode = {
+  '@type': 'WebPage',
+  '@id': `${canonicalUrl}#webpage`,
+  url: canonicalUrl,
+  name: title,
+  description,
+  isPartOf: { '@id': `${siteUrl}#website` },
+  about: { '@id': `${siteUrl}#organization` },
+  inLanguage: 'pt-BR',
+};
+
+const breadcrumbNode = breadcrumbs
+  ? {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: String(siteUrl),
+        },
+        ...breadcrumbs.map((b, i) => ({
+          '@type': 'ListItem',
+          position: i + 2,
+          name: b.name,
+          item: new URL(b.href, siteUrl).href,
+        })),
+      ],
+    }
+  : null;
+
+const schemaGraph = [
+  organizationNode,
+  websiteNode,
+  webPageNode,
+  ...(breadcrumbNode ? [breadcrumbNode] : []),
+];
+
+const jsonLd = { '@context': 'https://schema.org', '@graph': schemaGraph };
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Lima Teixeira Consulting" />
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Performance hints -->
+    <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="dns-prefetch" href="https://linkedin.com" />
+    {gaId && <link rel="preconnect" href="https://www.googletagmanager.com" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lima Teixeira Consulting" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <link rel="icon" type="image/svg+xml" href="/lima_teixeira_logo_premium.svg" />
+
+    <!-- Schema.org JSON-LD -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Google Analytics 4 -->
+    {gaId && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+        <script is:inline define:vars={{ gaId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', gaId, { anonymize_ip: true });
+        </script>
+      </>
+    )}
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold"
+    >
+      Pular para o conteúdo
+    </a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,5 @@
+# Configuração do Cloudflare Pages (Direct Upload).
+# Fonte única de verdade para o nome do projeto e o diretório publicado.
+name = "mecontrola-landingpage"
+compatibility_date = "2026-05-30"
+pages_build_output_dir = "dist"

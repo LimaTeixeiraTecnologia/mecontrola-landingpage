@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Credibility from '../components/sections/Credibility.astro';
+import Methodology from '../components/sections/Methodology.astro';
+import Segments from '../components/sections/Segments.astro';
+import Differentials from '../components/sections/Differentials.astro';
+import Results from '../components/sections/Results.astro';
+import Institutional from '../components/sections/Institutional.astro';
+import Content from '../components/sections/Content.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+import { hero } from '../lib/content';
+---
+
+<Layout
+  title="Lima Teixeira Consulting — Inteligência tecnológica para grandes operações"
+  description={hero.subtitle}
+  breadcrumbs={[]}
+>
+  <Hero />
+  <Credibility />
+  <Methodology />
+  <Segments />
+  <Differentials />
+  <Results />
+  <Institutional />
+  <Content />
+  <FinalCta />
+</Layout>

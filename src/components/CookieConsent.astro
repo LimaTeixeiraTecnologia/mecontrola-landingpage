@@ -1,0 +1,38 @@
+---
+// GA4 is loaded ONLY after explicit user consent (LGPD gating)
+// Banner hidden by default via `hidden` attribute; cookie-consent.ts shows it on first visit
+const gaId = import.meta.env.PUBLIC_GA_ID as string | undefined;
+---
+
+<aside
+  id="cookie-banner"
+  hidden
+  data-ga-id={gaId}
+  class="fixed bottom-0 inset-x-0 z-50 bg-surface border-t border-border p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-4"
+  role="dialog"
+  aria-label="Consentimento de cookies"
+  aria-live="polite"
+>
+  <p class="text-foreground text-sm font-medium flex-1">
+    Usamos cookies para entender uso do site e melhorar sua experiência. Você pode aceitar ou
+    recusar a qualquer momento.
+  </p>
+  <div class="flex gap-3 flex-none">
+    <button
+      id="consent-accept"
+      type="button"
+      class="bg-primary text-primary-foreground font-bold rounded-full px-5 py-2 text-sm cursor-pointer border-none transition-all hover:shadow-glow-primary"
+    >
+      Aceitar
+    </button>
+    <button
+      id="consent-decline"
+      type="button"
+      class="border border-border text-foreground font-bold rounded-full px-5 py-2 text-sm cursor-pointer bg-transparent transition-all hover:bg-surface"
+    >
+      Recusar
+    </button>
+  </div>
+</aside>
+
+<script src="../scripts/cookie-consent.ts"></script>

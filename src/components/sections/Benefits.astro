@@ -1,0 +1,27 @@
+---
+import { benefitCards, benefitsHeading } from '../../lib/content';
+import SectionHeader from '../ui/SectionHeader.astro';
+import Card from '../ui/Card.astro';
+---
+
+<section class="py-14 md:py-20">
+  <div class="max-w-5xl mx-auto px-5">
+    <SectionHeader title={benefitsHeading} />
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        benefitCards.map((card) => (
+          <Card>
+            <span class="text-[1.8rem] mb-[14px] inline-block">{card.emoji}</span>
+            <h3
+              class="text-[1.15rem] font-bold mb-2 text-foreground"
+              style="letter-spacing:var(--tracking-tight)"
+            >
+              {card.title}
+            </h3>
+            <p class="text-muted-foreground text-[0.95rem] font-medium">{card.body}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

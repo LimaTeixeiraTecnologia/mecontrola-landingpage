@@ -1,0 +1,87 @@
+---
+import Button from '../ui/Button.astro';
+import { hero, contact } from '../../lib/content';
+---
+
+<section
+  id="hero"
+  aria-labelledby="hero-heading"
+  class="relative flex items-center min-h-[calc(100svh-4rem)] md:min-h-dvh overflow-hidden"
+>
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 bg-[linear-gradient(color-mix(in_oklab,var(--color-foreground)_3%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_oklab,var(--color-foreground)_3%,transparent)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,#000_40%,transparent_100%)]"
+  >
+  </div>
+
+  <div
+    aria-hidden="true"
+    class="absolute top-1/4 left-1/4 size-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-(--color-primary) opacity-20 blur-3xl motion-reduce:hidden"
+  >
+  </div>
+  <div
+    aria-hidden="true"
+    class="absolute bottom-1/4 right-1/4 size-[400px] translate-x-1/2 translate-y-1/2 rounded-full bg-(--color-accent) opacity-15 blur-3xl motion-reduce:hidden"
+  >
+  </div>
+
+  <svg
+    aria-hidden="true"
+    class="absolute right-0 top-0 h-full w-1/2 opacity-5 hidden lg:block"
+    viewBox="0 0 600 800"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="0" y1="0" x2="600" y2="800" stroke="var(--color-primary)" stroke-width="0.5"></line>
+    <line x1="100" y1="0" x2="600" y2="600" stroke="var(--color-accent)" stroke-width="0.5"></line>
+    <line x1="200" y1="0" x2="600" y2="400" stroke="var(--color-primary)" stroke-width="0.5"></line>
+    <line x1="300" y1="0" x2="600" y2="200" stroke="var(--color-accent)" stroke-width="0.5"></line>
+    <line x1="0" y1="200" x2="400" y2="800" stroke="var(--color-primary)" stroke-width="0.5"></line>
+    <line x1="0" y1="400" x2="200" y2="800" stroke="var(--color-accent)" stroke-width="0.5"></line>
+    <circle cx="500" cy="150" r="80" stroke="var(--color-primary)" stroke-width="0.5"></circle>
+    <circle cx="500" cy="150" r="140" stroke="var(--color-accent)" stroke-width="0.5"></circle>
+    <circle cx="500" cy="150" r="200" stroke="var(--color-primary)" stroke-width="0.3"></circle>
+  </svg>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+    <div class="max-w-3xl">
+      <p class="text-accent text-sm font-semibold tracking-widest uppercase mb-6">
+        Lima Teixeira Consulting
+      </p>
+      <h1
+        id="hero-heading"
+        class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight mb-6"
+      >
+        {hero.title}
+      </h1>
+      <p class="text-muted-foreground text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl">
+        {hero.subtitle}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <Button href="#solucoes" variant="primary">
+          {hero.ctaPrimary}
+        </Button>
+        <Button href={contact.whatsappUrl} target="_blank" variant="outline">
+          {hero.ctaSecondary}
+        </Button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    aria-hidden="true"
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground"
+  >
+    <span class="text-xs tracking-widest uppercase">Explorar</span>
+    <svg
+      class="size-4 animate-bounce motion-reduce:animate-none"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+    </svg>
+  </div>
+</section>

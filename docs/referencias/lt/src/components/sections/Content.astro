@@ -1,0 +1,203 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import { contentArticles } from '../../lib/content';
+---
+
+<section
+  id="conteudo"
+  aria-labelledby="conteudo-heading"
+  class="py-20 lg:py-28 relative overflow-hidden"
+>
+  <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div
+      class="absolute -top-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.08)_0%,transparent_70%)]"
+    >
+    </div>
+    <div
+      class="absolute -bottom-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-[radial-gradient(circle,rgba(20,184,166,0.08)_0%,transparent_70%)]"
+    >
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <SectionHeader
+      id="conteudo-heading"
+      eyebrow="Central de inteligência"
+      title="Inteligência e autoridade em transformação digital."
+      subtitle="Conteúdos estratégicos para apoiar decisões, modernizar operações e aproximar tecnologia de resultados reais."
+      align="center"
+    />
+
+    <div class="mt-12 lg:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+      {/* NAV LATERAL — desktop */}
+      <aside class="hidden lg:block lg:col-span-4 lg:border-r lg:border-border/50 lg:pr-6">
+        <ol
+          role="tablist"
+          aria-orientation="vertical"
+          aria-label="Artigos estratégicos"
+          class="sticky top-28 flex flex-col gap-1"
+        >
+          {
+            contentArticles.map((a, i) => (
+              <li role="presentation">
+                <button
+                  type="button"
+                  role="tab"
+                  id={`tab-${a.slug}`}
+                  aria-controls={`panel-${a.slug}`}
+                  aria-selected={i === 0}
+                  tabindex={i === 0 ? 0 : -1}
+                  data-content-tab={a.slug}
+                  class="group relative w-full text-left pl-5 pr-4 py-3 rounded-r-xl text-muted-foreground hover:text-foreground hover:bg-surface/40 aria-selected:bg-surface/70 aria-selected:text-foreground transition-colors motion-reduce:transition-none before:absolute before:left-0 before:top-2 before:bottom-2 before:w-0.5 before:rounded-full before:bg-transparent aria-selected:before:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <span class="block text-[11px] font-mono text-accent/70 group-aria-selected:text-accent tracking-widest">
+                    {a.index}
+                  </span>
+                  <span class="block font-medium leading-snug mt-0.5">{a.title}</span>
+                </button>
+              </li>
+            ))
+          }
+        </ol>
+      </aside>
+
+      {/* TABS HORIZONTAIS — mobile */}
+      <div class="lg:hidden -mx-4 px-4 overflow-x-auto scrollbar-none">
+        <ol role="tablist" aria-label="Artigos estratégicos (mobile)" class="flex gap-2 w-max pb-2">
+          {
+            contentArticles.map((a, i) => (
+              <li role="presentation">
+                <button
+                  type="button"
+                  role="tab"
+                  id={`tab-mobile-${a.slug}`}
+                  aria-controls={`panel-${a.slug}`}
+                  aria-selected={i === 0}
+                  tabindex={i === 0 ? 0 : -1}
+                  data-content-tab={a.slug}
+                  class="whitespace-nowrap px-4 py-2 rounded-full text-sm border border-border text-muted-foreground aria-selected:bg-accent/15 aria-selected:border-accent aria-selected:text-foreground aria-selected:shadow-[0_0_0_1px_rgba(20,184,166,0.4)] transition-colors motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <span class="font-mono text-[10px] mr-1.5 opacity-60">{a.index}</span>
+                  {a.title}
+                </button>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+
+      {/* PAINEL */}
+      <div class="lg:col-span-8">
+        {
+          contentArticles.map((a, i) => (
+            <article
+              role="tabpanel"
+              id={`panel-${a.slug}`}
+              aria-labelledby={`tab-${a.slug} tab-mobile-${a.slug}`}
+              tabindex={0}
+              data-content-panel={a.slug}
+              hidden={i !== 0}
+              class="rounded-2xl border border-border bg-surface/40 p-6 sm:p-8 lg:p-10 not-[[hidden]]:animate-[fadeIn_220ms_ease-out] motion-reduce:animate-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <p class="text-accent text-xs font-semibold tracking-widest uppercase">
+                {a.category}
+              </p>
+              <h3 class="mt-3 text-2xl sm:text-3xl font-bold text-foreground leading-tight">
+                {a.title}
+              </h3>
+              <p class="mt-2 text-muted-foreground">{a.subtitle}</p>
+
+              <div class="mt-6 space-y-4 text-foreground/90 leading-relaxed">
+                {a.paragraphs.map((p) => (
+                  <p>{p}</p>
+                ))}
+              </div>
+
+              <blockquote class="mt-8 border-l-2 border-accent pl-5 py-2 bg-accent/5 rounded-r-lg">
+                <p class="text-foreground italic">{a.highlight}</p>
+              </blockquote>
+
+              <div class="mt-8">
+                <p class="text-xs font-semibold tracking-widest uppercase text-primary">
+                  Aplicações práticas
+                </p>
+                <ul class="mt-3 grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                  {a.applications.map((item) => (
+                    <li class="flex gap-2 text-sm text-muted-foreground">
+                      <span class="text-accent mt-1" aria-hidden="true">
+                        ▸
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {a.conclusion && (
+                <p class="mt-8 pt-6 border-t border-border text-foreground font-medium">
+                  {a.conclusion}
+                </p>
+              )}
+
+              <p class="mt-6 text-xs text-muted-foreground">
+                <span class="text-accent font-semibold">
+                  {a.sources.length === 1 ? 'Fonte:' : 'Fontes:'}
+                </span>{' '}
+                {a.sources.join(' · ')}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const section = document.getElementById('conteudo');
+  if (section) {
+    const tabs = section.querySelectorAll<HTMLButtonElement>('[data-content-tab]');
+    const panels = section.querySelectorAll<HTMLElement>('[data-content-panel]');
+
+    const activate = (slug: string) => {
+      tabs.forEach((t) => {
+        const active = t.dataset.contentTab === slug;
+        t.setAttribute('aria-selected', String(active));
+        t.tabIndex = active ? 0 : -1;
+      });
+      panels.forEach((p) => {
+        p.hidden = p.dataset.contentPanel !== slug;
+      });
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const slug = tab.dataset.contentTab;
+        if (slug) activate(slug);
+      });
+    });
+
+    section.querySelectorAll<HTMLElement>('[role="tablist"]').forEach((list) => {
+      const items = Array.from(list.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+      list.addEventListener('keydown', (e: KeyboardEvent) => {
+        const key = e.key;
+        const vertical = list.getAttribute('aria-orientation') === 'vertical';
+        const next = vertical ? 'ArrowDown' : 'ArrowRight';
+        const prev = vertical ? 'ArrowUp' : 'ArrowLeft';
+        if (![next, prev, 'Home', 'End'].includes(key)) return;
+        e.preventDefault();
+        const currentIndex = items.findIndex((t) => t.getAttribute('aria-selected') === 'true');
+        let target = currentIndex;
+        if (key === next) target = (currentIndex + 1) % items.length;
+        else if (key === prev) target = (currentIndex - 1 + items.length) % items.length;
+        else if (key === 'Home') target = 0;
+        else if (key === 'End') target = items.length - 1;
+        const targetItem = items[target];
+        const slug = targetItem?.dataset.contentTab;
+        if (slug && targetItem) {
+          activate(slug);
+          targetItem.focus();
+        }
+      });
+    });
+  }
+</script>

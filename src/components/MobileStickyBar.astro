@@ -1,0 +1,13 @@
+---
+import Button from './ui/Button.astro';
+---
+
+<div
+  class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-background/95 backdrop-blur border-t border-border p-4 flex items-center justify-between gap-3"
+  style="padding-bottom: max(1rem, env(safe-area-inset-bottom))"
+>
+  <p class="font-semibold text-sm text-foreground">Comece do jeito mais simples</p>
+  <Button variant="primary" href="#planos" dataTrack="cta_mobile_sticky_ver_planos">
+    Ver planos
+  </Button>
+</div>

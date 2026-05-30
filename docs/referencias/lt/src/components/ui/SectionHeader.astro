@@ -1,0 +1,32 @@
+---
+import { cn } from '../../lib/cn';
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+  id?: string;
+}
+
+const { eyebrow, title, subtitle, align = 'left', id } = Astro.props;
+const isCentered = align === 'center';
+
+const wrapperClass = cn('mb-12', isCentered && 'text-center');
+const subtitleClass = cn('text-muted-foreground text-lg max-w-2xl', isCentered && 'mx-auto');
+---
+
+<div class={wrapperClass}>
+  {
+    eyebrow && (
+      <p class="text-accent text-sm font-semibold tracking-widest uppercase mb-3">{eyebrow}</p>
+    )
+  }
+  <h2
+    id={id}
+    class="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-4 text-shadow-md"
+  >
+    {title}
+  </h2>
+  {subtitle && <p class={subtitleClass}>{subtitle}</p>}
+</div>

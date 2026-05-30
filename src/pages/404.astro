@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<Layout
+  title="Página não encontrada — MeControla"
+  description="Esta página decidiu sumir."
+  canonical="https://mecontrola.app.br/"
+>
+  <div class="min-h-[60vh] flex flex-col items-center justify-center text-center px-5 py-20">
+    <img
+      src="/images/brand-mascote-resumo-mes.jpeg"
+      alt="Mascote do MeControla"
+      width="200"
+      height="200"
+      loading="lazy"
+      decoding="async"
+      style="display:block;width:200px;height:200px;object-fit:contain;-webkit-mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);"
+      class="mx-auto mb-8"
+    />
+    <h1
+      class="text-3xl md:text-4xl font-extrabold text-foreground mb-4"
+      style="letter-spacing:var(--tracking-tight);line-height:1.15"
+    >
+      Esta página decidiu sumir.
+    </h1>
+    <p class="text-muted-foreground text-lg mb-8 max-w-md">
+      Mas relaxa: sua organização financeira começa por aqui.
+    </p>
+    <Button variant="primary" size="lg" href="/"> Voltar para o início </Button>
+  </div>
+</Layout>

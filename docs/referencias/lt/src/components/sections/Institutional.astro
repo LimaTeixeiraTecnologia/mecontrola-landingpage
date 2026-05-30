@@ -1,0 +1,118 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import { institutional } from '../../lib/content';
+---
+
+<section
+  id="institucional"
+  aria-labelledby="institucional-heading"
+  class="py-20 lg:py-28 bg-surface/30"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeader
+      id="institucional-heading"
+      eyebrow="Sobre"
+      title="Lima Teixeira Consulting"
+      align="center"
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-2xl border border-border bg-surface/60 relative overflow-hidden">
+        <div
+          aria-hidden="true"
+          class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent"
+        >
+        </div>
+        <div
+          class="size-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4"
+        >
+          <svg
+            class="size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+          </svg>
+        </div>
+        <h3 class="text-foreground font-bold text-lg mb-3">Missão</h3>
+        <p class="text-muted-foreground leading-relaxed">{institutional.mission}</p>
+      </div>
+
+      <div class="p-8 rounded-2xl border border-border bg-surface/60 relative overflow-hidden">
+        <div
+          aria-hidden="true"
+          class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent to-primary"
+        >
+        </div>
+        <div
+          class="size-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-4"
+        >
+          <svg
+            class="size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+          </svg>
+        </div>
+        <h3 class="text-foreground font-bold text-lg mb-3">Visão</h3>
+        <p class="text-muted-foreground leading-relaxed">{institutional.vision}</p>
+      </div>
+
+      <div class="p-8 rounded-2xl border border-border bg-surface/60 relative overflow-hidden">
+        <div
+          aria-hidden="true"
+          class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent"
+        >
+        </div>
+        <div
+          class="size-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4"
+        >
+          <svg
+            class="size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+            ></path>
+          </svg>
+        </div>
+        <h3 class="text-foreground font-bold text-lg mb-4">Valores</h3>
+        <ul class="flex flex-wrap gap-2">
+          {
+            institutional.values.map((value) => (
+              <li>
+                <span class="inline-block bg-surface border border-border rounded-full px-3 py-1 text-sm text-muted-foreground">
+                  {value}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

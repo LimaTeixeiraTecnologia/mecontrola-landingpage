@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/sections/Hero.astro';
+import MeetMascot from '../components/sections/MeetMascot.astro';
+import Benefits from '../components/sections/Benefits.astro';
+import HowItWorks from '../components/sections/HowItWorks.astro';
+import ForWhom from '../components/sections/ForWhom.astro';
+import Pricing from '../components/sections/Pricing.astro';
+import Faq from '../components/sections/Faq.astro';
+import MascotStripGoal from '../components/sections/MascotStripGoal.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+import { hero } from '../lib/content';
+---
+
+<Layout
+  title="MeControla — Sua vida financeira organizada, direto no WhatsApp."
+  description={hero.sub}
+  canonical="https://mecontrola.app.br/"
+  ogImage="https://mecontrola.app.br/og-image.png"
+>
+  <Hero />
+  <MeetMascot />
+  <Benefits />
+  <HowItWorks />
+  <ForWhom />
+  <Pricing />
+  <Faq />
+  <MascotStripGoal />
+  <FinalCta />
+</Layout>

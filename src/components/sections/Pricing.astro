@@ -1,0 +1,70 @@
+---
+import { plans } from '../../lib/content';
+import SectionHeader from '../ui/SectionHeader.astro';
+import Card from '../ui/Card.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section id="planos" class="py-14 md:py-20">
+  <div class="max-w-5xl mx-auto px-5">
+    <SectionHeader
+      title="Escolha o plano que faz mais sentido para você"
+      subtitle="Sem conta escondida. Sem pegadinha. Você vê o valor, a economia e escolhe com calma."
+    />
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+      {
+        plans.map((plan) => (
+          <div class="relative flex flex-col">
+            {plan.featured && (
+              <div
+                class="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-primary text-primary-foreground font-extrabold text-[0.72rem] uppercase px-4 py-1.5 rounded-full whitespace-nowrap"
+                style="letter-spacing:0.06em"
+              >
+                Melhor custo-benefício
+              </div>
+            )}
+            <Card featured={plan.featured} class="flex flex-col flex-1 pt-8">
+              <span
+                class="font-bold text-[0.85rem] uppercase text-muted-foreground mb-[14px] block"
+                style="letter-spacing:0.08em"
+              >
+                {plan.name}
+              </span>
+              <div
+                class="text-[1.9rem] font-extrabold text-foreground mb-1"
+                style="letter-spacing:var(--tracking-tight)"
+              >
+                {plan.priceLabel}
+                <span class="text-[0.95rem] font-semibold text-muted-foreground">
+                  {plan.periodLabel}
+                </span>
+              </div>
+              {plan.equiv && (
+                <p class="text-[0.85rem] text-muted-foreground font-medium mb-2">{plan.equiv}</p>
+              )}
+              {plan.savings && (
+                <span class="inline-block bg-primary/10 text-primary font-bold text-[0.78rem] px-3 py-1 rounded-full mb-[14px] w-fit">
+                  {plan.savings}
+                </span>
+              )}
+              <p class="text-muted-foreground font-medium text-[0.92rem] mb-[18px] flex-1">
+                {plan.support}
+              </p>
+              <Button
+                variant={plan.featured ? 'primary' : 'ghost'}
+                href={plan.ctaHref}
+                dataTrack={plan.trackId}
+                class="w-full justify-center"
+              >
+                {plan.ctaLabel}
+              </Button>
+            </Card>
+          </div>
+        ))
+      }
+    </div>
+    <p class="text-center text-muted-foreground mt-[22px] font-medium text-[0.92rem]">
+      Pague com PIX ou cartão. Se tiver cupom, você aplica no checkout.
+    </p>
+  </div>
+</section>

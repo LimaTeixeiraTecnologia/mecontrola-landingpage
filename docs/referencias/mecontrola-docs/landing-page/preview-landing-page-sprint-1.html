@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MeControla — Pré-visualização da Landing Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --neon:#C6FF00;
+    --roxo:#7861FF;
+    --preto:#0D0D0D;
+    --cinza:#1F1F1F;
+    --branco:#FFFFFF;
+    --texto-suave:#B8B8B8;
+    --wa-bg:#0B141A;
+    --wa-in:#1F2C33;
+    --wa-out:#005C4B;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',system-ui,sans-serif;
+    background:var(--preto);
+    color:var(--branco);
+    line-height:1.45;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:84px; /* espaço barra fixa mobile */
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+  h1,h2,h3{line-height:1.15;letter-spacing:-0.02em;}
+  .tag{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+    background:rgba(120,97,255,.18);color:#cfc6ff;padding:6px 12px;border-radius:999px;margin-bottom:16px;}
+
+  /* ---------- HEADER ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(13,13,13,.85);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.06);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:62px;}
+  .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.15rem;}
+  .logo .mark{width:34px;height:34px;display:inline-block;line-height:0;}
+  .logo .mark svg{width:100%;height:100%;}
+  .logo .me{color:var(--branco);} .logo .controla{color:var(--neon);}
+  .btn{font-family:inherit;font-weight:700;border:none;cursor:pointer;border-radius:999px;
+    text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .12s ease,filter .12s ease;}
+  .btn:hover{transform:translateY(-1px);filter:brightness(1.05);}
+  .btn-primary{background:var(--neon);color:var(--preto);padding:12px 22px;font-size:.95rem;}
+  .btn-ghost{background:transparent;color:var(--branco);border:1.5px solid rgba(255,255,255,.25);padding:12px 22px;}
+  .btn-lg{padding:16px 30px;font-size:1.05rem;}
+  .btn-block{width:100%;justify-content:center;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding-top:48px;}
+  .hero-grid{display:grid;gap:36px;}
+  .hero h1{font-size:2.1rem;font-weight:800;}
+  .hero h1 .hl{color:var(--neon);}
+  .hero .sub{color:var(--texto-suave);font-size:1.05rem;margin:18px 0 22px;font-weight:500;}
+  .bullets{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0 0 26px;}
+  .bullets li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.98rem;}
+  .bullets li::before{content:"✓";width:24px;height:24px;flex:0 0 24px;border-radius:50%;
+    background:rgba(198,255,0,.15);color:var(--neon);display:grid;place-items:center;font-size:.85rem;font-weight:800;}
+  .cta-row{display:flex;flex-direction:column;gap:12px;}
+
+  /* ---------- WHATSAPP MOCKUP ---------- */
+  .phone{max-width:330px;margin:0 auto;background:#000;border-radius:40px;padding:10px;
+    box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 2px rgba(255,255,255,.06);}
+  .phone-inner{background:var(--wa-bg);border-radius:31px;overflow:hidden;}
+  .wa-top{background:#1F2C33;display:flex;align-items:center;gap:10px;padding:14px 16px;}
+  .wa-avatar{width:40px;height:40px;border-radius:50%;background:#0D0D0D;border:1.5px solid var(--neon);
+    display:grid;place-items:center;overflow:hidden;}
+  .wa-avatar svg{width:30px;height:30px;}
+  .wa-name{font-weight:700;font-size:.95rem;}
+  .wa-status{font-size:.72rem;color:var(--neon);font-weight:500;}
+  .wa-body{padding:18px 14px;display:flex;flex-direction:column;gap:10px;min-height:340px;
+    background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:18px 18px;}
+  .msg{max-width:80%;padding:9px 12px;border-radius:14px;font-size:.86rem;font-weight:500;line-height:1.35;position:relative;}
+  .msg .time{display:block;font-size:.62rem;color:rgba(255,255,255,.5);text-align:right;margin-top:3px;}
+  .in{background:var(--wa-in);border-top-left-radius:4px;align-self:flex-start;}
+  .out{background:var(--wa-out);border-top-right-radius:4px;align-self:flex-end;}
+  /* recibo nativo dentro de bolha cinza padrão do WhatsApp */
+  .receipt{max-width:90%;padding:12px 14px;}
+  .receipt .r-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    font-size:.83rem;line-height:1.45;padding:3px 0;}
+  .receipt .r-k{color:#A9B3BB;font-weight:500;}
+  .receipt .r-v{color:#FFFFFF;font-weight:700;white-space:nowrap;}
+  .receipt .r-ok{color:#25D366;}
+  .receipt .r-div{height:1px;background:rgba(255,255,255,.08);margin:8px 0;}
+  .receipt .r-tip{margin-top:10px;font-size:.82rem;color:#E9EDEF;line-height:1.45;}
+
+  /* ---------- BENEFÍCIOS / CARDS GENÉRICOS ---------- */
+  .section-head{max-width:680px;margin-bottom:34px;}
+  .section-head h2{font-size:1.7rem;font-weight:800;}
+  .section-head p{color:var(--texto-suave);margin-top:12px;font-weight:500;}
+  .cards{display:grid;gap:18px;}
+  .card{background:var(--cinza);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:26px;}
+  .card .ico{font-size:1.8rem;margin-bottom:14px;display:inline-block;}
+  .card h3{font-size:1.15rem;font-weight:700;margin-bottom:8px;}
+  .card p{color:var(--texto-suave);font-size:.95rem;font-weight:500;}
+
+  /* ---------- BLOCO 2 — APRESENTAÇÃO DO MASCOTE ---------- */
+  .meet{background:#000;}
+  .meet-grid{display:grid;gap:30px;align-items:center;}
+  .meet-img{margin:0;max-width:480px;margin-inline:auto;}
+  .meet-img img{display:block;width:100%;height:auto;
+    -webkit-mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);
+            mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);}
+  .meet-copy h2{font-size:1.9rem;font-weight:800;margin-bottom:14px;}
+  .meet-copy h2 .hl{color:var(--neon);}
+  .meet-copy p{color:var(--texto-suave);font-weight:500;margin-bottom:18px;}
+  .meet-copy .bullets{margin-bottom:24px;}
+
+  /* ---------- COMO FUNCIONA ---------- */
+  .steps{display:grid;gap:16px;counter-reset:step;}
+  .step{display:flex;gap:16px;align-items:flex-start;background:var(--cinza);border-radius:18px;padding:20px 22px;
+    border:1px solid rgba(255,255,255,.06);}
+  .step .num{flex:0 0 38px;width:38px;height:38px;border-radius:12px;background:var(--neon);color:var(--preto);
+    font-weight:800;display:grid;place-items:center;font-size:1.05rem;}
+  .step p{font-weight:600;padding-top:6px;}
+  .closing{margin-top:22px;color:var(--texto-suave);font-weight:500;text-align:center;}
+
+  /* ---------- PARA QUEM É ---------- */
+  .para-quem{background:linear-gradient(160deg,rgba(120,97,255,.18),rgba(13,13,13,0));}
+  .quem-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:24px;}
+  .quem-list li{display:flex;gap:14px;align-items:flex-start;font-weight:600;font-size:1rem;}
+  .quem-list li::before{content:"💚";font-size:1.2rem;}
+
+  /* ---------- PLANOS ---------- */
+  .plans{display:grid;gap:18px;align-items:stretch;}
+  .plan{background:var(--cinza);border:1.5px solid rgba(255,255,255,.08);border-radius:22px;padding:28px 24px;
+    display:flex;flex-direction:column;position:relative;}
+  .plan .label{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--texto-suave);}
+  .plan .price{font-size:1.9rem;font-weight:800;margin:14px 0 4px;}
+  .plan .price small{font-size:.95rem;font-weight:600;color:var(--texto-suave);}
+  .plan .equiv{font-size:.85rem;color:var(--texto-suave);font-weight:500;}
+  .plan .support{margin:14px 0 18px;color:var(--texto-suave);font-weight:500;font-size:.92rem;}
+  .plan .selo{display:inline-block;background:rgba(198,255,0,.15);color:var(--neon);font-weight:700;
+    font-size:.78rem;padding:5px 12px;border-radius:999px;margin-bottom:6px;width:fit-content;}
+  .plan .btn{margin-top:auto;}
+  .plan.featured{border-color:var(--neon);background:linear-gradient(180deg,rgba(198,255,0,.06),var(--cinza));
+    box-shadow:0 0 0 1px var(--neon),0 18px 40px rgba(198,255,0,.08);}
+  .plan .destaque{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--neon);
+    color:var(--preto);font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;
+    padding:6px 16px;border-radius:999px;white-space:nowrap;}
+  .pay-note{text-align:center;color:var(--texto-suave);margin-top:22px;font-weight:500;font-size:.92rem;}
+
+  /* ---------- FAQ ---------- */
+  .faq{display:grid;gap:12px;max-width:760px;margin:0 auto;}
+  details{background:var(--cinza);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:4px 20px;}
+  summary{cursor:pointer;list-style:none;font-weight:700;padding:18px 0;display:flex;justify-content:space-between;
+    align-items:center;gap:12px;font-size:1.02rem;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";color:var(--neon);font-weight:800;font-size:1.4rem;transition:transform .2s;}
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{color:var(--texto-suave);padding:0 0 18px;font-weight:500;}
+
+  /* ---------- CTA FINAL ---------- */
+  .final{text-align:center;background:linear-gradient(160deg,var(--roxo),#4b39c0);border-radius:28px;
+    padding:54px 26px;margin:0 20px;}
+  .final h2{font-size:1.8rem;font-weight:800;max-width:620px;margin:0 auto 14px;}
+  .final p{color:rgba(255,255,255,.85);max-width:520px;margin:0 auto 28px;font-weight:500;}
+  .final .btn-primary{background:var(--neon);}
+
+  footer{text-align:center;color:#666;font-size:.8rem;padding:30px 20px 40px;font-weight:500;}
+
+  /* ---------- BARRA FIXA MOBILE ---------- */
+  .sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(13,13,13,.95);
+    backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.08);
+    display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 18px;}
+  .sticky-bar .txt{font-weight:600;font-size:.9rem;}
+
+  /* preview note */
+  .preview-note{background:var(--neon);color:var(--preto);text-align:center;font-weight:700;
+    font-size:.82rem;padding:8px 16px;}
+
+  /* ---------- PRINT ELABORADO DO WHATSAPP ---------- */
+  .phone-hero{position:relative;}
+  .notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:120px;height:26px;
+    background:#000;border-radius:0 0 18px 18px;z-index:3;}
+  .ios-status{display:flex;justify-content:space-between;align-items:center;padding:10px 22px 4px;
+    background:#1F2C33;color:#fff;font-size:.78rem;font-weight:600;}
+  .ios-time{margin-left:4px;}
+  .ios-icons{display:inline-flex;align-items:center;gap:5px;}
+  .wa-header{display:flex;align-items:center;gap:10px;background:#1F2C33;padding:6px 12px 12px;}
+  .wa-back{color:#cfd8dc;font-size:1.4rem;line-height:1;padding:0 2px;}
+  .wa-id{flex:1;}
+  .wa-actions{display:inline-flex;align-items:center;gap:14px;color:#cfd8dc;}
+  .wa-actions .kebab{display:inline-block;width:4px;height:18px;background:
+    radial-gradient(circle at 2px 3px,#cfd8dc 1.6px,transparent 1.7px),
+    radial-gradient(circle at 2px 9px,#cfd8dc 1.6px,transparent 1.7px),
+    radial-gradient(circle at 2px 15px,#cfd8dc 1.6px,transparent 1.7px);}
+
+  .date-pill{align-self:center;background:rgba(31,44,51,.85);color:#cfd8dc;font-size:.7rem;font-weight:600;
+    padding:5px 12px;border-radius:8px;margin:4px 0 6px;}
+
+  .msg .meta{display:flex;align-items:center;justify-content:flex-end;gap:5px;margin-top:3px;}
+  .msg .ticks{font-size:.7rem;color:#53bdeb;letter-spacing:-2px;font-weight:700;}
+
+  .typing{align-self:flex-start;background:var(--wa-in);padding:10px 14px;border-radius:14px;border-top-left-radius:4px;display:inline-flex;gap:4px;align-items:center;}
+  .typing span{width:6px;height:6px;border-radius:50%;background:#cfd8dc;opacity:.5;animation:dot 1.2s infinite ease-in-out;}
+  .typing span:nth-child(2){animation-delay:.15s;}
+  .typing span:nth-child(3){animation-delay:.3s;}
+  @keyframes dot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+
+  .wa-input{display:flex;align-items:center;gap:8px;background:#1F2C33;padding:8px 10px;border-top:1px solid rgba(255,255,255,.04);}
+  .wa-input .field{flex:1;background:#2A3942;color:#8696a0;border-radius:24px;padding:8px 14px;font-size:.82rem;}
+  .wa-input .ic{font-size:1.05rem;opacity:.85;}
+  .wa-input .mic{background:var(--neon);color:var(--preto);width:34px;height:34px;border-radius:50%;
+    display:grid;place-items:center;font-size:.95rem;}
+
+  /* ---------- BLOCOS COM IMAGEM DE MASCOTE ---------- */
+  .mascote-strip{background:#000;padding:0;}
+  .mascote-strip .wrap{display:grid;gap:30px;align-items:center;padding:56px 20px;}
+  .mascote-strip figure{margin:0;}
+  .mascote-strip img{display:block;width:100%;height:auto;max-width:480px;margin:0 auto;
+    -webkit-mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);
+            mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);}
+  .mascote-strip h2{font-size:1.6rem;font-weight:800;margin-bottom:12px;}
+  .mascote-strip p{color:var(--texto-suave);font-weight:500;}
+  .mascote-strip.reverse .wrap{direction:rtl;}
+  .mascote-strip.reverse .wrap > *{direction:ltr;}
+
+  .footer-logo{display:inline-flex;align-items:center;gap:8px;margin-bottom:10px;font-weight:800;font-size:1.05rem;}
+  .footer-logo .mark{width:26px;height:26px;line-height:0;}
+  .footer-logo .mark svg{width:100%;height:100%;}
+
+  /* ---------- DESKTOP ---------- */
+  @media(min-width:860px){
+    .hero h1{font-size:2.6rem;}
+    .hero-grid{grid-template-columns:1.1fr .9fr;align-items:center;}
+    .cta-row{flex-direction:row;}
+    .section-head h2{font-size:2.2rem;}
+    .cards{grid-template-columns:repeat(3,1fr);}
+    .meet-grid{grid-template-columns:1fr 1.05fr;gap:54px;}
+    .meet-copy h2{font-size:2.4rem;}
+    .meet-img{max-width:none;}
+    .steps{grid-template-columns:repeat(3,1fr);}
+    .plans{grid-template-columns:repeat(3,1fr);}
+    .plan.featured{transform:scale(1.04);}
+    .mascote-strip .wrap{grid-template-columns:1fr 1fr;gap:48px;padding:72px 20px;}
+    .mascote-strip h2{font-size:2rem;}
+    .sticky-bar{display:none;}
+    body{padding-bottom:0;}
+    .quem-list{max-width:760px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- SPRITE: rosto do mascote = símbolo da logo (reutilizado em logo e avatares) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mc-face" viewBox="0 0 64 64">
+    <path d="M16 8 H48 A8 8 0 0 1 56 16 V36 A8 8 0 0 1 48 44 H30 L18 56 V44 H16 A8 8 0 0 1 8 36 V16 A8 8 0 0 1 16 8 Z"
+          fill="#0D0D0D" stroke="#C6FF00" stroke-width="3.5" stroke-linejoin="round"/>
+    <ellipse cx="25" cy="23" rx="3.4" ry="5" fill="#FFFFFF"/>
+    <path d="M35 21 q4.5 3.2 9 0.2" fill="none" stroke="#C6FF00" stroke-width="3" stroke-linecap="round"/>
+    <path d="M22 31 q10 9 20 0" fill="none" stroke="#C6FF00" stroke-width="3.4" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<div class="preview-note">Pré-visualização estática — Landing Page Institucional MeControla (Sprint 1)</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <span class="mark"><svg viewBox="0 0 64 64"><use href="#mc-face"></use></svg></span>
+      <span><span class="me">Me</span><span class="controla">Controla</span></span>
+    </div>
+    <a href="#planos" class="btn btn-primary" data-track="cta_header_ver_planos">Ver planos</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Menos caos. Mais conquistas.</span>
+      <h1>Sua vida financeira organizada, <span class="hl">direto no WhatsApp.</span></h1>
+      <p class="sub">Sem planilha e sem sofrimento. O MeControla ajuda você a entender para onde seu dinheiro vai e a se organizar com mais leveza no dia a dia.</p>
+      <ul class="bullets">
+        <li>Sem app complicado</li>
+        <li>Sem julgamento</li>
+        <li>Sem precisar virar especialista em finanças</li>
+      </ul>
+      <div class="cta-row">
+        <a href="#planos" class="btn btn-primary btn-lg" data-track="cta_hero_ver_planos">Ver planos</a>
+        <a href="#como-funciona" class="btn btn-ghost btn-lg">Entender como funciona</a>
+      </div>
+    </div>
+
+    <!-- PRINT ELABORADO DO WHATSAPP — FLUXO DE LANÇAMENTO + SALDO DA CATEGORIA -->
+    <div class="phone phone-hero">
+      <span class="notch" aria-hidden="true"></span>
+      <div class="phone-inner">
+        <!-- status bar -->
+        <div class="ios-status" aria-hidden="true">
+          <span class="ios-time">9:41</span>
+          <span class="ios-icons">
+            <svg viewBox="0 0 18 12" width="17" height="11"><rect x="0" y="6" width="3" height="6" rx="1" fill="#fff"/><rect x="5" y="3" width="3" height="9" rx="1" fill="#fff"/><rect x="10" y="0" width="3" height="12" rx="1" fill="#fff"/></svg>
+            <svg viewBox="0 0 16 12" width="15" height="11"><path d="M8 11.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm0-4.4a3.4 3.4 0 0 1 2.4 1l1.4-1.5a5.4 5.4 0 0 0-7.6 0l1.4 1.5A3.4 3.4 0 0 1 8 7.1Zm0-4.5a7.6 7.6 0 0 1 5.4 2.2l1.4-1.5a9.6 9.6 0 0 0-13.6 0l1.4 1.5A7.6 7.6 0 0 1 8 2.6Z" fill="#fff"/></svg>
+            <svg viewBox="0 0 26 12" width="24" height="11"><rect x="0.5" y="1" width="22" height="10" rx="2.5" fill="none" stroke="#fff" stroke-width="1"/><rect x="2" y="2.5" width="17" height="7" rx="1.2" fill="#C6FF00"/><rect x="23.5" y="4" width="1.5" height="4" rx=".5" fill="#fff"/></svg>
+          </span>
+        </div>
+        <!-- header WhatsApp -->
+        <div class="wa-header">
+          <span class="wa-back" aria-hidden="true">‹</span>
+          <div class="wa-avatar"><svg viewBox="0 0 64 64"><use href="#mc-face"></use></svg></div>
+          <div class="wa-id">
+            <div class="wa-name">MeControla</div>
+            <div class="wa-status">online</div>
+          </div>
+          <div class="wa-actions" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#cfd8dc" stroke-width="2"><path d="M23 7l-7 5 7 5V7zM1 5h15v14H1z"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#cfd8dc" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="kebab"></span>
+          </div>
+        </div>
+        <!-- conversa -->
+        <div class="wa-body">
+          <span class="date-pill">Hoje</span>
+
+          <div class="msg out">
+            80 no cinema com a galera 🎬
+            <span class="meta"><span class="time">21:34</span><span class="ticks">✓✓</span></span>
+          </div>
+
+          <div class="msg in">
+            Pronto, lancei pra você 😉
+            <span class="meta"><span class="time">21:34</span></span>
+          </div>
+
+          <div class="msg in receipt">
+            <div class="r-row"><span class="r-k">Categoria</span><span class="r-v">Lazer</span></div>
+            <div class="r-row"><span class="r-k">Subcategoria</span><span class="r-v">Cinema</span></div>
+            <div class="r-row"><span class="r-k">Valor</span><span class="r-v">R$ 80,00</span></div>
+            <div class="r-div"></div>
+            <div class="r-row"><span class="r-k">Total usado em Lazer</span><span class="r-v">R$ 380,00</span></div>
+            <div class="r-row"><span class="r-k">Saldo disponível</span><span class="r-v r-ok">R$ 120,00</span></div>
+            <div class="r-tip">Ainda dá pra curtir o mês sem aperto 💚<br>Tá no ritmo, segue assim 🚀</div>
+            <span class="meta"><span class="time">21:34</span></span>
+          </div>
+
+          <div class="typing" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <!-- input -->
+        <div class="wa-input" aria-hidden="true">
+          <span class="ic">😊</span>
+          <div class="field">Mensagem</div>
+          <span class="ic">📎</span>
+          <span class="mic">🎙️</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 2 — APRESENTAÇÃO DO MASCOTE -->
+<section class="meet">
+  <div class="wrap meet-grid">
+    <figure class="meet-img">
+      <img src="brand-mascote-resumo-mes.jpeg" alt="Mascote do MeControla com o painel 'Como foi seu mês?' ao lado, mostrando entradas, gastos e quanto sobrou no bolso.">
+    </figure>
+    <div class="meet-copy">
+      <span class="tag">Conheça o MeControla</span>
+      <h2>Seu parceiro de finanças, <span class="hl">direto no WhatsApp.</span></h2>
+      <p>Sem app pra baixar, sem planilha pra preencher e sem sermão de banco. Só uma conversa simples — do jeito que já é o seu dia a dia.</p>
+      <ul class="bullets">
+        <li>Fala com você como gente fala</li>
+        <li>Sempre online quando você precisar</li>
+        <li>Te ajuda a chegar no fim do mês com mais leveza</li>
+      </ul>
+      <a href="#planos" class="btn btn-primary btn-lg" data-track="cta_meet_ver_planos">Quero esse parceiro</a>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Menos aperto. Mais clareza. Mais chance de respirar no fim do mês.</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="ico">👀</span>
+        <h3>Pare de sentir que o dinheiro some</h3>
+        <p>Veja com mais clareza para onde sua grana está indo.</p>
+      </div>
+      <div class="card">
+        <span class="ico">📦</span>
+        <h3>Organize sem complicação</h3>
+        <p>Sem planilha, sem dashboard difícil, sem rotina impossível de manter.</p>
+      </div>
+      <div class="card">
+        <span class="ico">📈</span>
+        <h3>Tenha pequenas vitórias de verdade</h3>
+        <p>Comece a pagar contas com menos desespero e a enxergar progresso no mês.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona">
+  <div class="wrap">
+    <div class="section-head"><h2>Como o MeControla funciona</h2></div>
+    <div class="steps">
+      <div class="step"><span class="num">1</span><p>Você escolhe seu plano</p></div>
+      <div class="step"><span class="num">2</span><p>Começa a usar pelo WhatsApp</p></div>
+      <div class="step"><span class="num">3</span><p>Recebe ajuda prática para se organizar melhor no dia a dia</p></div>
+    </div>
+    <p class="closing">Sem burocracia. Sem precisar aprender finanças avançadas. Sem perder tempo com ferramenta difícil.</p>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="para-quem">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0;">
+      <h2>O MeControla é para quem quer sair do sufoco sem complicar mais a própria vida.</h2>
+    </div>
+    <ul class="quem-list">
+      <li>Para quem vive no limite e quer organizar a vida financeira de um jeito possível</li>
+      <li>Para quem já tentou app, planilha ou vídeo de finanças e não conseguiu manter</li>
+      <li>Para quem quer clareza, apoio e progresso real no dia a dia</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Escolha o plano que faz mais sentido para você</h2>
+      <p>Sem conta escondida. Sem pegadinha. Você vê o valor, a economia e escolhe com calma.</p>
+    </div>
+    <div class="plans">
+      <!-- Mensal -->
+      <div class="plan">
+        <span class="label">Mensal</span>
+        <div class="price">R$ 29,90<small>/mês</small></div>
+        <p class="support">Ideal para começar com o menor compromisso.</p>
+        <a href="#" class="btn btn-ghost btn-block" data-track="plan_monthly_select">Quero o mensal</a>
+      </div>
+      <!-- Trimestral -->
+      <div class="plan">
+        <span class="label">Trimestral</span>
+        <div class="price">R$ 80,73 <small>/ 3 meses</small></div>
+        <p class="equiv">Equivale a R$ 26,91/mês</p>
+        <span class="selo" style="margin-top:14px;">Economize R$ 8,97</span>
+        <p class="support" style="margin-top:8px;">Uma entrada mais leve para manter o ritmo.</p>
+        <a href="#" class="btn btn-ghost btn-block" data-track="plan_quarterly_select">Quero o trimestral</a>
+      </div>
+      <!-- Anual -->
+      <div class="plan featured">
+        <span class="destaque">Melhor custo-benefício</span>
+        <span class="label">Anual</span>
+        <div class="price">R$ 297,80 <small>/ 12 meses</small></div>
+        <p class="equiv">Equivale a R$ 24,82/mês</p>
+        <span class="selo" style="margin-top:14px;">Economize R$ 61,00</span>
+        <p class="support" style="margin-top:8px;">A escolha de quem quer economizar mais o ano todo.</p>
+        <a href="#" class="btn btn-primary btn-block" data-track="plan_yearly_select">Quero economizar mais</a>
+      </div>
+    </div>
+    <p class="pay-note">Pague com PIX ou cartão. Se tiver cupom, você aplica no checkout.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
+      <h2>Dúvidas comuns</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Preciso baixar aplicativo?</summary>
+        <p>Não. A experiência principal acontece no WhatsApp, de um jeito simples e direto.</p>
+      </details>
+      <details>
+        <summary>Qual plano vale mais a pena?</summary>
+        <p>O anual tem o melhor custo-benefício. Se você quiser começar com um compromisso menor, o trimestral funciona como uma entrada mais leve.</p>
+      </details>
+      <details>
+        <summary>Como eu pago?</summary>
+        <p>No checkout, você pode escolher a forma de pagamento disponível, como PIX ou cartão.</p>
+      </details>
+      <details>
+        <summary>Isso é para quem entende de finanças?</summary>
+        <p>Não. O MeControla foi pensado justamente para quem quer organizar a vida financeira sem virar especialista no assunto.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA MASCOTE B — CONQUISTA REAL -->
+<section class="mascote-strip reverse">
+  <div class="wrap">
+    <figure>
+      <img src="brand-mascote-meta-concluida.jpeg" alt="Mascote do MeControla comemorando uma meta concluída: celular novo, R$ 2.800, 100% atingido — com a mensagem 'Parabéns! Você alcançou mais uma meta'.">
+    </figure>
+    <div>
+      <span class="tag">Pequenas vitórias de verdade</span>
+      <h2>Cada meta batida vira motivo pra continuar.</h2>
+      <p>O celular novo, a viagem, a reserva pra emergência. O MeControla acompanha cada conquista com você — e comemora junto, do jeito mais simples.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section>
+  <div class="final">
+    <h2>Seu dinheiro não precisa continuar mandando na sua paz.</h2>
+    <p>Comece com o plano que cabe no seu momento e veja sua vida financeira ficar mais clara, passo a passo.</p>
+    <a href="#planos" class="btn btn-primary btn-lg">Ver planos e começar</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <span class="mark"><svg viewBox="0 0 64 64"><use href="#mc-face"></use></svg></span>
+    <span><span style="color:#fff">Me</span><span style="color:var(--neon)">Controla</span></span>
+  </div>
+  Menos caos. Mais conquistas. · Pré-visualização de design
+</footer>
+
+<!-- BARRA FIXA MOBILE -->
+<div class="sticky-bar">
+  <span class="txt">Comece do jeito mais simples</span>
+  <a href="#planos" class="btn btn-primary" data-track="cta_mobile_sticky_ver_planos">Ver planos</a>
+</div>
+
+</body>
+</html>

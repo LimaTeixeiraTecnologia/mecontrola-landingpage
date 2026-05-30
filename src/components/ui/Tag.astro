@@ -1,0 +1,25 @@
+---
+import { cn } from '../../lib/cn';
+
+interface Props {
+  variant?: 'primary' | 'accent';
+  class?: string;
+}
+
+const { variant = 'primary', class: className } = Astro.props;
+
+const variants = {
+  primary: 'bg-primary/10 text-primary',
+  accent: 'bg-accent/10 text-accent',
+};
+
+const classes = cn(
+  'inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase',
+  variants[variant],
+  className,
+);
+---
+
+<span class={classes} style="letter-spacing: var(--tracking-wide)">
+  <slot />
+</span>

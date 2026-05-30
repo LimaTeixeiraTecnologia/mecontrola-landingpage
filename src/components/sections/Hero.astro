@@ -1,0 +1,56 @@
+---
+import { hero } from '../../lib/content';
+import Button from '../ui/Button.astro';
+import Tag from '../ui/Tag.astro';
+import WhatsAppMockup from './hero/WhatsAppMockup.astro';
+---
+
+<section class="pt-12 pb-16">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+      <!-- Left: text content -->
+      <div>
+        <Tag>{hero.tag}</Tag>
+        <h1
+          class="text-[2.1rem] md:text-[2.6rem] font-extrabold mt-4 mb-0"
+          style="letter-spacing: var(--tracking-tight); line-height: 1.15"
+        >
+          {hero.headlinePre}<span class="text-primary">{hero.headlineHighlight}</span>
+        </h1>
+        <p class="text-muted-foreground text-[1.05rem] font-medium mt-[18px] mb-[22px]">
+          {hero.sub}
+        </p>
+        <ul class="list-none flex flex-col gap-[10px] mb-[26px] p-0">
+          {
+            hero.bullets.map((bullet) => (
+              <li class="flex items-center gap-[10px] font-semibold text-[0.98rem]">
+                <span class="w-6 h-6 flex-none rounded-full bg-primary/15 text-primary grid place-items-center text-[0.85rem] font-extrabold">
+                  ✓
+                </span>
+                {bullet}
+              </li>
+            ))
+          }
+        </ul>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <Button
+            variant="primary"
+            size="lg"
+            href={hero.ctaPrimary.href}
+            dataTrack={hero.ctaPrimary.trackId}
+          >
+            {hero.ctaPrimary.label}
+          </Button>
+          <Button variant="ghost" size="lg" href={hero.ctaSecondary.href}>
+            {hero.ctaSecondary.label}
+          </Button>
+        </div>
+      </div>
+
+      <!-- Right: WhatsApp Mockup -->
+      <div class="flex justify-center">
+        <WhatsAppMockup />
+      </div>
+    </div>
+  </div>
+</section>

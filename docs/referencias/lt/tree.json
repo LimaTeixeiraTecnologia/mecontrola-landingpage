@@ -1,0 +1,536 @@
+{
+  "sha": "d2317d80bf6ca36f91bdb6e935bb3d98b6e0a6b7",
+  "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/d2317d80bf6ca36f91bdb6e935bb3d98b6e0a6b7",
+  "tree": [
+    {
+      "path": ".env.example",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3802d0642c57745bdcdaedf1584ef04f0cded18",
+      "size": 459,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/d3802d0642c57745bdcdaedf1584ef04f0cded18"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b031983a7734799cfdc09cf141cb07b3bdf18382",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/b031983a7734799cfdc09cf141cb07b3bdf18382"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4324a8dc758f1f7d0745bd3cddcf36c96093dad9",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/4324a8dc758f1f7d0745bd3cddcf36c96093dad9"
+    },
+    {
+      "path": ".github/workflows/deploy.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8e1f4c917873a332cf3de4eb40cba12d45ea4fe",
+      "size": 2212,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/f8e1f4c917873a332cf3de4eb40cba12d45ea4fe"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "023cd1482c82771b61843025b724b9303b20361c",
+      "size": 25,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/023cd1482c82771b61843025b724b9303b20361c"
+    },
+    {
+      "path": ".npmrc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e60ae715290dfca0657e14c0aa2572181e5992d8",
+      "size": 21,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/e60ae715290dfca0657e14c0aa2572181e5992d8"
+    },
+    {
+      "path": "Conteudo_Estrategico_Lima_Teixeira.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c12221dde093e966335c7e088618298377ebbd24",
+      "size": 5710,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/c12221dde093e966335c7e088618298377ebbd24"
+    },
+    {
+      "path": "Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e358c2b62f50fde314fc4186a80d790ce3ae2159",
+      "size": 966,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/e358c2b62f50fde314fc4186a80d790ce3ae2159"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35c2558b5e11c1ea4ee47b3d9b16fed1333e4868",
+      "size": 5582,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/35c2558b5e11c1ea4ee47b3d9b16fed1333e4868"
+    },
+    {
+      "path": "astro.config.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "969d3d736a94e7a9985e8825b6cb017a245c501e",
+      "size": 300,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/969d3d736a94e7a9985e8825b6cb017a245c501e"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "835e92386de9ab11016381141d3c611149a8b152",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/835e92386de9ab11016381141d3c611149a8b152"
+    },
+    {
+      "path": "docs/DEPLOY.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a1cae1a5a3c6dc9578e77ba7c4524f93e3f94a2",
+      "size": 7016,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/9a1cae1a5a3c6dc9578e77ba7c4524f93e3f94a2"
+    },
+    {
+      "path": "docs/prompts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "96a42a95c915f87b86f08979ffb9fb98ea114275",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/96a42a95c915f87b86f08979ffb9fb98ea114275"
+    },
+    {
+      "path": "docs/prompts/conteudo-estrategico",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eb1a1393ff678272150644c507d06aeee70e511f",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/eb1a1393ff678272150644c507d06aeee70e511f"
+    },
+    {
+      "path": "docs/prompts/conteudo-estrategico/01-extrair-conteudo-pdf.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4fb942deb2db20d70226a8daa9782bbfbbff85d",
+      "size": 3133,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/c4fb942deb2db20d70226a8daa9782bbfbbff85d"
+    },
+    {
+      "path": "docs/prompts/conteudo-estrategico/02-reescrever-content-astro.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba143f6f5dcbc5e4947f65cde9a9ab5d3f86e818",
+      "size": 6152,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/ba143f6f5dcbc5e4947f65cde9a9ab5d3f86e818"
+    },
+    {
+      "path": "docs/prompts/conteudo-estrategico/03-script-interatividade.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a5b53ba5af5867e238b368d917511a885ebc996",
+      "size": 3434,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/6a5b53ba5af5867e238b368d917511a885ebc996"
+    },
+    {
+      "path": "docs/prompts/conteudo-estrategico/04-polish-visual.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca84820c126318a38644f4035377bc7a1a184b73",
+      "size": 4265,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/ca84820c126318a38644f4035377bc7a1a184b73"
+    },
+    {
+      "path": "docs/prompts/conteudo-estrategico/05-acessibilidade-responsividade.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e9c983a4b2076b9cd99dbd2357b4fab3b8f7daa",
+      "size": 3887,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/8e9c983a4b2076b9cd99dbd2357b4fab3b8f7daa"
+    },
+    {
+      "path": "docs/prompts/conteudo-estrategico/06-simplify.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de1fc7f37559f00666cd9b6321eaf6343575d17a",
+      "size": 1913,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/de1fc7f37559f00666cd9b6321eaf6343575d17a"
+    },
+    {
+      "path": "docs/prompts/conteudo-estrategico/07-validacao-final.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e124021b41b778ddd6bf42d4bfb48a99c50bda00",
+      "size": 2821,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/e124021b41b778ddd6bf42d4bfb48a99c50bda00"
+    },
+    {
+      "path": "docs/prompts/conteudo-estrategico/08-review-opcional.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3601ae1e24d6af305c213b5d920317bd6f4ba05b",
+      "size": 1744,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/3601ae1e24d6af305c213b5d920317bd6f4ba05b"
+    },
+    {
+      "path": "docs/prompts/conteudo-estrategico/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b78e592abec069bd06d1f0c3f0ae99b8ea53445",
+      "size": 2706,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/9b78e592abec069bd06d1f0c3f0ae99b8ea53445"
+    },
+    {
+      "path": "docs/prompts/reestruturar-secao-conteudo-estrategico.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a2816638e3b521b1a0b358043725244e9d0c2f6",
+      "size": 12366,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/8a2816638e3b521b1a0b358043725244e9d0c2f6"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1197a2e804dabdde5b2b2eeb6d1e134e60218be",
+      "size": 757,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/b1197a2e804dabdde5b2b2eeb6d1e134e60218be"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "875d776ca893a77d8e5b0db850ce2ab2c1cacf58",
+      "size": 145703,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/875d776ca893a77d8e5b0db850ce2ab2c1cacf58"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbb26c82767012ed9c65d677831a4dc7dd4782d7",
+      "size": 43,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/dbb26c82767012ed9c65d677831a4dc7dd4782d7"
+    },
+    {
+      "path": "public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3e586062a47ecc7d51c868b29c395544be4b3ef6",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/3e586062a47ecc7d51c868b29c395544be4b3ef6"
+    },
+    {
+      "path": "public/_headers",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de2805bae9d19a3323ab5f51b6623f05c50ee7e7",
+      "size": 1082,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/de2805bae9d19a3323ab5f51b6623f05c50ee7e7"
+    },
+    {
+      "path": "public/lima_teixeira_logo_premium.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc7de345f665a75aa0b71483ee9a3b396ddee0d1",
+      "size": 2301,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/cc7de345f665a75aa0b71483ee9a3b396ddee0d1"
+    },
+    {
+      "path": "public/og-image.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bd63ebad780a62da58b617ae3f776629f5244cf",
+      "size": 136806,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/5bd63ebad780a62da58b617ae3f776629f5244cf"
+    },
+    {
+      "path": "public/og-image.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7093e1dbb0b2a117333c3730328cc487be743de4",
+      "size": 5639,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/7093e1dbb0b2a117333c3730328cc487be743de4"
+    },
+    {
+      "path": "public/robots.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "465f2d1db16f92b72131d3517c42cee9ffca6ae5",
+      "size": 97,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/465f2d1db16f92b72131d3517c42cee9ffca6ae5"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "52e84d86b5ad4f0d64498eae7d7149837f5f73fb",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/52e84d86b5ad4f0d64498eae7d7149837f5f73fb"
+    },
+    {
+      "path": "src/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "144db7fa9e4c4280d3dca028653a75419376819f",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/144db7fa9e4c4280d3dca028653a75419376819f"
+    },
+    {
+      "path": "src/assets/lima_teixeira_logo_premium.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc7de345f665a75aa0b71483ee9a3b396ddee0d1",
+      "size": 2301,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/cc7de345f665a75aa0b71483ee9a3b396ddee0d1"
+    },
+    {
+      "path": "src/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "559844ab6986e11993401e2357753db55e6ef977",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/559844ab6986e11993401e2357753db55e6ef977"
+    },
+    {
+      "path": "src/components/Footer.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a94dc8d8d3a5105075cd16d614a450f5e67f508",
+      "size": 2393,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/4a94dc8d8d3a5105075cd16d614a450f5e67f508"
+    },
+    {
+      "path": "src/components/Header.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a98f5122f14f250c3ef180656192763fa80f7b16",
+      "size": 2832,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/a98f5122f14f250c3ef180656192763fa80f7b16"
+    },
+    {
+      "path": "src/components/Logo.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c09bdabb69fa673572a214fb5b5f448d018be9e",
+      "size": 615,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/1c09bdabb69fa673572a214fb5b5f448d018be9e"
+    },
+    {
+      "path": "src/components/sections",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "14671633bbb94315931b7f6e1f9a5d14e4a0bdc8",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/14671633bbb94315931b7f6e1f9a5d14e4a0bdc8"
+    },
+    {
+      "path": "src/components/sections/Content.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e67eaee2b09f13c396ba2a1233b9f7a787e9347",
+      "size": 7965,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/3e67eaee2b09f13c396ba2a1233b9f7a787e9347"
+    },
+    {
+      "path": "src/components/sections/Credibility.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "483459d45f679fe19d87a5a092f2faef68480daf",
+      "size": 1260,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/483459d45f679fe19d87a5a092f2faef68480daf"
+    },
+    {
+      "path": "src/components/sections/Differentials.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12576100096243ad2da3f5f035f2dd227f71c9c2",
+      "size": 2072,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/12576100096243ad2da3f5f035f2dd227f71c9c2"
+    },
+    {
+      "path": "src/components/sections/FinalCta.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bba2a5b67433dd8619b6217a8bb2fe999d6081c",
+      "size": 1842,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/8bba2a5b67433dd8619b6217a8bb2fe999d6081c"
+    },
+    {
+      "path": "src/components/sections/Hero.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47fdb5c375d4224d317ff3ad319f7c0fd1668eba",
+      "size": 3435,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/47fdb5c375d4224d317ff3ad319f7c0fd1668eba"
+    },
+    {
+      "path": "src/components/sections/Institutional.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0c632d29e007e112f9b83577fce4473df04ca00",
+      "size": 3564,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/e0c632d29e007e112f9b83577fce4473df04ca00"
+    },
+    {
+      "path": "src/components/sections/Methodology.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ebab6abd4fde72a52d581cfbb6a64db1b4b6dfa",
+      "size": 1417,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/2ebab6abd4fde72a52d581cfbb6a64db1b4b6dfa"
+    },
+    {
+      "path": "src/components/sections/Results.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05c5cbfb1dce27e0f5b4c857387065e9097fce37",
+      "size": 1369,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/05c5cbfb1dce27e0f5b4c857387065e9097fce37"
+    },
+    {
+      "path": "src/components/sections/Segments.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31ab8bcf2aaf82d170dcc2fbbcbcd97e6cad1349",
+      "size": 1246,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/31ab8bcf2aaf82d170dcc2fbbcbcd97e6cad1349"
+    },
+    {
+      "path": "src/components/ui",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "779b9b634c0e4774cac6dcfb272519949a56480a",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/779b9b634c0e4774cac6dcfb272519949a56480a"
+    },
+    {
+      "path": "src/components/ui/Button.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5176079123985da5df6141b2ecac1ba4437c532a",
+      "size": 1187,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/5176079123985da5df6141b2ecac1ba4437c532a"
+    },
+    {
+      "path": "src/components/ui/Card.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c6f1a2caf274e71e0c679a9da2a2e09f2c4e19e",
+      "size": 400,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/1c6f1a2caf274e71e0c679a9da2a2e09f2c4e19e"
+    },
+    {
+      "path": "src/components/ui/Icon.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "579e0e4ec7fa65fd6b44b1874f5a55156ce0fc38",
+      "size": 5828,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/579e0e4ec7fa65fd6b44b1874f5a55156ce0fc38"
+    },
+    {
+      "path": "src/components/ui/SectionHeader.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1be7e86c6a12bd756a16931330a6f17983257c4",
+      "size": 766,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/b1be7e86c6a12bd756a16931330a6f17983257c4"
+    },
+    {
+      "path": "src/layouts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4796479c889e86bfefe54fb12f089b24e6fdfd04",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/4796479c889e86bfefe54fb12f089b24e6fdfd04"
+    },
+    {
+      "path": "src/layouts/Layout.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cf3b0f9b6c3c4e9bbb627df420e70398a65471b",
+      "size": 5335,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/4cf3b0f9b6c3c4e9bbb627df420e70398a65471b"
+    },
+    {
+      "path": "src/lib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8e15bb336066a83644b8a6c5c7483c161c936b7b",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/8e15bb336066a83644b8a6c5c7483c161c936b7b"
+    },
+    {
+      "path": "src/lib/cn.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a065a752a830bb30a7ebce988554260518b446ee",
+      "size": 508,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/a065a752a830bb30a7ebce988554260518b446ee"
+    },
+    {
+      "path": "src/lib/content.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc79d16197b49b765ebb261d7351c6a078c9655e",
+      "size": 15643,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/fc79d16197b49b765ebb261d7351c6a078c9655e"
+    },
+    {
+      "path": "src/pages",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "feec20c059069855504d4ee007ff074a8b804ee9",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/feec20c059069855504d4ee007ff074a8b804ee9"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ffeef67403320153a4a88c00e4a44551dcb5018",
+      "size": 977,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/3ffeef67403320153a4a88c00e4a44551dcb5018"
+    },
+    {
+      "path": "src/pages/lgpd.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3241fa8da070600787df05683a247d56b146524",
+      "size": 2181,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/c3241fa8da070600787df05683a247d56b146524"
+    },
+    {
+      "path": "src/pages/politica-de-privacidade.astro",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "682c2defb04842204d0bed98d3642be178da8b9f",
+      "size": 2445,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/682c2defb04842204d0bed98d3642be178da8b9f"
+    },
+    {
+      "path": "src/styles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c1479dacb3c97971e5f8b29a1f3b1d920d0e9dd5",
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/trees/c1479dacb3c97971e5f8b29a1f3b1d920d0e9dd5"
+    },
+    {
+      "path": "src/styles/global.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0032787ba3312edae772bb35e9cffbfc8ee153ad",
+      "size": 1076,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/0032787ba3312edae772bb35e9cffbfc8ee153ad"
+    },
+    {
+      "path": "tsconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0df5bfb5cb73a99281655598e0d434dc8ce9caa",
+      "size": 182,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/c0df5bfb5cb73a99281655598e0d434dc8ce9caa"
+    },
+    {
+      "path": "wrangler.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3bf769fe2fef12a34c593b222c3c0ad419aad6a",
+      "size": 229,
+      "url": "https://api.github.com/repos/LimaTeixeiraTecnologia/limateixeira-landingpage/git/blobs/e3bf769fe2fef12a34c593b222c3c0ad419aad6a"
+    }
+  ],
+  "truncated": false
+}

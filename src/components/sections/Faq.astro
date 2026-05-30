@@ -1,0 +1,28 @@
+---
+import { faq } from '../../lib/content';
+import SectionHeader from '../ui/SectionHeader.astro';
+---
+
+<section id="faq" class="py-14 md:py-20">
+  <div class="max-w-5xl mx-auto px-5">
+    <SectionHeader title="Dúvidas comuns" align="center" />
+    <div class="grid gap-3 max-w-[760px] mx-auto">
+      {
+        faq.map((item, i) => (
+          <details
+            open={i === 0 || undefined}
+            class="bg-card border border-border rounded-2xl px-5"
+          >
+            <summary class="cursor-pointer list-none font-bold py-[18px] flex justify-between items-center gap-3 text-[1.02rem] text-foreground [&::-webkit-details-marker]:hidden">
+              {item.question}
+              <span class="text-primary font-extrabold text-[1.4rem] transition-transform duration-200 [[open]_&]:rotate-45 flex-none">
+                +
+              </span>
+            </summary>
+            <p class="text-muted-foreground pb-[18px] font-medium">{item.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

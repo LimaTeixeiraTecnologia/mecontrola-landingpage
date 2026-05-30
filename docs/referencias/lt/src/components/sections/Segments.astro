@@ -1,0 +1,29 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import Icon from '../ui/Icon.astro';
+import { segments } from '../../lib/content';
+---
+
+<section id="segmentos" aria-labelledby="segmentos-heading" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeader
+      id="segmentos-heading"
+      eyebrow="Segmentos"
+      title="Soluções digitais para operações que exigem excelência."
+      align="center"
+    />
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      {
+        segments.map((segment) => (
+          <div class="group flex flex-col items-center text-center p-6 rounded-2xl border border-border bg-surface/40 hover:border-accent/40 hover:bg-surface/70 transition-all duration-200 motion-reduce:transition-none cursor-default">
+            <div class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-accent/10 group-hover:text-accent transition-colors duration-200 motion-reduce:transition-none">
+              <Icon name={segment.icon} class="size-6" />
+            </div>
+            <span class="text-foreground text-sm font-medium leading-snug">{segment.name}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
