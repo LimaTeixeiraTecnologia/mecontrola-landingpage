@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileStickyBar from '../components/MobileStickyBar.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import { INSTAGRAM_URL } from '../lib/content';
 
 interface Props {
   title: string;
@@ -29,7 +30,7 @@ const organizationNode = {
   email: 'contato@limateixeira.com.br',
   taxID: '52.162.759/0001-74',
   legalName: '',
-  sameAs: ['https://www.instagram.com/limateixeiraconsulting/'],
+  sameAs: [INSTAGRAM_URL],
 };
 
 const websiteNode = {

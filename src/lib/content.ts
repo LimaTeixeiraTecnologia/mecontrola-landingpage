@@ -129,7 +129,7 @@ export const CHECKOUT_URL_MENSAL = '#'; // TODO
 export const CHECKOUT_URL_TRIMESTRAL = '#'; // TODO
 export const CHECKOUT_URL_ANUAL = '#'; // TODO
 export const CONTACT_EMAIL = 'contato@limateixeira.com.br';
-export const INSTAGRAM_URL = 'https://www.instagram.com/limateixeiraconsulting/';
+export const INSTAGRAM_URL = 'https://www.instagram.com/mecontrola/';
 export const CNPJ = '52.162.759/0001-74';
 export const LEGAL_NAME = ''; // TODO: razão social oficial
 
