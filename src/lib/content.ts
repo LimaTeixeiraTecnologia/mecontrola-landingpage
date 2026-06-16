@@ -171,7 +171,7 @@ export const meetMascot: MeetMascotContent = {
   tag: 'Conheça o MeControla',
   heading: 'Seu parceiro de finanças, ',
   headingHighlight: 'direto no WhatsApp.',
-  body: 'Sem app pra baixar, sem planilha pra preencher e sem sermão de banco. Só uma conversa simples — do jeito que já é o seu dia a dia.',
+  body: 'Sem app pra baixar, sem planilha pra preencher e sem sermão de banco. Só uma conversa simples, do jeito que já faz parte do seu dia a dia.',
   bullets: [
     'Fala com você como gente fala',
     'Sempre online quando você precisar',
@@ -254,10 +254,10 @@ export const plans: Plan[] = [
   {
     id: 'trimestral',
     name: 'Trimestral',
-    priceLabel: 'R$ 80,73',
+    priceLabel: 'R$ 74,90',
     periodLabel: '/ 3 meses',
-    equiv: 'Equivale a R$ 26,91/mês',
-    savings: 'Economize R$ 8,97',
+    equiv: 'Equivale a R$ 24,97/mês',
+    savings: 'Economize R$ 14,80',
     support: 'Uma entrada mais leve para manter o ritmo.',
     ctaLabel: 'Quero o trimestral',
     ctaHref: CHECKOUT_URL_TRIMESTRAL,
@@ -267,10 +267,10 @@ export const plans: Plan[] = [
   {
     id: 'anual',
     name: 'Anual',
-    priceLabel: 'R$ 297,80',
+    priceLabel: 'R$ 239,90',
     periodLabel: '/ 12 meses',
-    equiv: 'Equivale a R$ 24,82/mês',
-    savings: 'Economize R$ 61,00',
+    equiv: 'Equivale a R$ 19,99/mês',
+    savings: 'Economize R$ 118,90',
     support: 'A escolha de quem quer economizar mais o ano todo.',
     ctaLabel: 'Quero economizar mais',
     ctaHref: CHECKOUT_URL_ANUAL,
@@ -310,7 +310,7 @@ export const mascotStripGoal: MascotStripGoalContent = {
   image: 'brand-mascote-meta-concluida',
   tag: 'Pequenas vitórias de verdade',
   heading: 'Cada meta batida vira motivo pra continuar.',
-  body: 'O celular novo, a viagem, a reserva pra emergência. O MeControla acompanha cada conquista com você — e comemora junto, do jeito mais simples.',
+  body: 'O celular novo, a viagem, a reserva pra emergência. O MeControla acompanha cada conquista com você e comemora junto, do jeito mais simples.',
 };
 
 // ---------------------------------------------------------------------------
