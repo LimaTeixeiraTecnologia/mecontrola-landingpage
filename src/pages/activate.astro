@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? 'http://localhost:8080';
+---
+
+<Layout
+  title="Ativar MeControla"
+  description="Ative seu acesso ao MeControla pelo WhatsApp ou Telegram."
+  canonical="https://mecontrola.app.br/activate"
+>
+  <section class="min-h-[calc(100vh-62px)] bg-slate-50 px-4 py-12 flex items-start justify-center">
+    <div
+      id="activate-card"
+      class="w-full max-w-[480px] bg-white rounded-2xl shadow-lg border border-slate-200 p-6 sm:p-8"
+      data-backend-url={backendUrl}
+    >
+      <div class="flex flex-col items-center text-center">
+        <svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" class="mb-4">
+          <path
+            d="M16 8 H48 A8 8 0 0 1 56 16 V36 A8 8 0 0 1 48 44 H30 L18 56 V44 H16 A8 8 0 0 1 8 36 V16 A8 8 0 0 1 16 8 Z"
+            fill="#0D0D0D"
+            stroke="#16a34a"
+            stroke-width="3.5"
+            stroke-linejoin="round"></path>
+          <ellipse cx="25" cy="23" rx="3.4" ry="5" fill="#FFFFFF"></ellipse>
+          <path
+            d="M35 21 q4.5 3.2 9 0.2"
+            fill="none"
+            stroke="#16a34a"
+            stroke-width="3"
+            stroke-linecap="round"></path>
+          <path
+            d="M22 31 q10 9 20 0"
+            fill="none"
+            stroke="#16a34a"
+            stroke-width="3.4"
+            stroke-linecap="round"></path>
+        </svg>
+        <h1 class="text-2xl font-extrabold text-slate-900">Ativar MeControla</h1>
+        <p id="activate-subtitle" class="mt-2 text-sm text-slate-600">
+          Estamos validando seu acesso...
+        </p>
+      </div>
+
+      <div
+        id="activate-loading"
+        class="mt-8 flex flex-col items-center"
+        role="status"
+        aria-live="polite"
+      >
+        <div
+          class="h-10 w-10 rounded-full border-4 border-slate-200 border-t-green-600 animate-spin"
+          aria-hidden="true"
+        >
+        </div>
+        <span class="mt-3 text-sm text-slate-500">Carregando...</span>
+      </div>
+
+      <div id="activate-ready" class="mt-8 hidden flex-col gap-3" aria-live="polite">
+        <a
+          id="activate-wa-btn"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-track="cta_activate_whatsapp"
+          class="w-full inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-semibold text-white shadow-sm hover:opacity-90 transition"
+          style="background-color: #25D366"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.51 0 .2 5.3.2 11.83c0 2.08.54 4.11 1.58 5.9L0 24l6.42-1.68a11.83 11.83 0 0 0 5.62 1.43h.01c6.53 0 11.83-5.3 11.83-11.83 0-3.16-1.23-6.13-3.46-8.36zM12.05 21.6h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.81 1 1.02-3.71-.23-.38a9.8 9.8 0 0 1-1.5-5.1c0-5.42 4.42-9.84 9.85-9.84 2.63 0 5.1 1.03 6.96 2.89a9.78 9.78 0 0 1 2.88 6.96c0 5.43-4.42 9.85-9.85 9.85zm5.4-7.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.18-.24-.58-.49-.5-.66-.51l-.56-.01c-.2 0-.51.07-.78.37-.27.3-1.02 1-1.02 2.45s1.05 2.84 1.2 3.04c.15.2 2.06 3.14 5 4.41.7.3 1.24.48 1.66.62.7.22 1.33.19 1.83.12.56-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"
+            ></path>
+          </svg>
+          <span>Ativar pelo WhatsApp</span>
+        </a>
+
+        <a
+          id="activate-tg-btn"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-track="cta_activate_telegram"
+          class="w-full inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-semibold text-white shadow-sm hover:opacity-90 transition hidden"
+          style="background-color: #229ED9"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.56 8.18-1.86 8.78c-.14.62-.51.77-1.03.48l-2.85-2.1-1.37 1.33c-.15.15-.28.28-.57.28l.2-2.88 5.25-4.74c.23-.2-.05-.32-.35-.12l-6.49 4.08-2.79-.87c-.61-.19-.62-.61.13-.9l10.92-4.2c.5-.18.95.12.81.86z"
+            ></path>
+          </svg>
+          <span>Ativar pelo Telegram</span>
+        </a>
+
+        <p id="activate-bot-number" class="mt-3 text-center text-xs text-slate-500"></p>
+      </div>
+
+      <div id="activate-error" class="mt-8 hidden flex-col items-center text-center" role="alert">
+        <div
+          class="h-12 w-12 rounded-full bg-amber-100 flex items-center justify-center mb-3"
+          aria-hidden="true"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#b45309"
+            stroke-width="2"
+          >
+            <path d="M12 9v4M12 17h.01" stroke-linecap="round"></path>
+            <path
+              d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+            ></path>
+          </svg>
+        </div>
+        <p id="activate-error-msg" class="text-sm text-slate-700">
+          Não foi possível validar seu acesso.
+        </p>
+        <p class="mt-3 text-xs text-slate-500">
+          Verifique o link recebido ou entre em contato com o suporte.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { fetchTokenState } from '../lib/api';
+
+  type ViewState = 'loading' | 'ready' | 'error';
+
+  const setView = (state: ViewState): void => {
+    const loading = document.getElementById('activate-loading');
+    const ready = document.getElementById('activate-ready');
+    const error = document.getElementById('activate-error');
+    if (!loading || !ready || !error) return;
+    loading.classList.toggle('hidden', state !== 'loading');
+    loading.classList.toggle('flex', state === 'loading');
+    ready.classList.toggle('hidden', state !== 'ready');
+    ready.classList.toggle('flex', state === 'ready');
+    error.classList.toggle('hidden', state !== 'error');
+    error.classList.toggle('flex', state === 'error');
+  };
+
+  const setSubtitle = (text: string): void => {
+    const el = document.getElementById('activate-subtitle');
+    if (el) el.textContent = text;
+  };
+
+  const setErrorMessage = (text: string): void => {
+    const el = document.getElementById('activate-error-msg');
+    if (el) el.textContent = text;
+  };
+
+  const showError = (msg: string): void => {
+    setSubtitle('Algo deu errado');
+    setErrorMessage(msg);
+    setView('error');
+  };
+
+  const init = async (): Promise<void> => {
+    const card = document.getElementById('activate-card');
+    if (!card) return;
+    const backendUrl = card.getAttribute('data-backend-url') ?? '';
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+
+    if (!token || token.trim().length === 0) {
+      showError('Link inválido: token ausente.');
+      return;
+    }
+    if (backendUrl.length === 0) {
+      showError('Configuração do servidor ausente.');
+      return;
+    }
+
+    const result = await fetchTokenState(backendUrl, token);
+    if (!result.ok) {
+      showError('Não foi possível validar seu acesso.');
+      return;
+    }
+
+    const data = result.data;
+    if (!data.ready_to_activate) {
+      showError('Não foi possível validar seu acesso.');
+      return;
+    }
+
+    const waBtn = document.getElementById('activate-wa-btn') as HTMLAnchorElement | null;
+    const tgBtn = document.getElementById('activate-tg-btn') as HTMLAnchorElement | null;
+    const botNumber = document.getElementById('activate-bot-number');
+
+    if (waBtn) waBtn.href = data.wa_me_url;
+    if (botNumber && data.bot_number_display) {
+      botNumber.textContent = `WhatsApp do bot: ${data.bot_number_display}`;
+    }
+    if (tgBtn) {
+      if (data.telegram_deep_link) {
+        tgBtn.href = data.telegram_deep_link;
+        tgBtn.classList.remove('hidden');
+      } else {
+        tgBtn.classList.add('hidden');
+      }
+    }
+
+    setSubtitle('Tudo certo! Escolha por onde quer começar:');
+    setView('ready');
+  };
+
+  void init();
+</script>

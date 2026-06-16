@@ -124,14 +124,15 @@ export interface MobileStickyBarContent {
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
-export const WHATSAPP_URL = '#'; // TODO: substituir antes de promoção pública
-export const CHECKOUT_URL_MENSAL = '#'; // TODO
-export const CHECKOUT_URL_TRIMESTRAL = '#'; // TODO
-export const CHECKOUT_URL_ANUAL = '#'; // TODO
+export const WHATSAPP_URL =
+  'https://wa.me/5511936212870?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20MeControla';
+export const CHECKOUT_URL_MENSAL = 'https://pay.kiwify.com.br/ocPt7sv';
+export const CHECKOUT_URL_TRIMESTRAL = 'https://pay.kiwify.com.br/Sh2upAU';
+export const CHECKOUT_URL_ANUAL = 'https://pay.kiwify.com.br/HquleKA';
 export const CONTACT_EMAIL = 'contato@limateixeira.com.br';
 export const INSTAGRAM_URL = 'https://www.instagram.com/mecontrola/';
 export const CNPJ = '52.162.759/0001-74';
-export const LEGAL_NAME = ''; // TODO: razão social oficial
+export const LEGAL_NAME = 'Lima Teixeira Tecnologia LTDA';
 
 // ---------------------------------------------------------------------------
 // HEADER — <header> / .nav · data-track="cta_header_ver_planos"
