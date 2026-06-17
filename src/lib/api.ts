@@ -1,3 +1,21 @@
+export type PlanId = 'MONTHLY' | 'QUARTERLY' | 'ANNUAL';
+
+export interface CheckoutResponse {
+  checkout_url: string;
+}
+
+export interface InitiateCheckoutOk {
+  ok: true;
+  checkoutUrl: string;
+}
+
+export interface InitiateCheckoutErr {
+  ok: false;
+  message: string;
+}
+
+export type InitiateCheckoutResult = InitiateCheckoutOk | InitiateCheckoutErr;
+
 export interface TokenStateReady {
   ready_to_activate: true;
   wa_me_url: string;
@@ -27,6 +45,50 @@ export type FetchTokenStateResult = FetchTokenStateOk | FetchTokenStateErr;
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null;
+
+export const initiateCheckout = async (
+  backendUrl: string,
+  planId: PlanId,
+  signal?: AbortSignal,
+): Promise<InitiateCheckoutResult> => {
+  const base = backendUrl.replace(/\/+$/, '');
+  const url = `${base}/api/v1/onboarding/checkout`;
+
+  let response: Response;
+  try {
+    const init: RequestInit = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ plan_id: planId }),
+    };
+    if (signal) init.signal = signal;
+    response = await fetch(url, init);
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'falha de rede';
+    return { ok: false, message };
+  }
+
+  if (!response.ok) {
+    return { ok: false, message: `HTTP ${response.status}` };
+  }
+
+  let json: unknown;
+  try {
+    json = await response.json();
+  } catch {
+    return { ok: false, message: 'resposta inválida' };
+  }
+
+  if (
+    !isRecord(json) ||
+    typeof json['checkout_url'] !== 'string' ||
+    (json['checkout_url'] as string).length === 0
+  ) {
+    return { ok: false, message: 'formato inesperado' };
+  }
+
+  return { ok: true, checkoutUrl: json['checkout_url'] as string };
+};
 
 const parseTokenState = (raw: unknown): TokenState | null => {
   if (!isRecord(raw)) return null;

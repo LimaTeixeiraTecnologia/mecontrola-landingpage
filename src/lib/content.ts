@@ -85,6 +85,7 @@ export interface Plan {
   support: string;
   ctaLabel: string;
   ctaHref: string;
+  planId: 'MONTHLY' | 'QUARTERLY' | 'ANNUAL';
   trackId: string;
   featured: boolean;
 }
@@ -248,6 +249,7 @@ export const plans: Plan[] = [
     support: 'Ideal para começar com o menor compromisso.',
     ctaLabel: 'Quero o mensal',
     ctaHref: CHECKOUT_URL_MENSAL,
+    planId: 'MONTHLY',
     trackId: 'plan_monthly_select',
     featured: false,
   },
@@ -261,6 +263,7 @@ export const plans: Plan[] = [
     support: 'Uma entrada mais leve para manter o ritmo.',
     ctaLabel: 'Quero o trimestral',
     ctaHref: CHECKOUT_URL_TRIMESTRAL,
+    planId: 'QUARTERLY',
     trackId: 'plan_quarterly_select',
     featured: false,
   },
@@ -274,6 +277,7 @@ export const plans: Plan[] = [
     support: 'A escolha de quem quer economizar mais o ano todo.',
     ctaLabel: 'Quero economizar mais',
     ctaHref: CHECKOUT_URL_ANUAL,
+    planId: 'ANNUAL',
     trackId: 'plan_yearly_select',
     featured: true,
   },

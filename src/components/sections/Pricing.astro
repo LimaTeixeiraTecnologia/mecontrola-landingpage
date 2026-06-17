@@ -3,6 +3,8 @@ import { plans } from '../../lib/content';
 import SectionHeader from '../ui/SectionHeader.astro';
 import Card from '../ui/Card.astro';
 import Button from '../ui/Button.astro';
+
+const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? '';
 ---
 
 <section id="planos" class="py-14 md:py-20">
@@ -54,6 +56,7 @@ import Button from '../ui/Button.astro';
                 variant={plan.featured ? 'primary' : 'ghost'}
                 href={plan.ctaHref}
                 dataTrack={plan.trackId}
+                dataPlanId={plan.planId}
                 class="w-full justify-center"
               >
                 {plan.ctaLabel}
@@ -68,3 +71,48 @@ import Button from '../ui/Button.astro';
     </p>
   </div>
 </section>
+
+<script define:vars={{ backendUrl }}>
+  document.addEventListener('click', async (e) => {
+    const target = e.target instanceof Element ? e.target.closest('[data-plan-id]') : null;
+    if (!target) return;
+
+    const planId = target.getAttribute('data-plan-id');
+    if (!planId) return;
+
+    e.preventDefault();
+
+    const fallbackHref = target instanceof HTMLAnchorElement ? target.href : null;
+    const originalText = target.textContent ?? '';
+
+    target.setAttribute('aria-busy', 'true');
+    target.textContent = 'Aguarde…';
+
+    try {
+      const response = await fetch(`${backendUrl}/api/v1/onboarding/checkout`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ plan_id: planId }),
+      });
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const data = await response.json();
+      const checkoutUrl = typeof data?.checkout_url === 'string' ? data.checkout_url : null;
+
+      if (checkoutUrl) {
+        window.location.href = checkoutUrl;
+        return;
+      }
+
+      throw new Error('checkout_url ausente na resposta');
+    } catch {
+      if (fallbackHref) {
+        window.location.href = fallbackHref;
+      }
+    } finally {
+      target.removeAttribute('aria-busy');
+      target.textContent = originalText;
+    }
+  });
+</script>

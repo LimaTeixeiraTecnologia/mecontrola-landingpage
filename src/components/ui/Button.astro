@@ -8,6 +8,7 @@ interface Props {
   type?: 'button' | 'submit' | 'reset';
   class?: string;
   dataTrack?: string;
+  dataPlanId?: string;
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   type = 'button',
   class: className,
   dataTrack,
+  dataPlanId,
 } = Astro.props;
 
 const base = [
@@ -42,11 +44,11 @@ const classes = cn(...base, variants[variant], sizes[size], className);
 
 {
   href ? (
-    <a href={href} class={classes} data-track={dataTrack}>
+    <a href={href} class={classes} data-track={dataTrack} data-plan-id={dataPlanId}>
       <slot />
     </a>
   ) : (
-    <button type={type} class={classes} data-track={dataTrack}>
+    <button type={type} class={classes} data-track={dataTrack} data-plan-id={dataPlanId}>
       <slot />
     </button>
   )
