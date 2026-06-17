@@ -109,7 +109,9 @@
       if (data.telegram_deep_link) {
         tgBtn.href = data.telegram_deep_link;
         tgBtn.classList.remove('hidden');
+        tgBtn.classList.add('inline-flex');
       } else {
+        tgBtn.classList.remove('inline-flex');
         tgBtn.classList.add('hidden');
       }
     }
