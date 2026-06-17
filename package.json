@@ -9,7 +9,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/verify-no-inline-scripts.mjs",
+    "verify:csp": "node scripts/verify-no-inline-scripts.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "prepare": "husky",

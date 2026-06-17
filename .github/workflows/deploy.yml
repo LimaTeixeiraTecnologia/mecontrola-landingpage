@@ -43,6 +43,9 @@ jobs:
           PUBLIC_GA_ID: ${{ secrets.PUBLIC_GA_ID }}
           PUBLIC_BACKEND_URL: https://api.mecontrola.app.br
 
+      - name: Verify CSP (no inline executable scripts)
+        run: node scripts/verify-no-inline-scripts.mjs
+
       - name: Install Wrangler
         run: npm install -g wrangler@4
 
