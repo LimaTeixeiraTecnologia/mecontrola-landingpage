@@ -73,6 +73,31 @@ const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? '';
 </section>
 
 <script define:vars={{ backendUrl }}>
+  const ERROR_MESSAGE = 'Não foi possível iniciar o checkout. Tente novamente em instantes.';
+
+  const findFeedback = (target) => {
+    const next = target.nextElementSibling;
+    return next instanceof HTMLElement && next.dataset.checkoutError ? next : null;
+  };
+
+  const showError = (target) => {
+    let feedback = findFeedback(target);
+    if (!feedback) {
+      feedback = document.createElement('p');
+      feedback.dataset.checkoutError = 'true';
+      feedback.setAttribute('role', 'alert');
+      feedback.style.cssText =
+        'margin-top:0.75rem;text-align:center;font-weight:600;font-size:0.85rem;color:#ff6b6b';
+      target.insertAdjacentElement('afterend', feedback);
+    }
+    feedback.textContent = ERROR_MESSAGE;
+  };
+
+  const clearError = (target) => {
+    const feedback = findFeedback(target);
+    if (feedback) feedback.textContent = '';
+  };
+
   document.addEventListener('click', async (e) => {
     const target = e.target instanceof Element ? e.target.closest('[data-plan-id]') : null;
     if (!target) return;
@@ -81,10 +106,9 @@ const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? '';
     if (!planId) return;
 
     e.preventDefault();
+    clearError(target);
 
-    const fallbackHref = target instanceof HTMLAnchorElement ? target.href : null;
     const originalText = target.textContent ?? '';
-
     target.setAttribute('aria-busy', 'true');
     target.textContent = 'Aguarde…';
 
@@ -98,19 +122,16 @@ const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? '';
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       const data = await response.json();
-      const checkoutUrl = typeof data?.checkout_url === 'string' ? data.checkout_url : null;
+      const checkoutUrl =
+        typeof data?.checkout_url === 'string' && data.checkout_url.length > 0
+          ? data.checkout_url
+          : null;
 
-      if (checkoutUrl) {
-        window.location.href = checkoutUrl;
-        return;
-      }
+      if (!checkoutUrl) throw new Error('checkout_url ausente na resposta');
 
-      throw new Error('checkout_url ausente na resposta');
+      window.location.href = checkoutUrl;
     } catch {
-      if (fallbackHref) {
-        window.location.href = fallbackHref;
-      }
-    } finally {
+      showError(target);
       target.removeAttribute('aria-busy');
       target.textContent = originalText;
     }
