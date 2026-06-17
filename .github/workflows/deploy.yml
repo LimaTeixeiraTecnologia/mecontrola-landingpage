@@ -41,6 +41,7 @@ jobs:
         run: ./node_modules/.bin/astro build
         env:
           PUBLIC_GA_ID: ${{ secrets.PUBLIC_GA_ID }}
+          PUBLIC_BACKEND_URL: https://api.mecontrola.app.br
 
       - name: Install Wrangler
         run: npm install -g wrangler@4
