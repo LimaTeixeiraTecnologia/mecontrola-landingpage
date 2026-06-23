@@ -4,11 +4,9 @@ import { cn } from '../../lib/cn';
 import SectionHeader from '../ui/SectionHeader.astro';
 import Card from '../ui/Card.astro';
 import Button from '../ui/Button.astro';
-
-const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? '';
 ---
 
-<section id="planos" class="py-[56px]" data-backend-url={backendUrl}>
+<section id="planos" class="py-[56px]">
   <div class="max-w-[1080px] mx-auto px-5">
     <SectionHeader
       title="Escolha o plano que faz mais sentido para você"
@@ -57,7 +55,6 @@ const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? '';
                 variant={plan.featured ? 'primary' : 'ghost'}
                 href={plan.ctaHref}
                 dataTrack={plan.trackId}
-                dataPlanId={plan.planId}
                 class="w-full justify-center"
               >
                 {plan.ctaLabel}
@@ -72,5 +69,3 @@ const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? '';
     </p>
   </div>
 </section>
-
-<script is:inline src="/js/checkout.js" defer></script>
