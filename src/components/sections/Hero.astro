@@ -5,8 +5,8 @@ import Tag from '../ui/Tag.astro';
 import WhatsAppMockup from './hero/WhatsAppMockup.astro';
 ---
 
-<section class="pt-12 pb-16">
-  <div class="max-w-5xl mx-auto px-5">
+<section class="pt-12 pb-[56px]">
+  <div class="max-w-[1080px] mx-auto px-5">
     <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
       <!-- Left: text content -->
       <div>
@@ -20,17 +20,8 @@ import WhatsAppMockup from './hero/WhatsAppMockup.astro';
         <p class="text-muted-foreground text-[1.05rem] font-medium mt-[18px] mb-[22px]">
           {hero.sub}
         </p>
-        <ul class="list-none flex flex-col gap-[10px] mb-[26px] p-0">
-          {
-            hero.bullets.map((bullet) => (
-              <li class="flex items-center gap-[10px] font-semibold text-[0.98rem]">
-                <span class="w-6 h-6 flex-none rounded-full bg-primary/15 text-primary grid place-items-center text-[0.85rem] font-extrabold">
-                  ✓
-                </span>
-                {bullet}
-              </li>
-            ))
-          }
+        <ul class="bullet-check">
+          {hero.bullets.map((bullet) => <li>{bullet}</li>)}
         </ul>
         <div class="flex flex-col sm:flex-row gap-3">
           <Button

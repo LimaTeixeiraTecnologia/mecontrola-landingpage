@@ -100,3 +100,65 @@
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+/* Bullet checkmark — hero */
+.bullet-check {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0 0 26px;
+}
+.bullet-check li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+.bullet-check li::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border-radius: 50%;
+  background: rgba(198, 255, 0, 0.15)
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C6FF00' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'><polyline points='5 12 10 17 19 7'/></svg>")
+    center / 14px no-repeat;
+}
+
+/* Bullet map-pin — para quem */
+.quem-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0;
+  margin-top: 24px;
+}
+.quem-list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.quem-list li::before {
+  content: '';
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: rgba(198, 255, 0, 0.15)
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C6FF00'><path d='M12 21s-7.5-4.7-7.5-11A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 7.5 4c0 6.3-7.5 11-7.5 11z'/></svg>")
+    center / 13px no-repeat;
+}
+
+/* Body padding-bottom para sticky bar no mobile */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 84px;
+  }
+}

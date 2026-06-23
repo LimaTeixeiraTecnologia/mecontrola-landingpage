@@ -10,18 +10,14 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {
-      "actualWorkers": 4
-    },
+    "metadata": {},
     "preserveOutput": "always",
     "projects": [
       {
         "outputDir": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 4
-        },
+        "metadata": {},
         "id": "chromium-mobile-375x667",
         "name": "chromium-mobile-375x667",
         "testDir": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright",
@@ -35,9 +31,7 @@
         "outputDir": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 4
-        },
+        "metadata": {},
         "id": "chromium-tablet-768x1024",
         "name": "chromium-tablet-768x1024",
         "testDir": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright",
@@ -51,9 +45,7 @@
         "outputDir": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 4
-        },
+        "metadata": {},
         "id": "chromium-desktop-1280x800",
         "name": "chromium-desktop-1280x800",
         "testDir": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright",
@@ -67,9 +59,7 @@
         "outputDir": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 4
-        },
+        "metadata": {},
         "id": "chromium-fhd-1920x1080",
         "name": "chromium-fhd-1920x1080",
         "testDir": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright",
@@ -83,9 +73,7 @@
         "outputDir": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 4
-        },
+        "metadata": {},
         "id": "webkit-1280x800",
         "name": "webkit-1280x800",
         "testDir": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright",
@@ -158,22 +146,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2170,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:04.983Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-db85b20f693a936a3a46",
@@ -192,22 +166,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1027,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:07.976Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-f8e8b1488f1fcc5bad69",
@@ -226,22 +186,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 783,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:09.022Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-8ecc87c4795ca581b2e5",
@@ -260,22 +206,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 276,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:09.817Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-d2a8a06d3c27b8d146aa",
@@ -294,22 +226,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 2979,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:12.392Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-5b451c1f57771dd52436",
@@ -328,22 +246,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 656,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:19.333Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-8a14076085cfb296107a",
@@ -362,22 +266,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 580,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:20.001Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-647d78fccf14b52ebbde",
@@ -396,22 +286,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 728,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:20.599Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-722b82a964541329a72c",
@@ -430,22 +306,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 794,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:22.851Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-af656cc569361d4fa009",
@@ -464,22 +326,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 532,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:23.937Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-ccfbd9c4731cfffcdf77",
@@ -498,22 +346,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 174,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:24.486Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-fb9175b85db4d9f914fd",
@@ -532,25 +366,171 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 198,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:24.675Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "aa3ad05f8c0e05077efb-a604ab0fbb9d3be1e012",
+              "file": "a11y.spec.ts",
+              "line": 49,
+              "column": 3
+            },
+            {
+              "title": "axe: 0 violations sérias/críticas",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-3a39c54314afa4f7d9d0",
+              "file": "a11y.spec.ts",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "h1 único e hierarquia de headings preservada",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-3cd14038ec5442053ce9",
+              "file": "a11y.spec.ts",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "foco visível ao navegar por Tab",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-fcdd84f42721da9778c1",
+              "file": "a11y.spec.ts",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "prefers-reduced-motion: animações suspensas",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-8f7898d3da3a012cf7ff",
+              "file": "a11y.spec.ts",
+              "line": 49,
+              "column": 3
+            },
+            {
+              "title": "axe: 0 violations sérias/críticas",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-9316774266cda68aa352",
+              "file": "a11y.spec.ts",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "h1 único e hierarquia de headings preservada",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-e7b32b0200a6c142c0da",
+              "file": "a11y.spec.ts",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "foco visível ao navegar por Tab",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-47f497d67a287b6a8a32",
+              "file": "a11y.spec.ts",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "prefers-reduced-motion: animações suspensas",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-b2483a7fff3767cb221c",
               "file": "a11y.spec.ts",
               "line": 49,
               "column": 3
@@ -583,22 +563,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 1664,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:04.999Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-1e688d4bc6c15b59ed6f",
@@ -617,22 +583,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 387,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:07.484Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-3d11ce69794a4f7255a0",
@@ -651,22 +603,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 427,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:07.893Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-4e4612441b7a697edf8c",
@@ -685,22 +623,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 364,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:08.348Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-17d879522fb9b9ab17e3",
@@ -719,22 +643,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1644,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:12.958Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-ba8e9ef9025e187f0930",
@@ -753,22 +663,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 776,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:17.999Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-c3b8d800ad7dd4fc1729",
@@ -787,22 +683,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 547,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:18.790Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-9b61f2edc9f8d2acb3a1",
@@ -821,22 +703,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 436,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:19.354Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-bf20d57c10867ad07aaf",
@@ -855,22 +723,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 349,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:24.900Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-aa2e9453327223b9f425",
@@ -889,22 +743,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 116,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:25.261Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-26cb50fa828d6f0447fb",
@@ -923,22 +763,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 104,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:25.396Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-a6823eaf2501265a269a",
@@ -957,25 +783,171 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 103,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:25.509Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "113882d59e5889ce79fa-c64688863e884ff688bc",
+              "file": "activate.spec.ts",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "mostra loading e renderiza CTA WhatsApp quando ready_to_activate=true",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "113882d59e5889ce79fa-57b7d0b72d541525cec9",
+              "file": "activate.spec.ts",
+              "line": 6,
+              "column": 3
+            },
+            {
+              "title": "renderiza ambos CTAs quando telegram_deep_link presente",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "113882d59e5889ce79fa-28efca914ec9b78255d4",
+              "file": "activate.spec.ts",
+              "line": 37,
+              "column": 3
+            },
+            {
+              "title": "renderiza mensagem de erro quando ready_to_activate=false",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "113882d59e5889ce79fa-4fa70336314d70a7f00d",
+              "file": "activate.spec.ts",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "renderiza erro quando token ausente",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "113882d59e5889ce79fa-2daf9a15925095dfb90f",
+              "file": "activate.spec.ts",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "mostra loading e renderiza CTA WhatsApp quando ready_to_activate=true",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "113882d59e5889ce79fa-9aaeb1f53526886bde07",
+              "file": "activate.spec.ts",
+              "line": 6,
+              "column": 3
+            },
+            {
+              "title": "renderiza ambos CTAs quando telegram_deep_link presente",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "113882d59e5889ce79fa-a5325e60facca4e09dd7",
+              "file": "activate.spec.ts",
+              "line": 37,
+              "column": 3
+            },
+            {
+              "title": "renderiza mensagem de erro quando ready_to_activate=false",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "113882d59e5889ce79fa-51f5d8a132a8071ab72e",
+              "file": "activate.spec.ts",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "renderiza erro quando token ausente",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "113882d59e5889ce79fa-305b810ca0b39787404e",
               "file": "activate.spec.ts",
               "line": 77,
               "column": 3
@@ -1008,22 +980,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 3741,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:05.098Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-6f8a45f410ce110ffdad",
@@ -1042,22 +1000,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 873,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:09.636Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-fe5fe5a8d51090645e93",
@@ -1076,28 +1020,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 1889,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:10.640Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "fullpage-mobile",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/perf-Performance-screenshot-da-página-completa-evidência--chromium-mobile-375x667/attachments/fullpage-mobile-0638647dee10b6c16010f002d51d227044c8cd16.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-d5dbbc5c736d6b5c4b32",
@@ -1116,22 +1040,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 4468,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:15.214Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-1fd43041dc43168f602c",
@@ -1150,22 +1060,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 1185,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:20.821Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-dd007613561e0790ea33",
@@ -1184,28 +1080,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 1327,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:22.100Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "fullpage-mobile",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/perf-Performance-screenshot-da-página-completa-evidência--chromium-tablet-768x1024/attachments/fullpage-mobile-0638647dee10b6c16010f002d51d227044c8cd16.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-7f840d7c90bf6f3e0bba",
@@ -1224,22 +1100,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 9,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 2773,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:25.933Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-bb660db2b6f5d1d12bec",
@@ -1258,22 +1120,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 9,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 821,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:28.957Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-d344d34e126690f29156",
@@ -1292,31 +1140,131 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 9,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 928,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:29.800Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "fullpage-mobile",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/perf-Performance-screenshot-da-página-completa-evidência--chromium-desktop-1280x800/attachments/fullpage-mobile-0638647dee10b6c16010f002d51d227044c8cd16.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-aa6c316cc8111927e39e",
+              "file": "perf.spec.ts",
+              "line": 80,
+              "column": 3
+            },
+            {
+              "title": "métricas de performance dentro dos budgets (mobile)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "73ed389be8d3d6a89cdb-be77c8cceab4ee36c4a0",
+              "file": "perf.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "transferência de JS dentro do budget (≤200 KB)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "73ed389be8d3d6a89cdb-161cffc6fecbd32c1e2f",
+              "file": "perf.spec.ts",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "screenshot da página completa (evidência)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "73ed389be8d3d6a89cdb-926d60ffe73b86e7d355",
+              "file": "perf.spec.ts",
+              "line": 80,
+              "column": 3
+            },
+            {
+              "title": "métricas de performance dentro dos budgets (mobile)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "73ed389be8d3d6a89cdb-692e553df7c5d52eb489",
+              "file": "perf.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "transferência de JS dentro do budget (≤200 KB)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "73ed389be8d3d6a89cdb-1aae33837bf3e0d4a86d",
+              "file": "perf.spec.ts",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "screenshot da página completa (evidência)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "73ed389be8d3d6a89cdb-18538254097a005d161f",
               "file": "perf.spec.ts",
               "line": 80,
               "column": 3
@@ -1340,22 +1288,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 2663,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:12.544Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-e647501119a9d7092b51",
@@ -1374,22 +1308,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3200,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:23.447Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-ae43e63da06ae7505d84",
@@ -1408,25 +1328,51 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 9,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 2631,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:30.739Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "73ed389be8d3d6a89cdb-22c36daaca322de6eb44",
+              "file": "perf.spec.ts",
+              "line": 94,
+              "column": 3
+            },
+            {
+              "title": "métricas de performance dentro dos budgets (desktop)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "73ed389be8d3d6a89cdb-953ac856c2327fe169b1",
+              "file": "perf.spec.ts",
+              "line": 94,
+              "column": 3
+            },
+            {
+              "title": "métricas de performance dentro dos budgets (desktop)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "73ed389be8d3d6a89cdb-d620495ee0105c28651d",
               "file": "perf.spec.ts",
               "line": 94,
               "column": 3
@@ -1459,22 +1405,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 1384,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:04.877Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-80724c4339c574034b61",
@@ -1493,22 +1425,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 424,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:07.408Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-f475e9a930bba6a55136",
@@ -1527,22 +1445,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 251,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:07.865Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-6b970f1a8b5c4782df94",
@@ -1561,38 +1465,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 1704,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:08.249Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "header-375px",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/responsive-Responsividade-screenshots-por-seção-×-viewport-chromium-mobile-375x667/attachments/header-375px-3a61f812545e0937b0830f265fe21213d902d0b2.png"
-                        },
-                        {
-                          "name": "main-375px",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/responsive-Responsividade-screenshots-por-seção-×-viewport-chromium-mobile-375x667/attachments/main-375px-9fa996d37e38a0f59cf1baf38db9a6d7d0cb66b4.png"
-                        },
-                        {
-                          "name": "footer-375px",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/responsive-Responsividade-screenshots-por-seção-×-viewport-chromium-mobile-375x667/attachments/footer-375px-203a752b024b7883f0191036f54d3ebe5cf9c7c4.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-4db155dd0341131e202a",
@@ -1611,22 +1485,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 577,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:10.032Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-a91abd03e181916813e6",
@@ -1645,22 +1505,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 2089,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:15.669Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-29fc9cf7c8f68b734286",
@@ -1679,22 +1525,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 726,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:18.520Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-e8b084ef5d42b20700f1",
@@ -1713,22 +1545,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 551,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:19.300Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-11bbd988f09cc61e6cce",
@@ -1747,38 +1565,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 1416,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:19.883Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "header-768px",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/responsive-Responsividade-screenshots-por-seção-×-viewport-chromium-tablet-768x1024/attachments/header-768px-7ec23e4a47682473ed87b7292f76985b6d0fcb85.png"
-                        },
-                        {
-                          "name": "main-768px",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/responsive-Responsividade-screenshots-por-seção-×-viewport-chromium-tablet-768x1024/attachments/main-768px-0b17c7c0a4dad660c6407ba0f6df868f841fc50e.png"
-                        },
-                        {
-                          "name": "footer-768px",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/responsive-Responsividade-screenshots-por-seção-×-viewport-chromium-tablet-768x1024/attachments/footer-768px-a315325ebb91845a1b1bb9b1786d61334f21db51.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-413c642414aea1224c6e",
@@ -1797,22 +1585,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 599,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:21.316Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-dca2fa234fa0a97e4cd1",
@@ -1831,22 +1605,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 124,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:25.636Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-d53b7e552060c9920bae",
@@ -1865,22 +1625,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 154,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:25.766Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-0e6da16df166ef717c61",
@@ -1899,22 +1645,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 171,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:25.925Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-f90338883371a8a2e5dd",
@@ -1933,38 +1665,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 769,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:26.107Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "header-1280px",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/responsive-Responsividade-screenshots-por-seção-×-viewport-chromium-desktop-1280x800/attachments/header-1280px-e4810044263a3c7ba7e7d3a08362a1e86227c206.png"
-                        },
-                        {
-                          "name": "main-1280px",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/responsive-Responsividade-screenshots-por-seção-×-viewport-chromium-desktop-1280x800/attachments/main-1280px-a77c65d4ab7f49f28fdde7c2f2c064efc5f94426.png"
-                        },
-                        {
-                          "name": "footer-1280px",
-                          "contentType": "image/png",
-                          "path": "/Users/jailtonjunior/Git/mecontrola-landingpage/tests/playwright/evidences/responsive-Responsividade-screenshots-por-seção-×-viewport-chromium-desktop-1280x800/attachments/footer-1280px-20f4efe0f91b504f58090ff698ca1a6667f9ea06.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-37e35f881a2f7410feff",
@@ -1983,25 +1685,211 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 182,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:26.883Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e0223b006feb3d306446-80183bb335ecca9f5ea0",
+              "file": "responsive.spec.ts",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "sem overflow horizontal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e0223b006feb3d306446-bbad6396fdf0819aa0ef",
+              "file": "responsive.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "MobileStickyBar: visível apenas em <768px",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e0223b006feb3d306446-c559326fe87284dad51b",
+              "file": "responsive.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "Hero mockup: empilhado em <1024px, lado-a-lado em >=1024px",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e0223b006feb3d306446-f2cf8e9d69865a5f3358",
+              "file": "responsive.spec.ts",
+              "line": 27,
+              "column": 3
+            },
+            {
+              "title": "screenshots por seção × viewport",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e0223b006feb3d306446-29424d8ce54a7f025793",
+              "file": "responsive.spec.ts",
+              "line": 43,
+              "column": 3
+            },
+            {
+              "title": "sem clipping em header e footer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e0223b006feb3d306446-718947f94172f39a2a08",
+              "file": "responsive.spec.ts",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "sem overflow horizontal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e0223b006feb3d306446-bdb51ffbad981afdf138",
+              "file": "responsive.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "MobileStickyBar: visível apenas em <768px",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e0223b006feb3d306446-53f5d64449711de71a76",
+              "file": "responsive.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "Hero mockup: empilhado em <1024px, lado-a-lado em >=1024px",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e0223b006feb3d306446-dd97de62b31d0eb86fd3",
+              "file": "responsive.spec.ts",
+              "line": 27,
+              "column": 3
+            },
+            {
+              "title": "screenshots por seção × viewport",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e0223b006feb3d306446-e28f481b2ebb3b345e52",
+              "file": "responsive.spec.ts",
+              "line": 43,
+              "column": 3
+            },
+            {
+              "title": "sem clipping em header e footer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e0223b006feb3d306446-7bd4bca6223364a5215d",
               "file": "responsive.spec.ts",
               "line": 61,
               "column": 3
@@ -2034,22 +1922,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 415,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:08.774Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-5e5345b95cb6f13b3c4d",
@@ -2068,22 +1942,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 187,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:09.237Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-8f13b4b6939fd0e0acdb",
@@ -2102,22 +1962,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 298,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:09.445Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-fb2ec1b53ae03d88d345",
@@ -2136,22 +1982,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 291,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:09.754Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-47a255f70b985640c7bf",
@@ -2170,22 +2002,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 485,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:10.076Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-abb5a88d69c58ba4b204",
@@ -2204,22 +2022,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 316,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:10.577Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-2547adf8c0bda385c41c",
@@ -2238,22 +2042,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 154,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:10.921Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-80edeba5068d8cc116dd",
@@ -2272,22 +2062,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 331,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:11.151Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-1b410dbbeea7b331bd8a",
@@ -2306,22 +2082,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 715,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:19.826Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-5e467ad03f630a40a1b0",
@@ -2340,22 +2102,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 623,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:20.554Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-af74b51169f9f0da225c",
@@ -2374,22 +2122,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 578,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:21.186Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-7087eddba00153f80860",
@@ -2408,22 +2142,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 599,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:21.782Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-9044dc4807728b6cbef4",
@@ -2442,22 +2162,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 542,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:22.393Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-c5e2deeddae421ef32d8",
@@ -2476,22 +2182,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 522,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:22.964Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-0a64b3f5eb0d6d64e37a",
@@ -2510,22 +2202,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 433,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:23.494Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-5d11f6d7f0b91511259f",
@@ -2544,22 +2222,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 504,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:23.941Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-fe49dbb37694b1b6356f",
@@ -2578,22 +2242,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 304,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:27.448Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-c649deef54ef75815551",
@@ -2612,22 +2262,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 189,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:27.989Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-d9ecd85add99566364d9",
@@ -2646,22 +2282,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 246,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:28.188Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-d0d3f0358c639ac4da62",
@@ -2680,22 +2302,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 181,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:28.454Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-da914590fd512d80cd4e",
@@ -2714,22 +2322,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 147,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:28.653Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-217bb4c4c54344aae517",
@@ -2748,22 +2342,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 68,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:28.809Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-e153d1461e65bda6c04a",
@@ -2782,22 +2362,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 70,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:28.886Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-638fdfbef33a7a4b221b",
@@ -2816,25 +2382,331 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 151,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:28.965Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-895cc215b87628b65537",
+              "file": "seo.spec.ts",
+              "line": 78,
+              "column": 3
+            },
+            {
+              "title": "title e meta description presentes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-499008befaa1c4c078a6",
+              "file": "seo.spec.ts",
+              "line": 4,
+              "column": 3
+            },
+            {
+              "title": "canonical absoluta e correta",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-5499f4baeb7c54b68bfd",
+              "file": "seo.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "Open Graph completo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-875e47cdf38acfa5cd3f",
+              "file": "seo.spec.ts",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "Twitter Card completo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-4c75863fa37a507e2c55",
+              "file": "seo.spec.ts",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "JSON-LD parseável com Organization + WebSite + WebPage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-8a742cb689bbda66f607",
+              "file": "seo.spec.ts",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "/sitemap-index.xml retorna 200 e referencia raiz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-7c680e418b9904b43e65",
+              "file": "seo.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "/robots.txt retorna 200 com Sitemap correto",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-2a6187ec2eebad32383b",
+              "file": "seo.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "/404 retorna status 404 com CTA \"Voltar\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-21b2ad7c1260d600f364",
+              "file": "seo.spec.ts",
+              "line": 78,
+              "column": 3
+            },
+            {
+              "title": "title e meta description presentes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-7c07d862a33cb101642a",
+              "file": "seo.spec.ts",
+              "line": 4,
+              "column": 3
+            },
+            {
+              "title": "canonical absoluta e correta",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-d8e7b41245148509ad55",
+              "file": "seo.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "Open Graph completo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-4c90614daf0a78d3fae2",
+              "file": "seo.spec.ts",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "Twitter Card completo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-a8d18d07aeb16d48d7ae",
+              "file": "seo.spec.ts",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "JSON-LD parseável com Organization + WebSite + WebPage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-65cf559ac43011058b78",
+              "file": "seo.spec.ts",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "/sitemap-index.xml retorna 200 e referencia raiz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-18d7b4e855184470cbfa",
+              "file": "seo.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "/robots.txt retorna 200 com Sitemap correto",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-9874354581a8b0e10b54",
+              "file": "seo.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "/404 retorna status 404 com CTA \"Voltar\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-47487e2dac3dc152a754",
               "file": "seo.spec.ts",
               "line": 78,
               "column": 3
@@ -2858,22 +2730,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 1307,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:11.561Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-7e858a4245a9c1e8ff28",
@@ -2892,22 +2750,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 1344,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:12.889Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-b99b577b11b0b4eba5f5",
@@ -2926,22 +2770,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 290,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:14.258Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-1cf24e796d2ce0716793",
@@ -2960,22 +2790,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 221,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:14.584Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-23757fae6ccc5281d40d",
@@ -2994,22 +2810,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1466,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:24.479Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-33a26c16b7eb5f3e1d7d",
@@ -3028,22 +2830,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1786,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:25.958Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-45ec5c97bfdd1823da45",
@@ -3062,22 +2850,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 858,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:27.771Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-58a7d64e51bae0d8d072",
@@ -3096,22 +2870,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1145,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:28.649Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-e384d4792d91620b8ae7",
@@ -3130,22 +2890,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 1583,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:29.127Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-9ffdfaba22842b08a2a0",
@@ -3164,22 +2910,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 1218,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:30.717Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-f6027b7438fb9433b6af",
@@ -3198,22 +2930,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 186,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:31.941Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-c4e0383b465600a0ec12",
@@ -3232,25 +2950,171 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 197,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:32.133Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "265a6ee67c94b2ef6801-55cdd3bd77bdaaf9e1a5",
+              "file": "seo.spec.ts",
+              "line": 135,
+              "column": 3
+            },
+            {
+              "title": "zero requests para tracking antes de qualquer interação",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-133ab738e8849096a5a4",
+              "file": "seo.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "Recusar: nenhum request de tracking agora nem após reload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-5cade26294d610e0bb8f",
+              "file": "seo.spec.ts",
+              "line": 103,
+              "column": 3
+            },
+            {
+              "title": "banner não reaparece após consent gravado",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-636517ccb3db9352602b",
+              "file": "seo.spec.ts",
+              "line": 124,
+              "column": 3
+            },
+            {
+              "title": "Aceitar: localStorage=accepted; banner oculto após reload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-dcecd601c68604acdde5",
+              "file": "seo.spec.ts",
+              "line": 135,
+              "column": 3
+            },
+            {
+              "title": "zero requests para tracking antes de qualquer interação",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-382e83c9ed27e124750a",
+              "file": "seo.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "Recusar: nenhum request de tracking agora nem após reload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-d56625d840d14d324cfc",
+              "file": "seo.spec.ts",
+              "line": 103,
+              "column": 3
+            },
+            {
+              "title": "banner não reaparece após consent gravado",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-3a9e6c0c3256e8ba1ea8",
+              "file": "seo.spec.ts",
+              "line": 124,
+              "column": 3
+            },
+            {
+              "title": "Aceitar: localStorage=accepted; banner oculto após reload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "265a6ee67c94b2ef6801-3680a64397f54a2c18a1",
               "file": "seo.spec.ts",
               "line": 135,
               "column": 3
@@ -3283,22 +3147,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 440,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:10.123Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-4c770520ffd0dd9a6295",
@@ -3317,22 +3167,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 349,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:10.581Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-d5d4880f0f53213d0db5",
@@ -3351,22 +3187,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 234,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:10.943Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-0c460f8da7c24ea17dd8",
@@ -3385,22 +3207,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 391,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:11.192Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-b936dc77739f39c03132",
@@ -3419,22 +3227,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 400,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:11.600Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-3aad435168e8058c86cd",
@@ -3453,22 +3247,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-mobile-375x667",
                   "projectName": "chromium-mobile-375x667",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 199,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:12.062Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-12842f550d83b010aefe",
@@ -3487,22 +3267,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 539,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:21.379Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-37f6010a885fdc7499be",
@@ -3521,22 +3287,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 672,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:21.935Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-640c4e30cb58ee696d65",
@@ -3555,22 +3307,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 713,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:22.620Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-592f76b2e6ef6ade5376",
@@ -3589,22 +3327,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 865,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:23.348Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-088ae7db8a00374730fc",
@@ -3623,22 +3347,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 675,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:24.232Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-6797eb7ba7b76ebc52e5",
@@ -3657,22 +3367,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-tablet-768x1024",
                   "projectName": "chromium-tablet-768x1024",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 396,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:24.930Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-7f84b29ebbc214bb8ecc",
@@ -3691,22 +3387,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 164,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:27.084Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-a930b963d6764b47ca4b",
@@ -3725,22 +3407,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 204,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:27.265Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-21127665b336f35073c7",
@@ -3759,22 +3427,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 165,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:27.484Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-6adb031290c5abb5b005",
@@ -3793,22 +3447,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 293,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:27.665Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-00334435c6aa6f9fab79",
@@ -3827,22 +3467,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 233,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:27.972Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-bb891e48a40e93dcc987",
@@ -3861,25 +3487,251 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium-desktop-1280x800",
                   "projectName": "chromium-desktop-1280x800",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 205,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-17T17:30:28.213Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4219922fea2e2bd3c691-97ab6fe65ec8bf47efeb",
+              "file": "smoke.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "GET / retorna 200",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-eb165f2e8748b1e0b29c",
+              "file": "smoke.spec.ts",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "<title> não vazio",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-fc077625ae191f951420",
+              "file": "smoke.spec.ts",
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "seções principais presentes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-46729416bbcd61181328",
+              "file": "smoke.spec.ts",
+              "line": 28,
+              "column": 3
+            },
+            {
+              "title": "âncoras navegam corretamente",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-02597879d96af74ce237",
+              "file": "smoke.spec.ts",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "todos os CTAs têm data-track correto",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-6f9a1e95bc4987f56319",
+              "file": "smoke.spec.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "gera relatório smoke.json",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-fhd-1920x1080",
+                  "projectName": "chromium-fhd-1920x1080",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-e45324cea2cfd5459b8f",
+              "file": "smoke.spec.ts",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "GET / retorna 200",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-247e7d1e6bfacb4f4d7c",
+              "file": "smoke.spec.ts",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "<title> não vazio",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-c8f33445d5648acccb1e",
+              "file": "smoke.spec.ts",
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "seções principais presentes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-3cde2035479ebd319b65",
+              "file": "smoke.spec.ts",
+              "line": 28,
+              "column": 3
+            },
+            {
+              "title": "âncoras navegam corretamente",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-f9bc87df935669b1dd85",
+              "file": "smoke.spec.ts",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "todos os CTAs têm data-track correto",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-3425654a353da62d0301",
+              "file": "smoke.spec.ts",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "gera relatório smoke.json",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-1280x800",
+                  "projectName": "webkit-1280x800",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-d1f1b50b00e452a7432e",
               "file": "smoke.spec.ts",
               "line": 64,
               "column": 3
@@ -3891,10 +3743,10 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-17T17:29:55.724Z",
-    "duration": 37716.621,
-    "expected": 105,
-    "skipped": 0,
+    "startTime": "2026-06-23T14:58:48.745Z",
+    "duration": 243.058,
+    "expected": 0,
+    "skipped": 175,
     "unexpected": 0,
     "flaky": 0
   }

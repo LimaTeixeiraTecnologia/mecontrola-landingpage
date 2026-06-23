@@ -1,5 +1,6 @@
 ---
 import { plans } from '../../lib/content';
+import { cn } from '../../lib/cn';
 import SectionHeader from '../ui/SectionHeader.astro';
 import Card from '../ui/Card.astro';
 import Button from '../ui/Button.astro';
@@ -7,8 +8,8 @@ import Button from '../ui/Button.astro';
 const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? '';
 ---
 
-<section id="planos" class="py-14 md:py-20" data-backend-url={backendUrl}>
-  <div class="max-w-5xl mx-auto px-5">
+<section id="planos" class="py-[56px]" data-backend-url={backendUrl}>
+  <div class="max-w-[1080px] mx-auto px-5">
     <SectionHeader
       title="Escolha o plano que faz mais sentido para você"
       subtitle="Sem conta escondida. Sem pegadinha. Você vê o valor, a economia e escolhe com calma."
@@ -16,7 +17,7 @@ const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? '';
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
       {
         plans.map((plan) => (
-          <div class="relative flex flex-col">
+          <div class={cn('relative flex flex-col', plan.featured && 'md:scale-[1.04]')}>
             {plan.featured && (
               <div
                 class="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-primary text-primary-foreground font-extrabold text-[0.72rem] uppercase px-4 py-1.5 rounded-full whitespace-nowrap"

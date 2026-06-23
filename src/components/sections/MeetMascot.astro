@@ -22,12 +22,12 @@ const imageSrc = `/images/${content.image}.jpeg`;
 
 const imageAlt =
   content.image === 'brand-mascote-resumo-mes'
-    ? "Mascote do MeControla com o painel 'Como foi seu mês?' ao lado, mostrando entradas, gastos e quanto sobrou no bolso."
-    : 'Mascote do MeControla comemorando uma meta concluída: celular novo, R$ 2.800, 100% atingido.';
+    ? 'Mascote do MeControla na praia, transmitindo leveza e tranquilidade financeira.'
+    : 'Mascote do MeControla com o celular na mão, acompanhando finanças pelo WhatsApp.';
 ---
 
-<section class="bg-[#000] py-14 md:py-20">
-  <div class="max-w-5xl mx-auto px-5">
+<section class="bg-[#000] py-[56px]">
+  <div class="max-w-[1080px] mx-auto px-5">
     <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-[54px]">
       {
         reverse ? (
@@ -49,12 +49,9 @@ const imageAlt =
               </h2>
               <p class="text-muted-foreground font-medium mb-[18px]">{content.body}</p>
               {isMeetMascot(content) && (
-                <ul class="list-none flex flex-col gap-[10px] mb-6 p-0">
+                <ul class="bullet-check mb-6">
                   {content.bullets.map((bullet: string) => (
-                    <li class="flex items-center gap-[10px] font-semibold">
-                      <span class="text-accent">💚</span>
-                      {bullet}
-                    </li>
+                    <li>{bullet}</li>
                   ))}
                 </ul>
               )}
@@ -78,7 +75,7 @@ const imageAlt =
                 height="480"
                 loading="lazy"
                 decoding="async"
-                style="display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);"
+                style="display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 80% 90% at 50% 50%, #000 60%, transparent 100%);mask-image:radial-gradient(ellipse 80% 90% at 50% 50%, #000 60%, transparent 100%);"
               />
             </figure>
           </>
@@ -92,7 +89,7 @@ const imageAlt =
                 height="480"
                 loading="lazy"
                 decoding="async"
-                style="display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);mask-image:radial-gradient(ellipse 78% 88% at 50% 50%, #000 62%, transparent 100%);"
+                class="block w-full h-auto rounded-[24px]"
               />
             </figure>
 
@@ -113,12 +110,9 @@ const imageAlt =
               </h2>
               <p class="text-muted-foreground font-medium mb-[18px]">{content.body}</p>
               {isMeetMascot(content) && (
-                <ul class="list-none flex flex-col gap-[10px] mb-6 p-0">
+                <ul class="bullet-check mb-6">
                   {content.bullets.map((bullet: string) => (
-                    <li class="flex items-center gap-[10px] font-semibold">
-                      <span class="text-accent">💚</span>
-                      {bullet}
-                    </li>
+                    <li>{bullet}</li>
                   ))}
                 </ul>
               )}

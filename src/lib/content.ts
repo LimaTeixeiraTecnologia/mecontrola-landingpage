@@ -127,6 +127,8 @@ export interface MobileStickyBarContent {
 // ---------------------------------------------------------------------------
 export const WHATSAPP_URL =
   'https://wa.me/5511936212870?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20MeControla';
+export const WHATSAPP_DUVIDAS_URL =
+  'https://wa.me/5511936212870?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20o%20MeControla';
 export const CHECKOUT_URL_MENSAL = 'https://pay.kiwify.com.br/ocPt7sv';
 export const CHECKOUT_URL_TRIMESTRAL = 'https://pay.kiwify.com.br/Sh2upAU';
 export const CHECKOUT_URL_ANUAL = 'https://pay.kiwify.com.br/HquleKA';
@@ -172,7 +174,7 @@ export const meetMascot: MeetMascotContent = {
   tag: 'Conheça o MeControla',
   heading: 'Seu parceiro de finanças, ',
   headingHighlight: 'direto no WhatsApp.',
-  body: 'Sem app pra baixar, sem planilha pra preencher e sem sermão de banco. Só uma conversa simples, do jeito que já faz parte do seu dia a dia.',
+  body: 'Sem app pra baixar, sem planilha pra preencher e sem sermão de banco. É só uma conversa simples, do jeito que já é o seu dia a dia.',
   bullets: [
     'Fala com você como gente fala',
     'Sempre online quando você precisar',
@@ -244,7 +246,7 @@ export const plans: Plan[] = [
   {
     id: 'mensal',
     name: 'Mensal',
-    priceLabel: 'R$ 29,90',
+    priceLabel: 'R$ 39,90',
     periodLabel: '/mês',
     support: 'Ideal para começar com o menor compromisso.',
     ctaLabel: 'Quero o mensal',
@@ -256,10 +258,10 @@ export const plans: Plan[] = [
   {
     id: 'trimestral',
     name: 'Trimestral',
-    priceLabel: 'R$ 74,90',
+    priceLabel: 'R$ 99,90',
     periodLabel: '/ 3 meses',
-    equiv: 'Equivale a R$ 24,97/mês',
-    savings: 'Economize R$ 14,80',
+    equiv: 'Equivale a R$ 33,30/mês',
+    savings: 'Economize R$ 19,80',
     support: 'Uma entrada mais leve para manter o ritmo.',
     ctaLabel: 'Quero o trimestral',
     ctaHref: CHECKOUT_URL_TRIMESTRAL,
@@ -270,10 +272,10 @@ export const plans: Plan[] = [
   {
     id: 'anual',
     name: 'Anual',
-    priceLabel: 'R$ 239,90',
+    priceLabel: 'R$ 299,90',
     periodLabel: '/ 12 meses',
-    equiv: 'Equivale a R$ 19,99/mês',
-    savings: 'Economize R$ 118,90',
+    equiv: 'Equivale a R$ 24,99/mês',
+    savings: 'Economize R$ 178,90',
     support: 'A escolha de quem quer economizar mais o ano todo.',
     ctaLabel: 'Quero economizar mais',
     ctaHref: CHECKOUT_URL_ANUAL,
@@ -312,9 +314,9 @@ export const faq: FaqItem[] = [
 // ---------------------------------------------------------------------------
 export const mascotStripGoal: MascotStripGoalContent = {
   image: 'brand-mascote-meta-concluida',
-  tag: 'Pequenas vitórias de verdade',
-  heading: 'Cada meta batida vira motivo pra continuar.',
-  body: 'O celular novo, a viagem, a reserva pra emergência. O MeControla acompanha cada conquista com você e comemora junto, do jeito mais simples.',
+  tag: 'Apoio que guia',
+  heading: 'Cada passo organizado vira uma conquista.',
+  body: 'O MeControla acompanha sua rotina, sugere o próximo passo na hora certa e comemora junto cada meta que você bate. Do jeito mais simples, sem cobrança e sem ruído.',
 };
 
 // ---------------------------------------------------------------------------

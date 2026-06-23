@@ -11,7 +11,9 @@ const { featured = false, as: Tag = 'div', class: className } = Astro.props;
 
 const classes = cn(
   'bg-card border rounded-2xl p-6 md:p-8',
-  featured ? 'border-primary shadow-glow-primary' : 'border-border',
+  featured
+    ? 'border-primary bg-[linear-gradient(180deg,rgba(198,255,0,.06),#1F1F1F)] shadow-[0_0_0_1px_#C6FF00,0_18px_40px_rgba(198,255,0,.08)]'
+    : 'border-border',
   className,
 );
 ---
