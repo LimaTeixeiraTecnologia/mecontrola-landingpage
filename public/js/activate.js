@@ -1,20 +1,41 @@
 (() => {
   const isRecord = (v) => typeof v === 'object' && v !== null;
 
+  const ERROR_MESSAGES = {
+    expired: 'Seu link de ativação expirou. Fale conosco pelo WhatsApp para receber um novo link.',
+    pending: 'Seu pagamento ainda está sendo processado. Aguarde alguns minutos e tente novamente.',
+    not_found: 'Link inválido. Verifique o link do email ou fale conosco pelo WhatsApp.',
+  };
+
   const parseTokenState = (raw) => {
     if (!isRecord(raw)) return null;
     const ready = raw.ready_to_activate;
     if (typeof ready !== 'boolean') return null;
+    const support = typeof raw.support_url === 'string' ? raw.support_url : '';
     if (ready) {
       const wa = raw.wa_me_url;
       const bot = raw.bot_number_display;
-      const tg = raw.telegram_deep_link;
       if (typeof wa !== 'string' || typeof bot !== 'string') return null;
-      const result = { ready_to_activate: true, wa_me_url: wa, bot_number_display: bot };
-      if (typeof tg === 'string' && tg.length > 0) result.telegram_deep_link = tg;
+      const result = {
+        ready_to_activate: true,
+        wa_me_url: wa,
+        bot_number_display: bot,
+        support_url: support,
+      };
+      if (typeof raw.telegram_deep_link === 'string')
+        result.telegram_deep_link = raw.telegram_deep_link;
       return result;
     }
-    return { ready_to_activate: false };
+    const reason = typeof raw.reason === 'string' ? raw.reason : '';
+    const waMe = typeof raw.wa_me_url === 'string' ? raw.wa_me_url : '';
+    const botD = typeof raw.bot_number_display === 'string' ? raw.bot_number_display : '';
+    return {
+      ready_to_activate: false,
+      reason,
+      wa_me_url: waMe,
+      bot_number_display: botD,
+      support_url: support,
+    };
   };
 
   const fetchTokenState = async (backendUrl, token) => {
@@ -23,10 +44,19 @@
     const base = backendUrl.replace(/\/+$/, '');
     const url = `${base}/api/v1/onboarding/tokens/${encodeURIComponent(trimmed)}/state`;
     let response;
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), 5000);
     try {
-      response = await fetch(url, { method: 'GET', headers: { Accept: 'application/json' } });
-    } catch {
+      response = await fetch(url, {
+        method: 'GET',
+        headers: { Accept: 'application/json' },
+        signal: controller.signal,
+      });
+    } catch (err) {
+      if (err && err.name === 'AbortError') return { ok: false, timeout: true };
       return { ok: false };
+    } finally {
+      clearTimeout(id);
     }
     if (!response.ok) return { ok: false };
     let json;
@@ -44,6 +74,7 @@
     const loading = document.getElementById('activate-loading');
     const ready = document.getElementById('activate-ready');
     const error = document.getElementById('activate-error');
+    const consumed = document.getElementById('activate-consumed');
     if (!loading || !ready || !error) return;
     loading.classList.toggle('hidden', state !== 'loading');
     loading.classList.toggle('flex', state === 'loading');
@@ -51,6 +82,10 @@
     ready.classList.toggle('flex', state === 'ready');
     error.classList.toggle('hidden', state !== 'error');
     error.classList.toggle('flex', state === 'error');
+    if (consumed) {
+      consumed.classList.toggle('hidden', state !== 'consumed');
+      consumed.classList.toggle('flex', state === 'consumed');
+    }
   };
 
   const setSubtitle = (text) => {
@@ -63,10 +98,22 @@
     if (el) el.textContent = text;
   };
 
-  const showError = (msg) => {
+  const showError = (msg, supportUrl) => {
     setSubtitle('Algo deu errado');
     setErrorMessage(msg);
+    if (supportUrl) {
+      const btn = document.getElementById('activate-support-btn');
+      if (btn) {
+        btn.href = supportUrl;
+        btn.classList.remove('hidden');
+      }
+    }
     setView('error');
+  };
+
+  const showErrorByReason = (reason, supportUrl) => {
+    const msg = ERROR_MESSAGES[reason] || 'Não foi possível validar seu acesso.';
+    showError(msg, supportUrl);
   };
 
   const init = async () => {
@@ -87,13 +134,31 @@
 
     const result = await fetchTokenState(backendUrl, token);
     if (!result.ok) {
-      showError('Não foi possível validar seu acesso.');
+      if (result.timeout) {
+        showError(
+          'Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.',
+        );
+      } else {
+        showError('Não foi possível validar seu acesso.');
+      }
       return;
     }
 
     const data = result.data;
+
     if (!data.ready_to_activate) {
-      showError('Não foi possível validar seu acesso.');
+      if (data.reason === 'consumed') {
+        setSubtitle('Sua conta já está ativa!');
+        const waBtn = document.getElementById('activate-consumed-wa-btn');
+        if (waBtn && data.wa_me_url) {
+          waBtn.href = data.wa_me_url;
+          waBtn.classList.remove('hidden');
+          waBtn.classList.add('inline-flex');
+        }
+        setView('consumed');
+        return;
+      }
+      showErrorByReason(data.reason, data.support_url);
       return;
     }
 
@@ -101,7 +166,9 @@
     const tgBtn = document.getElementById('activate-tg-btn');
     const botNumber = document.getElementById('activate-bot-number');
 
-    if (waBtn) waBtn.href = data.wa_me_url;
+    if (waBtn) {
+      waBtn.href = data.wa_me_url;
+    }
     if (botNumber && data.bot_number_display) {
       botNumber.textContent = `WhatsApp do bot: ${data.bot_number_display}`;
     }
@@ -118,6 +185,18 @@
 
     setSubtitle('Tudo certo! Escolha por onde quer começar:');
     setView('ready');
+
+    let remaining = 3;
+    const countEl = document.getElementById('activate-countdown');
+    if (countEl) countEl.textContent = String(remaining);
+    const interval = setInterval(() => {
+      remaining -= 1;
+      if (countEl) countEl.textContent = String(remaining);
+      if (remaining <= 0) {
+        clearInterval(interval);
+        window.location.href = data.wa_me_url;
+      }
+    }, 1000);
   };
 
   void init();
