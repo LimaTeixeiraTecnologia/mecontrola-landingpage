@@ -67,26 +67,27 @@ const imageAlt =
               )}
             </div>
 
-            <figure class="m-0 max-w-[480px] mx-auto md:mx-0">
+            <figure class="m-0 max-w-[460px] mx-auto md:mx-0">
               <img
                 src={imageSrc}
                 alt={imageAlt}
-                width="480"
-                height="480"
+                width="460"
+                height="460"
                 loading="lazy"
                 decoding="async"
+                class="rounded-[24px]"
                 style="display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 80% 90% at 50% 50%, #000 60%, transparent 100%);mask-image:radial-gradient(ellipse 80% 90% at 50% 50%, #000 60%, transparent 100%);"
               />
             </figure>
           </>
         ) : (
           <>
-            <figure class="m-0 max-w-[480px] mx-auto md:mx-0">
+            <figure class="m-0 max-w-[520px] mx-auto md:mx-0">
               <img
                 src={imageSrc}
                 alt={imageAlt}
-                width="480"
-                height="480"
+                width="520"
+                height="520"
                 loading="lazy"
                 decoding="async"
                 class="block w-full h-auto rounded-[24px]"
