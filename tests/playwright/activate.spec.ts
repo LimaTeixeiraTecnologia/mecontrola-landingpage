@@ -6,8 +6,10 @@ test.describe('/activate', () => {
   test('mostra loading e renderiza CTA WhatsApp quando ready_to_activate=true', async ({
     page,
   }) => {
+    // Delay alto o suficiente para que o estado transitório de loading seja
+    // observável de forma confiável em todos os engines (Chromium e WebKit).
     await page.route(BACKEND_PATTERN, async (route) => {
-      await new Promise((resolve) => setTimeout(resolve, 150));
+      await new Promise((resolve) => setTimeout(resolve, 800));
       await route.fulfill({
         status: 200,
         contentType: 'application/json',
