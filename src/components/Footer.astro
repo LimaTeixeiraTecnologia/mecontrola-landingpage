@@ -1,41 +1,29 @@
 ---
-// Footer minimalista — igual ao landing-page-final.html de referência
+import { footer } from '../lib/content';
 ---
 
 <footer class="text-center text-[#888] text-[.85rem] py-[36px] px-5 pb-[44px] font-medium">
   <div class="inline-flex items-center gap-[10px] mb-3">
-    <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
-      <path
-        d="M16 8 H48 A8 8 0 0 1 56 16 V36 A8 8 0 0 1 48 44 H30 L18 56 V44 H16 A8 8 0 0 1 8 36 V16 A8 8 0 0 1 16 8 Z"
-        fill="#0D0D0D"
-        stroke="#C6FF00"
-        stroke-width="3.5"
-        stroke-linejoin="round"></path>
-      <ellipse cx="25" cy="23" rx="3.4" ry="5" fill="#FFFFFF"></ellipse>
-      <path
-        d="M35 21 q4.5 3.2 9 0.2"
-        fill="none"
-        stroke="#C6FF00"
-        stroke-width="3"
-        stroke-linecap="round"></path>
-      <path
-        d="M22 31 q10 9 20 0"
-        fill="none"
-        stroke="#C6FF00"
-        stroke-width="3.4"
-        stroke-linecap="round"></path>
-    </svg>
     <img
-      src="/logo-wordmark.png"
-      alt="MeControla"
-      height="17"
-      style="height:17px;width:auto;display:block;"
-      onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"
+      src="/images/logo-icon.png"
+      alt=""
+      width="26"
+      height="26"
+      class="h-[26px] w-auto block"
+      loading="lazy"
+      decoding="async"
     />
-    <span style="display:none;font-weight:800;font-size:1.05rem;color:#fff"
-      ><span style="color:#fff">Me</span><span style="color:#C6FF00">Controla</span></span
-    >
+    <img
+      src="/images/logo-wordmark.png"
+      alt="MeControla"
+      width="85"
+      height="17"
+      class="h-[17px] w-auto block"
+      loading="lazy"
+      decoding="async"
+    />
   </div>
-  <div>Menos caos. Mais conquistas.</div>
-  <div class="text-[#888] text-[.78rem] mt-[6px]">© MeControla. Todos os direitos reservados.</div>
+  <div>{footer.tagline}</div>
+  <div class="text-[#888] text-[.78rem] mt-[6px]">{footer.legalLine}</div>
+  <div class="text-[#888] text-[.78rem] mt-[4px]">© MeControla. Todos os direitos reservados.</div>
 </footer>

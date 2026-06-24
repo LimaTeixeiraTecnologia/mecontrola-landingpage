@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import MobileStickyBar from '../components/MobileStickyBar.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
-import { INSTAGRAM_URL } from '../lib/content';
+import { INSTAGRAM_URL, LEGAL_NAME } from '../lib/content';
 
 interface Props {
   title: string;
@@ -30,7 +30,7 @@ const organizationNode = {
   url: 'https://mecontrola.app.br',
   email: 'contato@limateixeira.com.br',
   taxID: '52.162.759/0001-74',
-  legalName: '',
+  legalName: LEGAL_NAME,
   sameAs: [INSTAGRAM_URL],
 };
 
@@ -83,7 +83,7 @@ const jsonLd = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <!-- Schema.org JSON-LD (TODO: legalName vazio — preencher antes de campanhas pagas) -->
+    <!-- Schema.org JSON-LD -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class="bg-background text-foreground font-sans antialiased">
