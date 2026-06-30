@@ -30,34 +30,7 @@ test.describe('/activate', () => {
     await expect(waBtn).toBeVisible();
     await expect(waBtn).toHaveAttribute('href', 'https://wa.me/5511936212870?text=ATIVAR%20test');
 
-    const tgBtn = page.locator('#activate-tg-btn');
-    await expect(tgBtn).toBeHidden();
-
     await expect(loading).toBeHidden();
-  });
-
-  test('renderiza ambos CTAs quando telegram_deep_link presente', async ({ page }) => {
-    await page.route(BACKEND_PATTERN, async (route) => {
-      await route.fulfill({
-        status: 200,
-        contentType: 'application/json',
-        body: JSON.stringify({
-          ready_to_activate: true,
-          wa_me_url: 'https://wa.me/5511936212870?text=ATIVAR%20test',
-          bot_number_display: '+55 11 93621-2870',
-          telegram_deep_link: 'https://t.me/mecontrola_bot?start=ATIVAR_test',
-        }),
-      });
-    });
-
-    await page.goto('/activate?token=test');
-
-    const waBtn = page.locator('#activate-wa-btn');
-    const tgBtn = page.locator('#activate-tg-btn');
-
-    await expect(waBtn).toBeVisible();
-    await expect(tgBtn).toBeVisible();
-    await expect(tgBtn).toHaveAttribute('href', 'https://t.me/mecontrola_bot?start=ATIVAR_test');
   });
 
   test('renderiza mensagem de erro quando ready_to_activate=false sem reason', async ({ page }) => {

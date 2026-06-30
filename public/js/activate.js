@@ -1,6 +1,17 @@
 (() => {
   const isRecord = (v) => typeof v === 'object' && v !== null;
 
+  const sendBeacon = (backendUrl, token, eventName) => {
+    const base = backendUrl.replace(/\/+$/, '');
+    const url = `${base}/api/v1/onboarding/tokens/${encodeURIComponent(token)}/opened`;
+    try {
+      navigator.sendBeacon(
+        url,
+        new Blob([JSON.stringify({ event: eventName })], { type: 'application/json' }),
+      );
+    } catch (_) {}
+  };
+
   const ERROR_MESSAGES = {
     expired: 'Seu link de ativação expirou. Fale conosco pelo WhatsApp para receber um novo link.',
     pending: 'Seu pagamento ainda está sendo processado. Aguarde alguns minutos e tente novamente.',
@@ -16,15 +27,12 @@
       const wa = raw.wa_me_url;
       const bot = raw.bot_number_display;
       if (typeof wa !== 'string' || typeof bot !== 'string') return null;
-      const result = {
+      return {
         ready_to_activate: true,
         wa_me_url: wa,
         bot_number_display: bot,
         support_url: support,
       };
-      if (typeof raw.telegram_deep_link === 'string')
-        result.telegram_deep_link = raw.telegram_deep_link;
-      return result;
     }
     const reason = typeof raw.reason === 'string' ? raw.reason : '';
     const waMe = typeof raw.wa_me_url === 'string' ? raw.wa_me_url : '';
@@ -163,28 +171,21 @@
     }
 
     const waBtn = document.getElementById('activate-wa-btn');
-    const tgBtn = document.getElementById('activate-tg-btn');
     const botNumber = document.getElementById('activate-bot-number');
 
     if (waBtn) {
       waBtn.href = data.wa_me_url;
+      waBtn.addEventListener('click', () => sendBeacon(backendUrl, token, 'whatsapp_opened'), {
+        once: true,
+      });
     }
     if (botNumber && data.bot_number_display) {
       botNumber.textContent = `WhatsApp do bot: ${data.bot_number_display}`;
     }
-    if (tgBtn) {
-      if (data.telegram_deep_link) {
-        tgBtn.href = data.telegram_deep_link;
-        tgBtn.classList.remove('hidden');
-        tgBtn.classList.add('inline-flex');
-      } else {
-        tgBtn.classList.remove('inline-flex');
-        tgBtn.classList.add('hidden');
-      }
-    }
 
-    setSubtitle('Tudo certo! Escolha por onde quer começar:');
+    setSubtitle('Tudo certo! Abra o WhatsApp e envie uma mensagem.');
     setView('ready');
+    sendBeacon(backendUrl, token, 'page_opened');
 
     let remaining = 3;
     const countEl = document.getElementById('activate-countdown');
