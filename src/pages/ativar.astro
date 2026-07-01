@@ -16,27 +16,15 @@ const backendUrl = import.meta.env.PUBLIC_BACKEND_URL ?? 'http://localhost:8080'
       data-backend-url={backendUrl}
     >
       <div class="flex flex-col items-center text-center">
-        <svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" class="mb-4">
-          <path
-            d="M16 8 H48 A8 8 0 0 1 56 16 V36 A8 8 0 0 1 48 44 H30 L18 56 V44 H16 A8 8 0 0 1 8 36 V16 A8 8 0 0 1 16 8 Z"
-            fill="#0D0D0D"
-            stroke="#16a34a"
-            stroke-width="3.5"
-            stroke-linejoin="round"></path>
-          <ellipse cx="25" cy="23" rx="3.4" ry="5" fill="#FFFFFF"></ellipse>
-          <path
-            d="M35 21 q4.5 3.2 9 0.2"
-            fill="none"
-            stroke="#16a34a"
-            stroke-width="3"
-            stroke-linecap="round"></path>
-          <path
-            d="M22 31 q10 9 20 0"
-            fill="none"
-            stroke="#16a34a"
-            stroke-width="3.4"
-            stroke-linecap="round"></path>
-        </svg>
+        <img
+          src="/images/logo-icon.png"
+          alt=""
+          width="56"
+          height="56"
+          class="mb-4 h-14 w-auto"
+          loading="eager"
+          decoding="async"
+        />
         <h1 class="text-2xl font-extrabold text-slate-900">Ativar MeControla</h1>
         <p id="activate-subtitle" class="mt-2 text-sm text-slate-600">
           Estamos validando seu acesso...
