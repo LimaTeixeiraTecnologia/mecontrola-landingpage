@@ -55,6 +55,5 @@ tests/playwright/
 ## Placeholders pendentes (obrigatório antes de campanhas pagas)
 
 - `WHATSAPP_URL` — link de redirecionamento para WhatsApp Business
-- `CHECKOUT_URL_MENSAL`, `CHECKOUT_URL_TRIMESTRAL`, `CHECKOUT_URL_ANUAL` — links de pagamento
 - `LEGAL_NAME` — razão social legal da empresa (usado no JSON-LD)
 - `PUBLIC_GA_ID` — ID do Google Analytics 4 (variável de ambiente Cloudflare)

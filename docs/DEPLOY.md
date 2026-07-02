@@ -146,13 +146,10 @@ Alternativa sem rebuild: **Cloudflare Pages → Deployments → (deploy anterior
 Os itens abaixo estão em `src/lib/content.ts` e precisam ser preenchidos antes de qualquer
 campanha paga ou divulgação pública:
 
-| Placeholder               | Descrição                           |
-| ------------------------- | ----------------------------------- |
-| `WHATSAPP_URL`            | URL do WhatsApp Business            |
-| `CHECKOUT_URL_MENSAL`     | URL de checkout do plano mensal     |
-| `CHECKOUT_URL_TRIMESTRAL` | URL de checkout do plano trimestral |
-| `CHECKOUT_URL_ANUAL`      | URL de checkout do plano anual      |
-| `LEGAL_NAME`              | Razão social oficial da empresa     |
+| Placeholder    | Descrição                |
+| -------------- | ------------------------ |
+| `WHATSAPP_URL` | URL do WhatsApp Business |
+| `LEGAL_NAME`   | Razão social oficial     |
 
 ---
 

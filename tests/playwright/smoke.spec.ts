@@ -13,6 +13,14 @@ const EXPECTED_DATA_TRACKS = [
   'cta_mobile_sticky_ver_planos',
 ];
 
+const EXPECTED_CHECKOUT_URLS: Record<string, string> = {
+  plan_monthly_select: 'https://pay.kiwify.com.br/mPlGcoa',
+  plan_quarterly_select: 'https://pay.kiwify.com.br/IAG8RlG',
+  plan_yearly_select: 'https://pay.kiwify.com.br/UrnUAXi',
+};
+
+const INVALID_CHECKOUT_PATTERNS = ['#', 'ocPt7sv', 'Sh2upAU', 'HquleKA'];
+
 test.describe('Smoke', () => {
   test('GET / retorna 200', async ({ page }) => {
     const response = await page.goto('/');
@@ -58,6 +66,22 @@ test.describe('Smoke', () => {
     for (const track of EXPECTED_DATA_TRACKS) {
       const el = page.locator(`[data-track="${track}"]`);
       await expect(el, `data-track="${track}" não encontrado`).toBeAttached();
+    }
+  });
+
+  test('links de checkout apontam para as URLs de produção', async ({ page }) => {
+    await page.goto('/');
+    for (const [track, expectedUrl] of Object.entries(EXPECTED_CHECKOUT_URLS)) {
+      const el = page.locator(`[data-track="${track}"]`);
+      await expect(el, `data-track="${track}" não encontrado`).toBeAttached();
+      await expect(el, `href de ${track} deve ser ${expectedUrl}`).toHaveAttribute(
+        'href',
+        expectedUrl,
+      );
+      const href = await el.getAttribute('href');
+      for (const invalid of INVALID_CHECKOUT_PATTERNS) {
+        expect(href).not.toContain(invalid);
+      }
     }
   });
 

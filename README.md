@@ -18,9 +18,6 @@ Landing page institucional do MeControla, construída com Astro 5 + Tailwind v4 
 ## Placeholders pendentes (obrigatório antes de campanhas pagas)
 
 - `WHATSAPP_URL` em `src/lib/content.ts` — URL real do WhatsApp Business
-- `CHECKOUT_URL_MENSAL` em `src/lib/content.ts` — URL de checkout plano mensal
-- `CHECKOUT_URL_TRIMESTRAL` em `src/lib/content.ts` — URL de checkout plano trimestral
-- `CHECKOUT_URL_ANUAL` em `src/lib/content.ts` — URL de checkout plano anual
 - `LEGAL_NAME` em `src/lib/content.ts` — Razão social oficial
 
 ## LGPD / Consent
