@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CNPJ, CONTACT_EMAIL, LEGAL_NAME, plans } from '../lib/content';
+
+const lastUpdated = '10 de agosto de 2026';
+
+const planLines = plans
+  .map(
+    (plan) =>
+      `${plan.name} (${plan.priceLabel}${plan.periodLabel}${plan.equiv ? `, ${plan.equiv}` : ''})`,
+  )
+  .join('; ');
+
+const sections = [
+  {
+    title: '1. Quem somos',
+    body: `${LEGAL_NAME}, com sede em Santana de Parnaíba, SP — Brasil, inscrita no CNPJ ${CNPJ}, é a responsável pelo desenvolvimento e operação do MeControla. Estes Termos de Serviço regulam a contratação e o uso do MeControla pelo site https://mecontrola.app.br e pelo canal oficial de WhatsApp vinculado ao serviço.`,
+  },
+  {
+    title: '2. O que é o MeControla',
+    body: 'O MeControla é um serviço de apoio à organização financeira pessoal, oferecido por meio de conversa em um número oficial de WhatsApp. Não é necessário baixar aplicativo: o acesso ocorre pelo próprio WhatsApp do usuário, após a contratação de um plano.',
+  },
+  {
+    title: '3. Contratação e planos',
+    body: `A contratação ocorre pela escolha de um dos planos disponíveis no site (${planLines}) e pelo redirecionamento para o checkout do parceiro de pagamento Kiwify. A confirmação da compra e a liberação do acesso dependem da aprovação do pagamento pelo parceiro de checkout.`,
+  },
+  {
+    title: '4. Pagamento',
+    body: 'O processamento de pagamentos, formas de pagamento disponíveis (como PIX e cartão) e emissão de comprovantes são realizados pela Kiwify, conforme os termos e políticas próprios dessa plataforma. O MeControla não armazena dados completos de cartão de pagamento.',
+  },
+  {
+    title: '5. Renovação, atraso e cancelamento',
+    body: 'Planos recorrentes são renovados automaticamente ao fim de cada período contratado, salvo cancelamento prévio pelo usuário diretamente no parceiro de checkout ou pelo canal de contato desta página. Em caso de falha na cobrança, o acesso pode ser mantido por um período de carência de até 3 (três) dias corridos a partir da identificação do atraso; encerrada a carência sem regularização, o acesso é suspenso até a confirmação de novo pagamento.',
+  },
+  {
+    title: '6. Direito de arrependimento',
+    body: 'Nos termos do artigo 49 do Código de Defesa do Consumidor, o usuário que contratar o MeControla fora do estabelecimento comercial (compra online) pode exercer o direito de arrependimento em até 7 (sete) dias corridos a contar da contratação, mediante solicitação ao canal de contato informado nesta página, com direito à devolução dos valores pagos.',
+  },
+  {
+    title: '7. Uso do WhatsApp',
+    body: 'O MeControla opera por meio da API oficial do WhatsApp Business, sujeita também às políticas e aos termos de uso da Meta e do WhatsApp. A interrupção, indisponibilidade ou alteração de funcionalidades da plataforma de mensageria por terceiros pode afetar a prestação do serviço, sem que isso configure descumprimento destes Termos pelo MeControla.',
+  },
+  {
+    title: '8. Responsabilidades do usuário',
+    body: 'O usuário é responsável por manter a titularidade e o controle do número de WhatsApp vinculado à sua conta, por fornecer informações verdadeiras sobre suas finanças e por utilizar o serviço para fins pessoais e lícitos. O uso indevido, fraudulento ou que viole a lei pode levar à suspensão do acesso.',
+  },
+  {
+    title: '9. Natureza do serviço e limitação de responsabilidade',
+    body: 'O MeControla é uma ferramenta de apoio à organização financeira pessoal e não constitui consultoria financeira, contábil, de investimentos ou tributária profissional. As decisões financeiras tomadas com base nas informações e interações do serviço são de responsabilidade exclusiva do usuário.',
+  },
+  {
+    title: '10. Propriedade intelectual',
+    body: 'A marca MeControla, o conteúdo do site, os textos, imagens e demais elementos visuais são de titularidade da empresa responsável ou de seus licenciantes, sendo vedada a reprodução não autorizada.',
+  },
+  {
+    title: '11. Alterações destes Termos',
+    body: 'Estes Termos podem ser atualizados para refletir mudanças legais, operacionais ou de produto. A versão vigente é sempre a publicada nesta mesma URL, com a respectiva data de atualização.',
+  },
+  {
+    title: '12. Legislação aplicável e foro',
+    body: 'Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da comarca de Santana de Parnaíba, SP, para dirimir quaisquer controvérsias, ressalvado o foro de domicílio do consumidor quando aplicável por lei.',
+  },
+  {
+    title: '13. Contato',
+    body: `Dúvidas sobre estes Termos de Serviço podem ser encaminhadas para ${CONTACT_EMAIL}.`,
+  },
+];
+---
+
+<Layout
+  title="Termos de Serviço — MeControla"
+  description="Termos de Serviço do MeControla: contratação, planos, pagamento, cancelamento e uso do serviço via WhatsApp."
+  canonical="https://mecontrola.app.br/termos-de-servico/"
+>
+  <section class="px-5 py-16 md:py-24">
+    <div class="mx-auto max-w-3xl">
+      <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-primary">
+        Termos de Serviço
+      </p>
+      <h1 class="mb-6 text-3xl font-extrabold text-foreground md:text-5xl">Termos de Serviço</h1>
+      <p class="mb-10 text-base font-medium leading-relaxed text-muted-foreground md:text-lg">
+        Estes Termos explicam, de forma objetiva, as condições de contratação e uso do MeControla.
+      </p>
+
+      <div class="mb-10 rounded-lg border border-border bg-card p-5 text-card-foreground">
+        <p class="text-sm font-semibold text-foreground">Última atualização: {lastUpdated}</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Esta URL é a referência pública dos Termos de Serviço do MeControla.
+        </p>
+        <div class="mt-4 space-y-1 text-sm leading-relaxed text-muted-foreground">
+          <p class="font-semibold text-foreground">{LEGAL_NAME}</p>
+          <p>Santana de Parnaíba, SP — Brasil</p>
+          <p>CNPJ: {CNPJ}</p>
+          <p>
+            Contato: <a
+              class="underline underline-offset-4 hover:text-primary"
+              href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        {
+          sections.map((section) => {
+            const sectionId = section.title
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replaceAll('.', '')
+              .replaceAll(' ', '-');
+
+            return (
+              <section aria-labelledby={sectionId}>
+                <h2 id={sectionId} class="mb-3 text-xl font-extrabold text-foreground md:text-2xl">
+                  {section.title}
+                </h2>
+                <p class="text-sm font-medium leading-relaxed text-muted-foreground md:text-base">
+                  {section.body}
+                </p>
+              </section>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

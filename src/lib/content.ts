@@ -135,7 +135,7 @@ export const CHECKOUT_URL_ANUAL = 'https://pay.kiwify.com.br/UrnUAXi';
 export const CONTACT_EMAIL = 'contato@limateixeira.com.br';
 export const INSTAGRAM_URL = 'https://www.instagram.com/mecontrola/';
 export const CNPJ = '52.162.759/0001-74';
-export const LEGAL_NAME = 'Lima Teixeira Tecnologia LTDA';
+export const LEGAL_NAME = 'Lima Teixeira Desenvolvimento e Tecnologia LTDA';
 
 // ---------------------------------------------------------------------------
 // HEADER — <header> / .nav · data-track="cta_header_ver_planos"

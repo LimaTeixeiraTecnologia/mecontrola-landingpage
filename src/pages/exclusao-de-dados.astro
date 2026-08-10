@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CNPJ, CONTACT_EMAIL, LEGAL_NAME } from '../lib/content';
+
+const lastUpdated = '10 de agosto de 2026';
+
+const sections = [
+  {
+    title: '1. Quem processa esta solicitação',
+    body: `${LEGAL_NAME}, com sede em Santana de Parnaíba, SP — Brasil, inscrita no CNPJ ${CNPJ}, é a responsável pelo tratamento dos dados pessoais do MeControla e pelo atendimento de solicitações de exclusão de dados.`,
+  },
+  {
+    title: '2. Como solicitar a exclusão dos seus dados',
+    body: `Para solicitar a exclusão dos seus dados pessoais tratados pelo MeControla, envie um e-mail para ${CONTACT_EMAIL} a partir do endereço de e-mail ou do número de WhatsApp vinculado à sua conta, informando claramente o pedido de exclusão. Podemos solicitar informações adicionais razoáveis para confirmar sua identidade antes de processar o pedido.`,
+  },
+  {
+    title: '3. O que acontece após a solicitação',
+    body: 'A solicitação é analisada e processada manualmente pela equipe responsável. Sua conta é marcada como excluída e deixa de ser utilizada para qualquer finalidade de atendimento, envio de mensagens ou processamento futuro. Os registros de autenticação vinculados à sua conta são anonimizados como parte desse processamento.',
+  },
+  {
+    title: '4. Prazo de atendimento',
+    body: 'Buscamos confirmar o recebimento da solicitação e concluir o processamento em prazo razoável, observado o disposto na Lei Geral de Proteção de Dados (LGPD). Caso haja necessidade de mais tempo em razão de volume ou complexidade do pedido, você será informado sobre o andamento pelo mesmo canal de contato.',
+  },
+  {
+    title: '5. Dados que podem ser retidos após a exclusão',
+    body: 'Mesmo após a exclusão da conta, podemos manter, pelo prazo exigido por lei, dados necessários para cumprimento de obrigação legal ou regulatória, como registros fiscais e de pagamento relacionados à contratação do serviço, e para exercício regular de direitos em eventual disputa, nos termos do artigo 16 da LGPD. Esses dados retidos não são utilizados para nenhuma outra finalidade além da exigida por lei.',
+  },
+  {
+    title: '6. Relação com o WhatsApp e a Meta',
+    body: 'A exclusão da sua conta no MeControla não exclui automaticamente o seu histórico de conversas armazenado no próprio aplicativo WhatsApp do seu celular, nem dados tratados diretamente pela Meta como operadora da plataforma de mensageria. Para gerenciar seus dados diretamente com a Meta/WhatsApp, consulte os canais oficiais de privacidade da própria Meta.',
+  },
+  {
+    title: '7. Outros direitos previstos na LGPD',
+    body: `Além da exclusão, você pode solicitar confirmação da existência de tratamento, acesso, correção, portabilidade e demais direitos previstos na LGPD pelo mesmo canal de contato, ${CONTACT_EMAIL}. Mais detalhes sobre o tratamento de dados do MeControla estão na `,
+    link: { label: 'Política de Privacidade', href: '/politica-de-privacidade/' },
+    tail: '.',
+  },
+  {
+    title: '8. Atualizações desta página',
+    body: 'Esta página pode ser atualizada para refletir mudanças legais, operacionais ou de produto. A versão vigente é sempre a publicada nesta mesma URL, com a respectiva data de atualização.',
+  },
+];
+---
+
+<Layout
+  title="Exclusão de Dados — MeControla"
+  description="Instruções para solicitar a exclusão dos seus dados pessoais tratados pelo MeControla."
+  canonical="https://mecontrola.app.br/exclusao-de-dados/"
+>
+  <section class="px-5 py-16 md:py-24">
+    <div class="mx-auto max-w-3xl">
+      <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-primary">LGPD</p>
+      <h1 class="mb-6 text-3xl font-extrabold text-foreground md:text-5xl">Exclusão de Dados</h1>
+      <p class="mb-10 text-base font-medium leading-relaxed text-muted-foreground md:text-lg">
+        Instruções objetivas para solicitar a exclusão dos seus dados pessoais tratados pelo
+        MeControla.
+      </p>
+
+      <div class="mb-10 rounded-lg border border-border bg-card p-5 text-card-foreground">
+        <p class="text-sm font-semibold text-foreground">Última atualização: {lastUpdated}</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Esta URL é a referência pública das instruções de exclusão de dados do MeControla.
+        </p>
+        <div class="mt-4 space-y-1 text-sm leading-relaxed text-muted-foreground">
+          <p class="font-semibold text-foreground">{LEGAL_NAME}</p>
+          <p>Santana de Parnaíba, SP — Brasil</p>
+          <p>CNPJ: {CNPJ}</p>
+          <p>
+            Solicitação de exclusão: <a
+              class="underline underline-offset-4 hover:text-primary"
+              href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        {
+          sections.map((section) => {
+            const sectionId = section.title
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replaceAll('.', '')
+              .replaceAll(' ', '-');
+
+            return (
+              <section aria-labelledby={sectionId}>
+                <h2 id={sectionId} class="mb-3 text-xl font-extrabold text-foreground md:text-2xl">
+                  {section.title}
+                </h2>
+                <p class="text-sm font-medium leading-relaxed text-muted-foreground md:text-base">
+                  {section.body}
+                  {section.link && (
+                    <a
+                      class="underline underline-offset-4 hover:text-primary"
+                      href={section.link.href}
+                    >
+                      {section.link.label}
+                    </a>
+                  )}
+                  {section.tail}
+                </p>
+              </section>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
