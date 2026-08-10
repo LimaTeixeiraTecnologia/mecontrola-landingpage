@@ -1,4 +1,20 @@
 import { test, expect } from '@playwright/test';
+import * as fs from 'fs';
+import * as path from 'path';
+
+const APP_ICON_PATH = path.join(process.cwd(), 'public', 'app-icon.png');
+const BLOCKING_PRIVACY_MARKERS = ['TODO_PRIVACY_CONTENT', 'TODO_LEGAL_REVIEW'];
+
+function readPngDimensions(filePath: string) {
+  const buffer = fs.readFileSync(filePath);
+  const pngSignature = '89504e470d0a1a0a';
+  expect(buffer.subarray(0, 8).toString('hex')).toBe(pngSignature);
+
+  return {
+    width: buffer.readUInt32BE(16),
+    height: buffer.readUInt32BE(20),
+  };
+}
 
 test.describe('SEO técnico', () => {
   test('title e meta description presentes', async ({ page }) => {
@@ -68,6 +84,13 @@ test.describe('SEO técnico', () => {
     expect(body).toContain('sitemap');
   });
 
+  test('/sitemap-0.xml inclui política de privacidade', async ({ page }) => {
+    const response = await page.goto('/sitemap-0.xml');
+    expect(response?.status()).toBe(200);
+    const body = await response!.text();
+    expect(body).toContain('https://mecontrola.app.br/politica-de-privacidade/');
+  });
+
   test('/robots.txt retorna 200 com Sitemap correto', async ({ page }) => {
     const response = await page.goto('/robots.txt');
     expect(response?.status()).toBe(200);
@@ -80,6 +103,57 @@ test.describe('SEO técnico', () => {
     expect(response?.status()).toBe(404);
     const cta = page.locator('a', { hasText: /voltar/i });
     await expect(cta).toBeAttached();
+  });
+
+  test('ícone PNG do app atende requisitos da plataforma', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('link[rel="icon"][type="image/png"]')).toHaveAttribute(
+      'href',
+      '/app-icon.png',
+    );
+    await expect(page.locator('link[rel="apple-touch-icon"]')).toHaveAttribute(
+      'href',
+      '/app-icon.png',
+    );
+
+    const stat = fs.statSync(APP_ICON_PATH);
+    expect(stat.size).toBeGreaterThan(0);
+    expect(stat.size).toBeLessThanOrEqual(5 * 1024 * 1024);
+
+    const dimensions = readPngDimensions(APP_ICON_PATH);
+    expect(dimensions.width).toBe(dimensions.height);
+    expect(dimensions.width).toBeGreaterThanOrEqual(512);
+    expect(dimensions.width).toBeLessThanOrEqual(1024);
+  });
+
+  test('/politica-de-privacidade/ retorna 200 e tem canonical público', async ({ page }) => {
+    const response = await page.goto('/politica-de-privacidade/');
+    expect(response?.status()).toBe(200);
+    await expect(page.locator('h1')).toHaveText('Política de Privacidade');
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      'href',
+      'https://mecontrola.app.br/politica-de-privacidade/',
+    );
+  });
+
+  test('footer expõe link rastreável para política de privacidade', async ({ page }) => {
+    await page.goto('/');
+    const link = page.locator('footer a', { hasText: 'Política de Privacidade' });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', '/politica-de-privacidade/');
+  });
+
+  test('política de privacidade não pode ir para produção com marcadores bloqueantes', async ({
+    page,
+  }) => {
+    await page.goto('/politica-de-privacidade/');
+    const bodyText = (await page.locator('body').innerText()).trim();
+
+    for (const marker of BLOCKING_PRIVACY_MARKERS) {
+      expect(bodyText, `${marker} precisa ser substituído antes do uso em produção`).not.toContain(
+        marker,
+      );
+    }
   });
 });
 

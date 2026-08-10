@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CNPJ, CONTACT_EMAIL, LEGAL_NAME } from '../lib/content';
+
+const lastUpdated = '10 de agosto de 2026';
+
+const sections = [
+  {
+    title: '1. Quem somos',
+    body: `${LEGAL_NAME}, com sede em São Paulo, SP — Brasil, inscrita no CNPJ ${CNPJ}, responsável pelo desenvolvimento do MeControla por meio do site https://limateixeira.com.br/, é a responsável pelo tratamento dos dados pessoais relacionados ao site e à operação do MeControla. Para assuntos de privacidade e exercício de direitos previstos na LGPD, o canal de contato disponibilizado nesta política é ${CONTACT_EMAIL}.`,
+  },
+  {
+    title: '2. Quando esta política se aplica',
+    body: 'Esta política se aplica à navegação no site mecontrola.app.br, ao fluxo de ativação de acesso, ao encaminhamento para checkout, ao atendimento e operação do MeControla por canais digitais, inclusive quando o contato ocorre por links oficiais para WhatsApp.',
+  },
+  {
+    title: '3. Dados que podemos tratar',
+    body: 'Podemos tratar dados de identificação e contato informados por você, dados necessários para atendimento e ativação de acesso, dados técnicos de navegação e dispositivo, registros de interação com páginas e botões do site, preferência de consentimento de cookies e dados necessários para direcionar você ao checkout ou ao canal oficial de atendimento.',
+  },
+  {
+    title: '4. Como os dados são coletados',
+    body: 'Os dados podem ser coletados diretamente quando você navega no site, clica em links de planos, checkout, ativação e suporte, informa dados em fluxos operacionais do MeControla ou interage com parceiros necessários para a prestação do serviço. Métricas de uso com Google Analytics 4 só são carregadas quando você aceita cookies de medição.',
+  },
+  {
+    title: '5. Finalidades de uso',
+    body: 'Usamos os dados para disponibilizar o site, viabilizar ativação e uso do serviço, responder solicitações, encaminhar você ao checkout, prevenir abuso técnico, registrar consentimento, cumprir obrigações legais e melhorar a experiência e o desempenho do produto com base em métricas agregadas quando houver consentimento aplicável.',
+  },
+  {
+    title: '6. Bases legais',
+    body: 'O tratamento pode ocorrer, conforme o caso, para execução de procedimentos preliminares relacionados à contratação do serviço, execução contratual, cumprimento de obrigação legal ou regulatória, exercício regular de direitos, atendimento de interesses legítimos relacionados à operação segura do negócio e, quando exigido, com base no seu consentimento.',
+  },
+  {
+    title: '7. Compartilhamento com terceiros',
+    body: 'Os dados podem ser compartilhados com operadores e provedores necessários para a operação do MeControla, como infraestrutura e hospedagem, serviços de mensageria e comunicação, plataforma de checkout e pagamento, backend de ativação e analytics condicionado a consentimento. O site direciona compras para a Kiwify e contatos para canais oficiais de WhatsApp. Dados de pagamento são processados no ambiente do parceiro de checkout, conforme os termos e a política dele.',
+  },
+  {
+    title: '8. Cookies e tecnologias semelhantes',
+    body: 'O site utiliza recursos técnicos necessários para funcionamento básico e pode armazenar a sua escolha de consentimento em cookies ou armazenamento local do navegador. Tecnologias de medição e analytics não são ativadas antes da sua manifestação positiva. Você pode alterar ou remover permissões de cookies pelos controles do navegador, observadas eventuais limitações funcionais.',
+  },
+  {
+    title: '9. Retenção e segurança',
+    body: 'Mantemos dados pessoais pelo tempo necessário para cumprir as finalidades desta política, atender exigências legais, regulatórias, contratuais e resguardar direitos. Adotamos medidas técnicas e organizacionais compatíveis com a natureza do serviço para reduzir acesso não autorizado, uso indevido, perda e alteração indevida de informações.',
+  },
+  {
+    title: '10. Seus direitos',
+    body: 'Nos termos da LGPD e conforme aplicável, você pode solicitar confirmação da existência de tratamento, acesso, correção, anonimização, bloqueio, eliminação, portabilidade, informação sobre compartilhamento, revogação do consentimento e revisão de decisões quando cabível. Também pode pedir informações sobre os critérios aplicados ao tratamento de seus dados.',
+  },
+  {
+    title: '11. Como exercer seus direitos',
+    body: `Para exercer direitos relacionados a dados pessoais, envie sua solicitação para ${CONTACT_EMAIL}. Podemos pedir informações adicionais razoáveis para confirmar sua identidade e viabilizar o atendimento seguro da solicitação.`,
+  },
+  {
+    title: '12. Atualizações desta política',
+    body: 'Esta política pode ser atualizada para refletir mudanças legais, operacionais ou de produto. A versão vigente será sempre a publicada nesta mesma URL, com a respectiva data de atualização.',
+  },
+];
+---
+
+<Layout
+  title="Política de Privacidade — MeControla"
+  description="Política de Privacidade do MeControla para o site, ativação de acesso, checkout e operação do serviço."
+  canonical="https://mecontrola.app.br/politica-de-privacidade/"
+>
+  <section class="px-5 py-16 md:py-24">
+    <div class="mx-auto max-w-3xl">
+      <p class="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-primary">LGPD</p>
+      <h1 class="mb-6 text-3xl font-extrabold text-foreground md:text-5xl">
+        Política de Privacidade
+      </h1>
+      <p class="mb-10 text-base font-medium leading-relaxed text-muted-foreground md:text-lg">
+        Esta política explica, de forma objetiva, como o MeControla trata dados pessoais no site,
+        nos fluxos de ativação e nos canais oficiais usados para operação do serviço.
+      </p>
+
+      <div class="mb-10 rounded-lg border border-border bg-card p-5 text-card-foreground">
+        <p class="text-sm font-semibold text-foreground">Última atualização: {lastUpdated}</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Esta URL é a referência pública da política de privacidade do MeControla.
+        </p>
+        <div class="mt-4 space-y-1 text-sm leading-relaxed text-muted-foreground">
+          <p class="font-semibold text-foreground">Empresa</p>
+          <p>São Paulo, SP — Brasil</p>
+          <p>CNPJ: {CNPJ}</p>
+          <p>
+            Desenvolvimento: <a
+              class="underline underline-offset-4 hover:text-primary"
+              href="https://limateixeira.com.br/"
+              rel="noopener noreferrer"
+              target="_blank">limateixeira.com.br</a
+            >
+          </p>
+          <p>Política de Privacidade LGPD</p>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        {
+          sections.map((section) => {
+            const sectionId = section.title
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replaceAll('.', '')
+              .replaceAll(' ', '-');
+
+            return (
+              <section aria-labelledby={sectionId}>
+                <h2 id={sectionId} class="mb-3 text-xl font-extrabold text-foreground md:text-2xl">
+                  {section.title}
+                </h2>
+                <p class="text-sm font-medium leading-relaxed text-muted-foreground md:text-base">
+                  {section.body}
+                </p>
+              </section>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
