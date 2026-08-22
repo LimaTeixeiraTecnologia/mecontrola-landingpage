@@ -95,6 +95,10 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface TrustContent {
+  body: string;
+}
+
 export interface MascotStripGoalContent {
   image: string;
   tag: string;
@@ -249,6 +253,13 @@ export const forWhom: ForWhomContent = {
 };
 
 // ---------------------------------------------------------------------------
+// CONFIANÇA — <section class="trust"> · bloco curto antes dos planos
+// ---------------------------------------------------------------------------
+export const trust: TrustContent = {
+  body: 'Seus dados seguem a Lei Geral de Proteção de Dados (LGPD). Você não precisa conectar sua conta bancária: só conta o que aconteceu, e o MeControla organiza a partir da conversa.',
+};
+
+// ---------------------------------------------------------------------------
 // PLANOS — <section id="planos"> · .plans
 // ---------------------------------------------------------------------------
 export const plans: Plan[] = [
@@ -315,6 +326,26 @@ export const faq: FaqItem[] = [
     question: 'Isso é para quem entende de finanças?',
     answer:
       'Não. O MeControla foi pensado justamente para quem quer organizar a vida financeira sem virar especialista no assunto.',
+  },
+  {
+    question: 'Como cancelo minha assinatura?',
+    answer:
+      'Você pode cancelar quando quiser, diretamente no parceiro de pagamento ou pelo nosso canal de contato. Se for dentro de 7 dias da contratação, você também tem direito à devolução integral, conforme o Código de Defesa do Consumidor.',
+  },
+  {
+    question: 'Preciso conectar minha conta bancária?',
+    answer:
+      'Não. Você conta o que aconteceu (um gasto, um recebimento, uma compra no cartão) em uma mensagem, e o MeControla organiza a partir da conversa.',
+  },
+  {
+    question: 'Como o MeControla trata meus dados?',
+    answer:
+      'Seus dados seguem a Lei Geral de Proteção de Dados (LGPD). Você pode saber exatamente o que tratamos e pedir acesso, correção ou exclusão a qualquer momento pela nossa Política de Privacidade.',
+  },
+  {
+    question: 'E se eu esquecer de registrar um gasto?',
+    answer:
+      'Sem problema. Você pode registrar quando lembrar, e também consultar, corrigir ou remover um lançamento a qualquer momento.',
   },
 ];
 
