@@ -1,6 +1,6 @@
 ---
 // WhatsApp brand colors used as arbitrary values — not part of MeControla design system
-// WA palette: #0B141A (bg), #1F2C33 (header/incoming), #005C4B (outgoing), #00A884 (online)
+// Same phone-chrome structure as hero/WhatsAppMockup.astro, different conversation.
 ---
 
 <div
@@ -17,21 +17,18 @@
       class="bg-[#1F2C33] flex justify-between items-center px-[22px] pt-[10px] pb-1 text-white text-[0.78rem] font-semibold"
       aria-hidden="true"
     >
-      <span>9:41</span>
+      <span>10:21</span>
       <span class="inline-flex items-center gap-[5px]">
-        <!-- signal -->
         <svg viewBox="0 0 18 12" width="17" height="11" aria-hidden="true">
           <rect x="0" y="6" width="3" height="6" rx="1" fill="#fff"></rect>
           <rect x="5" y="3" width="3" height="9" rx="1" fill="#fff"></rect>
           <rect x="10" y="0" width="3" height="12" rx="1" fill="#fff"></rect>
         </svg>
-        <!-- wifi -->
         <svg viewBox="0 0 16 12" width="15" height="11" aria-hidden="true">
           <path
             d="M8 11.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm0-4.4a3.4 3.4 0 0 1 2.4 1l1.4-1.5a5.4 5.4 0 0 0-7.6 0l1.4 1.5A3.4 3.4 0 0 1 8 7.1Zm0-4.5a7.6 7.6 0 0 1 5.4 2.2l1.4-1.5a9.6 9.6 0 0 0-13.6 0l1.4 1.5A7.6 7.6 0 0 1 8 2.6Z"
             fill="#fff"></path>
         </svg>
-        <!-- battery -->
         <svg viewBox="0 0 26 12" width="24" height="11" aria-hidden="true">
           <rect
             x="0.5"
@@ -51,7 +48,6 @@
     <!-- WhatsApp Header Bar -->
     <div class="bg-[#1F2C33] flex items-center gap-[10px] px-3 pt-[6px] pb-3">
       <span class="text-[#cfd8dc] text-[1.4rem] leading-none px-[2px]" aria-hidden="true">‹</span>
-      <!-- Avatar: mascot face -->
       <div
         class="w-10 h-10 rounded-full bg-[#0D0D0D] border-[1.5px] border-[#C6FF00] grid place-items-center overflow-hidden flex-none"
       >
@@ -61,7 +57,7 @@
           width="32"
           height="32"
           class="w-[78%] h-[78%] object-contain block"
-          loading="eager"
+          loading="lazy"
           decoding="async"
         />
       </div>
@@ -105,7 +101,6 @@
       class="px-[14px] py-[18px] flex flex-col gap-[10px] min-h-[340px] bg-[#0B141A]"
       style="background-image: radial-gradient(rgba(255,255,255,.025) 1px, transparent 1px); background-size: 18px 18px;"
     >
-      <!-- Date pill -->
       <div
         class="self-center bg-[rgba(31,44,51,.85)] text-[#cfd8dc] text-[0.7rem] font-semibold px-3 py-[5px] rounded-lg my-1"
       >
@@ -117,9 +112,9 @@
         data-step="out1"
         class="self-end max-w-[80%] bg-[#005C4B] text-white px-3 py-[9px] rounded-2xl rounded-tr-[4px] text-[0.86rem] font-medium leading-[1.35]"
       >
-        Gastei 10 reais na padaria no cartão
+        Quanto ainda posso gastar na praia?
         <div class="flex items-center justify-end gap-[5px] mt-[3px]">
-          <span class="text-[0.62rem] text-[rgba(255,255,255,.5)]">15:27</span>
+          <span class="text-[0.62rem] text-[rgba(255,255,255,.5)]">10:21</span>
           <span class="text-[0.7rem] text-[#53bdeb] tracking-[-2px] font-bold">✓✓</span>
         </div>
       </div>
@@ -147,43 +142,19 @@
         data-step="in1"
         class="self-start max-w-[90%] bg-[#1F2C33] text-white px-[14px] pt-3 pb-[9px] rounded-2xl rounded-tl-[4px] text-[0.83rem]"
       >
-        <div class="flex justify-between items-baseline gap-[14px] py-[3px]">
-          <span style="color:#A9B3BB" class="font-medium">Valor</span>
-          <span class="text-white font-bold whitespace-nowrap">R$ 10,00</span>
-        </div>
-        <div class="flex justify-between items-baseline gap-[14px] py-[3px]">
-          <span style="color:#A9B3BB" class="font-medium">Categoria</span>
-          <span class="text-white font-bold whitespace-nowrap">Custo Fixo</span>
-        </div>
-        <div class="flex justify-between items-baseline gap-[14px] py-[3px]">
-          <span style="color:#A9B3BB" class="font-medium">Subcategoria</span>
-          <span class="text-white font-bold whitespace-nowrap">Padaria</span>
-        </div>
-        <div class="flex justify-between items-baseline gap-[14px] py-[3px]">
-          <span style="color:#A9B3BB" class="font-medium">Pagamento</span>
-          <span class="text-white font-bold whitespace-nowrap">Crédito</span>
-        </div>
-        <div class="flex justify-between items-baseline gap-[14px] py-[3px]">
-          <span style="color:#A9B3BB" class="font-medium">Cartão</span>
-          <span class="text-white font-bold whitespace-nowrap">Nubank</span>
-        </div>
-        <p class="mt-[10px] text-[0.82rem] leading-[1.45]" style="color:#E9EDEF">
-          Posso registrar?
+        <p class="mb-2 leading-[1.45]" style="color:#E9EDEF">
+          Aqui está o resumo do seu orçamento de lazer:
         </p>
-        <div class="flex items-center justify-end gap-[5px] mt-[3px]">
-          <span class="text-[0.62rem] text-[rgba(255,255,255,.5)]">15:27</span>
+        <div class="flex justify-between items-baseline gap-[14px] py-[3px]">
+          <span style="color:#A9B3BB" class="font-medium">Orçamento de lazer</span>
+          <span class="text-white font-bold whitespace-nowrap">R$ 1.000,00</span>
         </div>
-      </div>
-
-      <!-- Outgoing message -->
-      <div
-        data-step="out2"
-        class="self-end max-w-[80%] bg-[#005C4B] text-white px-3 py-[9px] rounded-2xl rounded-tr-[4px] text-[0.86rem] font-medium leading-[1.35]"
-      >
-        Sim
+        <div class="flex justify-between items-baseline gap-[14px] py-[3px]">
+          <span style="color:#A9B3BB" class="font-medium">Gasto até o momento</span>
+          <span class="text-white font-bold whitespace-nowrap">R$ 300,00</span>
+        </div>
         <div class="flex items-center justify-end gap-[5px] mt-[3px]">
-          <span class="text-[0.62rem] text-[rgba(255,255,255,.5)]">15:28</span>
-          <span class="text-[0.7rem] text-[#53bdeb] tracking-[-2px] font-bold">✓✓</span>
+          <span class="text-[0.62rem] text-[rgba(255,255,255,.5)]">10:21</span>
         </div>
       </div>
 
@@ -208,11 +179,19 @@
       <!-- Incoming message -->
       <div
         data-step="in2"
-        class="self-start max-w-[80%] bg-[#1F2C33] text-white px-3 py-[9px] rounded-2xl rounded-tl-[4px] text-[0.86rem] font-medium leading-[1.35]"
+        class="self-start max-w-[90%] bg-[#1F2C33] text-white px-[14px] pt-3 pb-[9px] rounded-2xl rounded-tl-[4px] text-[0.83rem]"
       >
-        Prontinho! ✅ Consistência é o segredo; você está mandando bem! 🙌💚
+        <p class="leading-[1.45]" style="color:#E9EDEF">
+          Você está indo bem, ainda tem R$ 700,00 disponíveis nessa categoria. Aproveite com
+          sabedoria 🏖️
+        </p>
+        <div class="h-px my-2" style="background: rgba(255,255,255,.08)"></div>
+        <div class="flex justify-between items-baseline gap-[14px] py-[3px]">
+          <span style="color:#A9B3BB" class="font-medium">Disponível</span>
+          <span class="font-bold whitespace-nowrap" style="color:#25D366">R$ 700,00</span>
+        </div>
         <div class="flex items-center justify-end gap-[5px] mt-[3px]">
-          <span class="text-[0.62rem] text-[rgba(255,255,255,.5)]">15:28</span>
+          <span class="text-[0.62rem] text-[rgba(255,255,255,.5)]">10:21</span>
         </div>
       </div>
     </div>
@@ -227,7 +206,6 @@
         Mensagem
       </div>
       <span class="text-[1.05rem] opacity-85">📎</span>
-      <!-- bg-primary allowed: mic button color matches neon green in the preview -->
       <span
         class="bg-primary text-primary-foreground w-[34px] h-[34px] rounded-full grid place-items-center text-[0.95rem] flex-none"
         >🎙️</span

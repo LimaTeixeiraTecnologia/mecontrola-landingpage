@@ -1,0 +1,43 @@
+---
+import { founders } from '../../lib/content';
+import Tag from '../ui/Tag.astro';
+
+const imageSrc = `/images/${founders.image}.jpg`;
+---
+
+<section class="bg-[#000] py-[56px]">
+  <div class="max-w-[1080px] mx-auto px-5">
+    <div class="grid grid-cols-1 md:grid-cols-[240px_1fr] items-center gap-8 md:gap-[54px]">
+      <div class="w-[200px] md:w-[240px] mx-auto md:mx-0">
+        <img
+          src={imageSrc}
+          alt="Stefany e Junior, fundadores do MeControla"
+          width="240"
+          height="240"
+          loading="lazy"
+          decoding="async"
+          class="block w-full aspect-square object-cover rounded-full border-[3px] border-primary shadow-[0_20px_50px_rgba(0,0,0,.45)]"
+        />
+      </div>
+
+      <div class="text-center md:text-left">
+        <Tag>{founders.tag}</Tag>
+        <h2
+          class="text-[1.6rem] md:text-[1.9rem] font-extrabold mt-3 mb-[16px]"
+          style="letter-spacing:var(--tracking-tight);line-height:1.15"
+        >
+          {founders.heading}
+        </h2>
+        {
+          founders.quotes.map((quote) => (
+            <p class="text-muted-foreground font-medium mb-[14px]">{quote}</p>
+          ))
+        }
+        <div class="mt-[18px]">
+          <strong class="block text-foreground text-[1rem]">{founders.signatureName}</strong>
+          <span class="text-muted-foreground text-[0.85rem]">{founders.signatureRole}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

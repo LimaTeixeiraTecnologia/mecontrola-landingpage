@@ -110,6 +110,15 @@ export interface FinalCtaContent {
   trackId?: string;
 }
 
+export interface FoundersContent {
+  tag: string;
+  heading: string;
+  quotes: string[];
+  signatureName: string;
+  signatureRole: string;
+  image: string;
+}
+
 export interface FooterContent {
   tagline: string;
   legalLine: string;
@@ -317,6 +326,22 @@ export const mascotStripGoal: MascotStripGoalContent = {
   tag: 'Apoio que guia',
   heading: 'Cada passo organizado vira uma conquista.',
   body: 'O MeControla acompanha sua rotina, sugere o próximo passo na hora certa e comemora junto cada meta que você bate. Do jeito mais simples, sem cobrança e sem ruído.',
+};
+
+// ---------------------------------------------------------------------------
+// FUNDADORES — <section class="founders">
+// ---------------------------------------------------------------------------
+export const founders: FoundersContent = {
+  tag: 'Quem está por trás',
+  heading: 'O MeControla nasceu da vida real.',
+  quotes: [
+    'Não criamos o MeControla porque achamos que todo mundo deveria amar planilhas ou virar especialista em investimentos.',
+    'Ele nasceu porque acreditamos que quem trabalha tanto para ganhar dinheiro merece saber o que esse dinheiro está construindo.',
+    'A tecnologia deveria tornar isso mais simples, sem criar mais uma obrigação na nossa rotina.',
+  ],
+  signatureName: 'Stefany & Junior',
+  signatureRole: 'Fundadores do MeControla',
+  image: 'founders',
 };
 
 // ---------------------------------------------------------------------------

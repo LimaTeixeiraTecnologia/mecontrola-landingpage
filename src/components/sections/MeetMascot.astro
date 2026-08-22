@@ -3,6 +3,7 @@ import type { MeetMascotContent, MascotStripGoalContent } from '../../lib/conten
 import { meetMascot } from '../../lib/content';
 import Button from '../ui/Button.astro';
 import Tag from '../ui/Tag.astro';
+import MeetChatMockup from './meet/MeetChatMockup.astro';
 
 interface Props {
   reverse?: boolean;
@@ -67,32 +68,42 @@ const imageAlt =
               )}
             </div>
 
-            <figure class="m-0 max-w-[460px] mx-auto md:mx-0">
-              <img
-                src={imageSrc}
-                alt={imageAlt}
-                width="460"
-                height="460"
-                loading="lazy"
-                decoding="async"
-                class="rounded-[24px]"
-                style="display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 80% 90% at 50% 50%, #000 60%, transparent 100%);mask-image:radial-gradient(ellipse 80% 90% at 50% 50%, #000 60%, transparent 100%);"
-              />
-            </figure>
+            {isMeetMascot(content) ? (
+              <MeetChatMockup />
+            ) : (
+              <figure class="m-0 max-w-[460px] mx-auto md:mx-0">
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                  width="460"
+                  height="460"
+                  loading="lazy"
+                  decoding="async"
+                  class="rounded-[24px]"
+                  style="display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 80% 90% at 50% 50%, #000 60%, transparent 100%);mask-image:radial-gradient(ellipse 80% 90% at 50% 50%, #000 60%, transparent 100%);"
+                />
+              </figure>
+            )}
           </>
         ) : (
           <>
-            <figure class="m-0 max-w-[520px] mx-auto md:mx-0">
-              <img
-                src={imageSrc}
-                alt={imageAlt}
-                width="520"
-                height="520"
-                loading="lazy"
-                decoding="async"
-                class="block w-full h-auto rounded-[24px]"
-              />
-            </figure>
+            {isMeetMascot(content) ? (
+              <div class="max-w-[460px] mx-auto md:mx-0">
+                <MeetChatMockup />
+              </div>
+            ) : (
+              <figure class="m-0 max-w-[520px] mx-auto md:mx-0">
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                  width="520"
+                  height="520"
+                  loading="lazy"
+                  decoding="async"
+                  class="block w-full h-auto rounded-[24px]"
+                />
+              </figure>
+            )}
 
             <div class="meet-copy">
               <Tag>{content.tag}</Tag>
