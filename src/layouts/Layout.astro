@@ -6,6 +6,21 @@ import MobileStickyBar from '../components/MobileStickyBar.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import { CONTACT_EMAIL, INSTAGRAM_URL, LEGAL_NAME } from '../lib/content';
 
+// Preload das fontes usadas acima da dobra.
+//
+// @fontsource emite font-display: swap, entao o texto pinta com a fonte de fallback e
+// REFLUI quando a Poppins chega. No macOS o fallback tem metricas parecidas e o
+// deslocamento e imperceptivel; no Linux headless do CI o fallback e outro e o bloco
+// inteiro do hero se move — CLS 0.223 contra orcamento de 0.1, deterministico, com o
+// mesmo valor ate a 17a casa decimal entre execucoes.
+//
+// Precarregar em alta prioridade faz a fonte chegar antes da primeira pintura, o que
+// elimina a janela de troca e, com ela, o deslocamento. Os nomes sao hasheados no
+// build, entao a URL vem da importacao de asset, nunca fixada a mao.
+import poppins500 from '@fontsource/poppins/files/poppins-latin-500-normal.woff2?url';
+import poppins600 from '@fontsource/poppins/files/poppins-latin-600-normal.woff2?url';
+import poppins700 from '@fontsource/poppins/files/poppins-latin-700-normal.woff2?url';
+
 interface Props {
   title: string;
   description: string;
@@ -59,6 +74,9 @@ const jsonLd = {
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preload" as="font" type="font/woff2" href={poppins500} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={poppins600} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={poppins700} crossorigin />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0D0D0D" />
     <meta name="description" content={description} />
