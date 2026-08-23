@@ -1,10 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { CNPJ, CONTACT_EMAIL, LEGAL_NAME } from '../lib/content';
+import type { LegalSection } from '../lib/content';
+import {
+  CNPJ,
+  CONTACT_EMAIL,
+  CONTROLLER_ADDRESS,
+  LEGAL_DOCS_VERSION,
+  LEGAL_NAME,
+} from '../lib/content';
 
-const lastUpdated = '10 de agosto de 2026';
+const lastUpdated = '22 de agosto de 2026';
 
-const sections = [
+const sections: LegalSection[] = [
   {
     title: '1. Quem somos',
     body: `${LEGAL_NAME}, com sede em Santana de Parnaíba, SP — Brasil, inscrita no CNPJ ${CNPJ}, responsável pelo desenvolvimento do MeControla por meio do site https://limateixeira.com.br/, é a responsável pelo tratamento dos dados pessoais relacionados ao site e à operação do MeControla. Para assuntos de privacidade e exercício de direitos previstos na LGPD, o canal de contato disponibilizado nesta política é ${CONTACT_EMAIL}.`,
@@ -26,32 +33,88 @@ const sections = [
     body: 'Usamos os dados para disponibilizar o site, viabilizar ativação e uso do serviço, responder solicitações, encaminhar você ao checkout, prevenir abuso técnico, registrar consentimento, cumprir obrigações legais e melhorar a experiência e o desempenho do produto com base em métricas agregadas quando houver consentimento aplicável.',
   },
   {
-    title: '6. Bases legais',
-    body: 'O tratamento pode ocorrer, conforme o caso, para execução de procedimentos preliminares relacionados à contratação do serviço, execução contratual, cumprimento de obrigação legal ou regulatória, exercício regular de direitos, atendimento de interesses legítimos relacionados à operação segura do negócio e, quando exigido, com base no seu consentimento.',
+    title: '6. Bases legais e finalidades de tratamento',
+    body: 'Cada finalidade de tratamento tem uma base legal específica prevista na LGPD. O mapa abaixo mostra, para cada finalidade, qual base legal a ampara — inclusive as afirmações de que "seus dados seguem a LGPD" e de que você pode "pedir acesso, correção ou exclusão a qualquer momento", publicadas em outras páginas do site, encontram aqui o lastro correspondente:',
+    items: [
+      'Operação do serviço e cobrança (ativação, uso do MeControla e cobrança dos planos) — execução de contrato e de procedimentos preliminares relacionados a ele (LGPD, art. 7º, V).',
+      'Obrigações fiscais e de guarda de registros (emissão e retenção de documentos fiscais e de cobrança) — cumprimento de obrigação legal ou regulatória pelo controlador (art. 7º, II).',
+      'Segurança e antifraude (prevenção a abuso técnico e uso indevido do serviço) — legítimo interesse do controlador (art. 7º, IX).',
+      'Marketing (mensagens promocionais sobre o MeControla) — consentimento específico, destacado e apartado do titular, revogável a qualquer momento (art. 7º, I; art. 8º, §1º e §4º).',
+      'Medição de audiência via cookies (Google Analytics 4) — consentimento específico do titular, coletado no banner de cookies antes do carregamento de qualquer script de medição e com informação prévia e destacada de que o aceite envia dados de navegação ao Google LLC, nos Estados Unidos (art. 7º, I; art. 33, VIII).',
+    ],
   },
   {
     title: '7. Compartilhamento com terceiros',
     body: 'Os dados podem ser compartilhados com operadores e provedores necessários para a operação do MeControla, como infraestrutura e hospedagem, serviços de mensageria e comunicação, plataforma de checkout e pagamento, backend de ativação e analytics condicionado a consentimento. O site direciona compras para a Kiwify e contatos para canais oficiais de WhatsApp. Dados de pagamento são processados no ambiente do parceiro de checkout, conforme os termos e a política dele.',
   },
   {
-    title: '8. Cookies e tecnologias semelhantes',
+    title: '8. Transferência internacional de dados',
+    body: 'Parte dos operadores que tratam dados em nosso nome está sediada fora do Brasil ou processa dados em infraestrutura internacional. Nominamos abaixo os destinatários envolvidos e a base legal do art. 33 da LGPD aplicável a cada transferência:',
+    items: [
+      'Meta Platforms, Inc. — operadora da API oficial do WhatsApp Business (WhatsApp Cloud API), usada para o atendimento conversacional do MeControla. Transferência necessária à execução do contrato de prestação do serviço do qual você é parte (art. 33, IX, c/c art. 7º, V).',
+      'Google LLC — operadora do Google Analytics 4, usado apenas para medição de audiência quando há consentimento de cookies. Transferência amparada no seu consentimento específico e em destaque (art. 33, VIII): antes de qualquer aceite, o banner de cookies exibe, em bloco destacado e apartado do aviso geral de cookies, a informação de que aceitar envia seus dados de navegação ao Google LLC, nos Estados Unidos, para medição de audiência no Google Analytics 4, identificando essa finalidade como separada das demais. Recusar não afeta o uso do site, e a escolha pode ser revista a qualquer momento pelos controles do navegador.',
+      'Kiwify (Kiwify do Brasil) — parceira de checkout e processamento de pagamentos dos planos contratados. Transferência necessária à execução do contrato de assinatura (art. 33, IX, c/c art. 7º, V).',
+      'OpenRouter, Inc. — operadora do provedor de modelos de linguagem que interpreta as mensagens enviadas por você ao assistente do MeControla. O conteúdo das suas mensagens é transmitido a esse operador para gerar a resposta e registrar o lançamento solicitado. Transferência necessária à execução do contrato (art. 33, IX, c/c art. 7º, V).',
+      'Resend, Inc. — operadora do serviço de envio de e-mails transacionais (ativação de conta e comunicações de serviço). Transferência necessária à execução do contrato (art. 33, IX, c/c art. 7º, V).',
+      'Amazon Web Services, Inc. — provedora do armazenamento de backups cifrados do banco de dados, na região us-east-1. Transferência necessária à execução do contrato de prestação do serviço do qual você é parte (art. 33, IX, c/c art. 7º, V).',
+    ],
+  },
+  {
+    title: '9. Cookies e tecnologias semelhantes',
     body: 'O site utiliza recursos técnicos necessários para funcionamento básico e pode armazenar a sua escolha de consentimento em cookies ou armazenamento local do navegador. Tecnologias de medição e analytics não são ativadas antes da sua manifestação positiva. Você pode alterar ou remover permissões de cookies pelos controles do navegador, observadas eventuais limitações funcionais.',
   },
   {
-    title: '9. Retenção e segurança',
-    body: 'Mantemos dados pessoais pelo tempo necessário para cumprir as finalidades desta política, atender exigências legais, regulatórias, contratuais e resguardar direitos. Adotamos medidas técnicas e organizacionais compatíveis com a natureza do serviço para reduzir acesso não autorizado, uso indevido, perda e alteração indevida de informações.',
+    title: '10. Retenção de dados',
+    body: 'Mantemos cada categoria de dado pessoal apenas pelo prazo necessário à finalidade que a justifica, com prazos e fontes verificáveis no código do MeControla:',
+    table: {
+      caption: 'Prazos de retenção por categoria de dado pessoal',
+      headers: ['Categoria', 'Prazo', 'Fonte verificável'],
+      rows: [
+        [
+          'Registros de acesso/autenticação',
+          '180 dias',
+          'internal/identity/application/usecases/cleanup_auth_events.go:15',
+        ],
+        [
+          'Ledger de execução do agente',
+          '30 dias',
+          'internal/agents/application/usecases/purge_ledger.go:12',
+        ],
+        [
+          'Deduplicação de mensagens WhatsApp',
+          '30 dias',
+          'internal/platform/whatsapp/dedup/housekeeping.go:14',
+        ],
+        [
+          'Conversas com o agente',
+          'enquanto a conta existir; purgadas na exclusão',
+          'processo de exclusão de dados, /exclusao-de-dados/',
+        ],
+        [
+          'Lançamentos financeiros',
+          'enquanto a conta existir + 30 dias de graça',
+          'processo de exclusão de dados, /exclusao-de-dados/',
+        ],
+        ['Registros de cobrança e fiscais', '5 anos', 'LGPD, art. 16, I'],
+        ['Registros de consentimento', '5 anos após a revogação', 'LGPD, art. 8º, §2º'],
+      ],
+    },
   },
   {
-    title: '10. Seus direitos',
-    body: 'Nos termos da LGPD e conforme aplicável, você pode solicitar confirmação da existência de tratamento, acesso, correção, anonimização, bloqueio, eliminação, portabilidade, informação sobre compartilhamento, revogação do consentimento e revisão de decisões quando cabível. Também pode pedir informações sobre os critérios aplicados ao tratamento de seus dados.',
+    title: '11. Segurança da informação',
+    body: 'Adotamos medidas técnicas e organizacionais compatíveis com a natureza do serviço para reduzir acesso não autorizado, uso indevido, perda e alteração indevida de informações.',
   },
   {
-    title: '11. Como exercer seus direitos',
-    body: `Para exercer direitos relacionados a dados pessoais, envie sua solicitação para ${CONTACT_EMAIL}. Podemos pedir informações adicionais razoáveis para confirmar sua identidade e viabilizar o atendimento seguro da solicitação.`,
+    title: '12. Seus direitos',
+    body: 'Nos termos da LGPD e conforme aplicável, você pode solicitar confirmação da existência de tratamento, acesso, correção, anonimização, bloqueio, eliminação, portabilidade, informação sobre compartilhamento, revogação do consentimento e revisão de decisões quando cabível. Também pode pedir informações sobre os critérios aplicados ao tratamento de seus dados. O direito de portabilidade (art. 18, V) é atendido pelo canal do encarregado descrito na seção seguinte, sem custo e no prazo informado, sem que isso exija um mecanismo de autoatendimento automatizado.',
   },
   {
-    title: '12. Atualizações desta política',
-    body: 'Esta política pode ser atualizada para refletir mudanças legais, operacionais ou de produto. A versão vigente será sempre a publicada nesta mesma URL, com a respectiva data de atualização.',
+    title: '13. Como exercer seus direitos e encarregado (DPO)',
+    body: `Para exercer direitos relacionados a dados pessoais, envie sua solicitação para ${CONTACT_EMAIL}. Este é o canal oficial do encarregado (DPO) do MeControla para o exercício dos direitos previstos no art. 18 da LGPD (art. 41, §1º). Podemos pedir informações adicionais razoáveis para confirmar sua identidade e viabilizar o atendimento seguro da solicitação. Buscamos confirmar o recebimento e responder em até 15 (quinze) dias corridos, conforme o parâmetro do art. 19, II da LGPD.`,
+  },
+  {
+    title: '14. Versionamento e atualizações desta política',
+    body: `Esta política é publicada com versionamento semântico no formato vMAIOR.MENOR, hoje na versão ${LEGAL_DOCS_VERSION}. Uma alteração é classificada como MAIOR quando ocorre pelo menos um destes quatro gatilhos: (1) nova finalidade de tratamento; (2) mudança de base legal de finalidade já existente; (3) novo destinatário/operador ou nova transferência internacional; (4) restrição de direito do titular ou ampliação de prazo de retenção. Qualquer outra alteração é classificada como MENOR. Mudanças MENOR são comunicadas de forma passiva, apenas pela atualização desta página e da data abaixo, sem envio de mensagem no WhatsApp ou por e-mail. Mudanças MAIOR exigem novo aceite na próxima interação com o MeControla; para contas legadas, o novo aceite é solicitado uma única vez por versão, sem bloquear o uso do serviço. A versão vigente é sempre a publicada nesta mesma URL, com a respectiva data de atualização.`,
   },
 ];
 ---
@@ -74,13 +137,15 @@ const sections = [
 
       <div class="mb-10 rounded-lg border border-border bg-card p-5 text-card-foreground">
         <p class="text-sm font-semibold text-foreground">Última atualização: {lastUpdated}</p>
+        <p class="text-sm font-semibold text-foreground">Versão: {LEGAL_DOCS_VERSION}</p>
         <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
           Esta URL é a referência pública da política de privacidade do MeControla.
         </p>
         <div class="mt-4 space-y-1 text-sm leading-relaxed text-muted-foreground">
           <p class="font-semibold text-foreground">Empresa</p>
-          <p>Santana de Parnaíba, SP — Brasil</p>
+          <p>{LEGAL_NAME}</p>
           <p>CNPJ: {CNPJ}</p>
+          <p>{CONTROLLER_ADDRESS}</p>
           <p>
             Desenvolvimento: <a
               class="underline underline-offset-4 hover:text-primary"
@@ -104,13 +169,64 @@ const sections = [
               .replaceAll(' ', '-');
 
             return (
-              <section aria-labelledby={sectionId}>
+              <section
+                aria-labelledby={sectionId}
+                class={
+                  section.highlighted
+                    ? 'rounded-lg border-2 border-primary bg-primary/5 p-5'
+                    : undefined
+                }
+              >
                 <h2 id={sectionId} class="mb-3 text-xl font-extrabold text-foreground md:text-2xl">
                   {section.title}
                 </h2>
                 <p class="text-sm font-medium leading-relaxed text-muted-foreground md:text-base">
-                  {section.body}
+                  {section.highlighted ? <strong>{section.body}</strong> : section.body}
                 </p>
+                {section.items && (
+                  <ul class="mt-3 list-disc space-y-2 pl-5 text-sm font-medium leading-relaxed text-muted-foreground md:text-base">
+                    {section.items.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                {section.table && (
+                  <div
+                    class="mt-4 overflow-x-auto"
+                    tabindex="0"
+                    role="region"
+                    aria-label={section.title}
+                  >
+                    <table class="w-full border-collapse text-left text-sm">
+                      <caption class="mb-2 text-left text-sm font-semibold text-foreground">
+                        {section.table.caption}
+                      </caption>
+                      <thead>
+                        <tr>
+                          {section.table.headers.map((header) => (
+                            <th
+                              scope="col"
+                              class="border-b border-border py-2 pr-4 font-semibold text-foreground"
+                            >
+                              {header}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {section.table.rows.map((row) => (
+                          <tr>
+                            {row.map((cell) => (
+                              <td class="border-b border-border py-2 pr-4 align-top text-muted-foreground">
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </section>
             );
           })

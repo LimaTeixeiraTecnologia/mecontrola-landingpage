@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
+const LEGAL_PAGES = ['/politica-de-privacidade/', '/termos-de-servico/'];
+
 test.describe('Acessibilidade', () => {
   test('axe: 0 violations sérias/críticas', async ({ page }) => {
     await page.goto('/');
@@ -19,6 +21,22 @@ test.describe('Acessibilidade', () => {
       expect(severe, `Violations:\n${summary}`).toHaveLength(0);
     }
   });
+
+  for (const legalPath of LEGAL_PAGES) {
+    test(`axe: 0 violations sérias/críticas em ${legalPath}`, async ({ page }) => {
+      await page.goto(legalPath);
+      const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
+
+      const severe = results.violations.filter(
+        (v) => v.impact === 'serious' || v.impact === 'critical',
+      );
+
+      if (severe.length > 0) {
+        const summary = severe.map((v) => `[${v.impact}] ${v.id}: ${v.description}`).join('\n');
+        expect(severe, `Violations:\n${summary}`).toHaveLength(0);
+      }
+    });
+  }
 
   test('h1 único e hierarquia de headings preservada', async ({ page }) => {
     await page.goto('/');

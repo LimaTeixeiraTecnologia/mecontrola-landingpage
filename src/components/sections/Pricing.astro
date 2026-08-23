@@ -12,6 +12,17 @@ import Button from '../ui/Button.astro';
       title="Escolha o plano que faz mais sentido para você"
       subtitle="Sem conta escondida. Sem pegadinha. Você vê o valor, a economia e escolhe com calma."
     />
+    <p class="text-center text-muted-foreground mb-6 font-medium text-[0.92rem]">
+      Ao contratar um plano, você concorda com os
+      <a href="/termos-de-servico/" class="underline underline-offset-4 hover:text-primary">
+        Termos de Serviço
+      </a>
+      e a
+      <a href="/politica-de-privacidade/" class="underline underline-offset-4 hover:text-primary">
+        Política de Privacidade
+      </a>
+      do MeControla.
+    </p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
       {
         plans.map((plan) => (

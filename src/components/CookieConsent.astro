@@ -8,15 +8,24 @@ const gaId = import.meta.env.PUBLIC_GA_ID as string | undefined;
   id="cookie-banner"
   hidden
   data-ga-id={gaId}
-  class="fixed bottom-0 inset-x-0 z-50 bg-surface border-t border-border p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-4"
+  class="fixed bottom-0 inset-x-0 z-50 bg-surface border-t border-border p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4 max-h-[40vh] md:max-h-none overflow-y-auto"
   role="dialog"
   aria-label="Consentimento de cookies"
   aria-live="polite"
 >
-  <p class="text-foreground text-sm font-medium flex-1">
-    Usamos cookies para entender uso do site e melhorar sua experiência. Você pode aceitar ou
-    recusar a qualquer momento.
-  </p>
+  <div class="flex-1 flex flex-col gap-2">
+    <p class="text-foreground text-xs md:text-sm font-medium">
+      Usamos cookies para entender o uso do site. Você pode aceitar ou recusar a qualquer momento.
+    </p>
+    <p
+      id="cookie-intl-transfer"
+      class="border-2 border-primary rounded-lg bg-background px-3 py-2 text-foreground text-xs md:text-sm font-bold"
+    >
+      Transferência internacional de dados (finalidade separada das demais): aceitar envia seus
+      dados de navegação ao Google LLC, nos Estados Unidos, para medição de audiência no Google
+      Analytics 4. Recusar não afeta o uso do site.
+    </p>
+  </div>
   <div class="flex gap-3 flex-none">
     <button
       id="consent-accept"

@@ -1,4 +1,6 @@
 (() => {
+  const isRecord = (v) => typeof v === 'object' && v !== null;
+
   const ERROR_MESSAGES = {
     activation_token_required: 'Link inválido: token de ativação ausente.',
     activation_token_too_long: 'Link inválido.',
@@ -21,6 +23,7 @@
     const ready = document.getElementById('activate-beta-ready');
     const error = document.getElementById('activate-beta-error');
     const consumed = document.getElementById('activate-beta-consumed');
+    const consent = document.getElementById('activate-beta-consent');
     if (!loading || !ready || !error) return;
     loading.classList.toggle('hidden', state !== 'loading');
     loading.classList.toggle('flex', state === 'loading');
@@ -31,6 +34,10 @@
     if (consumed) {
       consumed.classList.toggle('hidden', state !== 'consumed');
       consumed.classList.toggle('flex', state === 'consumed');
+    }
+    if (consent) {
+      consent.classList.toggle('hidden', state !== 'consent');
+      consent.classList.toggle('flex', state === 'consent');
     }
   };
 
@@ -71,17 +78,22 @@
     return { code: 'unknown', message: DEFAULT_ERROR_MESSAGE };
   };
 
-  const activate = async (backendUrl, token) => {
+  const ACTIVATE_TIMEOUT_MS = 10000;
+  const ACTIVATE_TOTAL_BUDGET_MS = 11000;
+
+  const activate = async (backendUrl, token, consent, budgetMs) => {
     const base = backendUrl.replace(/\/+$/, '');
     const url = `${base}/api/v1/billing/beta-accesses/activate`;
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    const budget = typeof budgetMs === 'number' ? budgetMs : ACTIVATE_TIMEOUT_MS;
+    const timeoutId = setTimeout(() => controller.abort(), budget);
+    const payload = consent ? { activation_token: token, consent } : { activation_token: token };
     let response;
     try {
       response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ activation_token: token }),
+        body: JSON.stringify(payload),
         signal: controller.signal,
       });
     } catch (err) {
@@ -99,6 +111,40 @@
     return { ok: true };
   };
 
+  const parseConsentRequirements = (raw) => {
+    if (!isRecord(raw)) return { consentRequired: false };
+    const required = raw.consent_required;
+    if (typeof required !== 'boolean' || !required) return { consentRequired: false };
+    const terms = raw.terms_version;
+    const privacy = raw.privacy_version;
+    if (typeof terms !== 'string' || terms.length === 0) return { consentRequired: false };
+    if (typeof privacy !== 'string' || privacy.length === 0) return { consentRequired: false };
+    return { consentRequired: true, termsVersion: terms, privacyVersion: privacy };
+  };
+
+  const CONSENT_REQUIREMENTS_TIMEOUT_MS = 1200;
+
+  const fetchConsentRequirements = async (backendUrl) => {
+    const base = backendUrl.replace(/\/+$/, '');
+    const url = `${base}/api/v1/legal/consent-requirements`;
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), CONSENT_REQUIREMENTS_TIMEOUT_MS);
+    try {
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: { Accept: 'application/json' },
+        signal: controller.signal,
+      });
+      if (!response.ok) return { consentRequired: false };
+      const json = await response.json();
+      return parseConsentRequirements(json);
+    } catch {
+      return { consentRequired: false };
+    } finally {
+      clearTimeout(id);
+    }
+  };
+
   const startCountdownAndRedirect = (waMeURL) => {
     let remaining = 3;
     const countEl = document.getElementById('activate-beta-countdown');
@@ -111,6 +157,29 @@
         window.location.href = waMeURL;
       }
     }, 1000);
+  };
+
+  const TRANSIENT_ERROR_CODES = ['network', 'timeout'];
+
+  const activateWithRetry = async (backendUrl, token, consent) => {
+    const startedAt = Date.now();
+    const first = await activate(backendUrl, token, consent, ACTIVATE_TIMEOUT_MS);
+    if (first.ok) return first;
+    if (!TRANSIENT_ERROR_CODES.includes(first.code)) return first;
+    const remaining = ACTIVATE_TOTAL_BUDGET_MS - (Date.now() - startedAt);
+    if (remaining <= 0) return first;
+    return activate(backendUrl, token, consent, Math.min(ACTIVATE_TIMEOUT_MS, remaining));
+  };
+
+  const setSubmitDisabled = (submitBtn, disabled) => {
+    if (!submitBtn) return;
+    if (disabled) {
+      submitBtn.setAttribute('aria-disabled', 'true');
+      submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
+      return;
+    }
+    submitBtn.removeAttribute('aria-disabled');
+    submitBtn.classList.remove('opacity-60', 'cursor-not-allowed');
   };
 
   const init = async () => {
@@ -130,27 +199,81 @@
       return;
     }
 
-    const result = await activate(backendUrl, token.trim());
+    const trimmedToken = token.trim();
 
-    if (!result.ok) {
-      if (result.code === 'invalid_transition') {
-        setSubtitle('Sua conta já está ativa!');
-        const waBtn = document.getElementById('activate-beta-consumed-wa-btn');
-        if (waBtn && whatsappNumber) waBtn.href = buildWaMeURL(whatsappNumber);
-        setView('consumed');
+    const restoreConsentControls = () => {
+      const checkbox = document.getElementById('activate-beta-consent-checkbox');
+      const submitBtn = document.getElementById('activate-beta-consent-submit');
+      if (checkbox) checkbox.disabled = false;
+      if (submitBtn) setSubmitDisabled(submitBtn, !(checkbox && checkbox.checked));
+    };
+
+    const doActivate = async (consent) => {
+      const result = await activateWithRetry(backendUrl, trimmedToken, consent);
+
+      if (!result.ok) {
+        restoreConsentControls();
+        if (result.code === 'invalid_transition') {
+          setSubtitle('Sua conta já está ativa!');
+          const waBtn = document.getElementById('activate-beta-consumed-wa-btn');
+          if (waBtn && whatsappNumber) waBtn.href = buildWaMeURL(whatsappNumber);
+          setView('consumed');
+          return;
+        }
+        showError(result.message || DEFAULT_ERROR_MESSAGE);
         return;
       }
-      showError(result.message || DEFAULT_ERROR_MESSAGE);
+
+      const waMeURL = buildWaMeURL(whatsappNumber);
+      const waBtn = document.getElementById('activate-beta-wa-btn');
+      if (waBtn) waBtn.href = waMeURL;
+
+      setSubtitle('Tudo certo! Abra o WhatsApp e envie uma mensagem.');
+      setView('ready');
+      startCountdownAndRedirect(waMeURL);
+    };
+
+    const consentReq = await fetchConsentRequirements(backendUrl);
+
+    if (!consentReq.consentRequired) {
+      await doActivate(undefined);
       return;
     }
 
-    const waMeURL = buildWaMeURL(whatsappNumber);
-    const waBtn = document.getElementById('activate-beta-wa-btn');
-    if (waBtn) waBtn.href = waMeURL;
+    setView('consent');
 
-    setSubtitle('Tudo certo! Abra o WhatsApp e envie uma mensagem.');
-    setView('ready');
-    startCountdownAndRedirect(waMeURL);
+    const checkbox = document.getElementById('activate-beta-consent-checkbox');
+    const submitBtn = document.getElementById('activate-beta-consent-submit');
+    const consentError = document.getElementById('activate-beta-consent-error');
+
+    if (checkbox && submitBtn) {
+      checkbox.addEventListener('change', () => {
+        if (consentError) consentError.classList.add('hidden');
+        setSubmitDisabled(submitBtn, !checkbox.checked);
+      });
+    }
+
+    if (submitBtn) {
+      let submitting = false;
+      submitBtn.addEventListener('click', async () => {
+        if (submitBtn.getAttribute('aria-disabled') === 'true') {
+          if (consentError) consentError.classList.remove('hidden');
+          if (checkbox) checkbox.focus();
+          return;
+        }
+        if (submitting) return;
+        submitting = true;
+        setSubmitDisabled(submitBtn, true);
+        if (checkbox) checkbox.disabled = true;
+
+        await doActivate({
+          terms_version: consentReq.termsVersion,
+          privacy_version: consentReq.privacyVersion,
+        });
+
+        submitting = false;
+      });
+    }
   };
 
   void init();

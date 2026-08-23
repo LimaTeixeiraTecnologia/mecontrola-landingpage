@@ -1,0 +1,6 @@
+{
+  "$comment": "Contrato congelado de versao dos documentos legais. Espelha as constantes CurrentTermsVersion e CurrentPrivacyVersion de internal/identity/domain/valueobjects/current_versions.go no repositorio mecontrola (backend). Ao bumpar qualquer um dos lados, este arquivo DEVE ser atualizado no mesmo commit do site; legal-version-parity.spec.ts falha se LEGAL_DOCS_VERSION, o texto renderizado nas paginas legais ou o fonte Go (quando presente na maquina) divergirem daqui.",
+  "backend_source": "internal/identity/domain/valueobjects/current_versions.go",
+  "terms_version": "v0.9",
+  "privacy_version": "v0.9"
+}

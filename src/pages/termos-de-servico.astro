@@ -1,8 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { CNPJ, CONTACT_EMAIL, LEGAL_NAME, plans } from '../lib/content';
+import type { LegalSection } from '../lib/content';
+import {
+  CNPJ,
+  CONTACT_EMAIL,
+  CONTROLLER_ADDRESS,
+  LEGAL_DOCS_VERSION,
+  LEGAL_NAME,
+  plans,
+} from '../lib/content';
 
-const lastUpdated = '10 de agosto de 2026';
+const lastUpdated = '22 de agosto de 2026';
 
 const planLines = plans
   .map(
@@ -11,7 +19,7 @@ const planLines = plans
   )
   .join('; ');
 
-const sections = [
+const sections: LegalSection[] = [
   {
     title: '1. Quem somos',
     body: `${LEGAL_NAME}, com sede em Santana de Parnaíba, SP — Brasil, inscrita no CNPJ ${CNPJ}, é a responsável pelo desenvolvimento e operação do MeControla. Estes Termos de Serviço regulam a contratação e o uso do MeControla pelo site https://mecontrola.app.br e pelo canal oficial de WhatsApp vinculado ao serviço.`,
@@ -45,16 +53,19 @@ const sections = [
     body: 'O usuário é responsável por manter a titularidade e o controle do número de WhatsApp vinculado à sua conta, por fornecer informações verdadeiras sobre suas finanças e por utilizar o serviço para fins pessoais e lícitos. O uso indevido, fraudulento ou que viole a lei pode levar à suspensão do acesso.',
   },
   {
-    title: '9. Natureza do serviço e limitação de responsabilidade',
+    title: '9. Tratamento de dados financeiros pessoais',
+    body: 'Nos termos do artigo 54, §4º, do Código de Defesa do Consumidor, destacamos: o MeControla trata dados financeiros pessoais que você mesmo fornece ao serviço — como lançamentos, valores, categorias e metas informados por conversa — para viabilizar a organização financeira que é o objeto deste contrato. O tratamento desses dados segue a Política de Privacidade do MeControla, incluindo o mapa de finalidades e bases legais, a tabela de retenção e os seus direitos como titular, descritos na ',
+    link: { label: 'Política de Privacidade', href: '/politica-de-privacidade/' },
+    tail: '.',
+    highlighted: true,
+  },
+  {
+    title: '10. Natureza do serviço e limitação de responsabilidade',
     body: 'O MeControla é uma ferramenta de apoio à organização financeira pessoal e não constitui consultoria financeira, contábil, de investimentos ou tributária profissional. As decisões financeiras tomadas com base nas informações e interações do serviço são de responsabilidade exclusiva do usuário.',
   },
   {
-    title: '10. Propriedade intelectual',
+    title: '11. Propriedade intelectual',
     body: 'A marca MeControla, o conteúdo do site, os textos, imagens e demais elementos visuais são de titularidade da empresa responsável ou de seus licenciantes, sendo vedada a reprodução não autorizada.',
-  },
-  {
-    title: '11. Alterações destes Termos',
-    body: 'Estes Termos podem ser atualizados para refletir mudanças legais, operacionais ou de produto. A versão vigente é sempre a publicada nesta mesma URL, com a respectiva data de atualização.',
   },
   {
     title: '12. Legislação aplicável e foro',
@@ -63,6 +74,10 @@ const sections = [
   {
     title: '13. Contato',
     body: `Dúvidas sobre estes Termos de Serviço podem ser encaminhadas para ${CONTACT_EMAIL}.`,
+  },
+  {
+    title: '14. Versionamento e alterações destes Termos',
+    body: `Estes Termos são publicados com versionamento semântico no formato vMAIOR.MENOR, hoje na versão ${LEGAL_DOCS_VERSION}, seguindo a mesma regra de classificação MAIOR/MENOR descrita na Política de Privacidade. Mudanças MENOR são comunicadas de forma passiva, apenas pela atualização desta página e da data abaixo. Mudanças MAIOR exigem novo aceite na próxima interação com o MeControla. A versão vigente é sempre a publicada nesta mesma URL, com a respectiva data de atualização.`,
   },
 ];
 ---
@@ -84,12 +99,13 @@ const sections = [
 
       <div class="mb-10 rounded-lg border border-border bg-card p-5 text-card-foreground">
         <p class="text-sm font-semibold text-foreground">Última atualização: {lastUpdated}</p>
+        <p class="text-sm font-semibold text-foreground">Versão: {LEGAL_DOCS_VERSION}</p>
         <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
           Esta URL é a referência pública dos Termos de Serviço do MeControla.
         </p>
         <div class="mt-4 space-y-1 text-sm leading-relaxed text-muted-foreground">
           <p class="font-semibold text-foreground">{LEGAL_NAME}</p>
-          <p>Santana de Parnaíba, SP — Brasil</p>
+          <p>{CONTROLLER_ADDRESS}</p>
           <p>CNPJ: {CNPJ}</p>
           <p>
             Contato: <a
@@ -111,13 +127,90 @@ const sections = [
               .replaceAll(' ', '-');
 
             return (
-              <section aria-labelledby={sectionId}>
+              <section
+                aria-labelledby={sectionId}
+                class={
+                  section.highlighted
+                    ? 'rounded-lg border-2 border-primary bg-primary/5 p-5'
+                    : undefined
+                }
+              >
                 <h2 id={sectionId} class="mb-3 text-xl font-extrabold text-foreground md:text-2xl">
                   {section.title}
                 </h2>
                 <p class="text-sm font-medium leading-relaxed text-muted-foreground md:text-base">
-                  {section.body}
+                  {section.highlighted ? (
+                    <strong>
+                      {section.body}
+                      {section.link && (
+                        <a
+                          class="underline underline-offset-4 hover:text-primary"
+                          href={section.link.href}
+                        >
+                          {section.link.label}
+                        </a>
+                      )}
+                      {section.tail}
+                    </strong>
+                  ) : (
+                    <Fragment>
+                      {section.body}
+                      {section.link && (
+                        <a
+                          class="underline underline-offset-4 hover:text-primary"
+                          href={section.link.href}
+                        >
+                          {section.link.label}
+                        </a>
+                      )}
+                      {section.tail}
+                    </Fragment>
+                  )}
                 </p>
+                {section.items && (
+                  <ul class="mt-3 list-disc space-y-2 pl-5 text-sm font-medium leading-relaxed text-muted-foreground md:text-base">
+                    {section.items.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                {section.table && (
+                  <div
+                    class="mt-4 overflow-x-auto"
+                    tabindex="0"
+                    role="region"
+                    aria-label={section.title}
+                  >
+                    <table class="w-full border-collapse text-left text-sm">
+                      <caption class="mb-2 text-left text-sm font-semibold text-foreground">
+                        {section.table.caption}
+                      </caption>
+                      <thead>
+                        <tr>
+                          {section.table.headers.map((header) => (
+                            <th
+                              scope="col"
+                              class="border-b border-border py-2 pr-4 font-semibold text-foreground"
+                            >
+                              {header}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {section.table.rows.map((row) => (
+                          <tr>
+                            {row.map((cell) => (
+                              <td class="border-b border-border py-2 pr-4 align-top text-muted-foreground">
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </section>
             );
           })

@@ -128,6 +128,27 @@ export interface FooterContent {
   legalLine: string;
 }
 
+export interface LegalSectionTable {
+  caption: string;
+  headers: string[];
+  rows: string[][];
+}
+
+export interface LegalSectionLink {
+  label: string;
+  href: string;
+}
+
+export interface LegalSection {
+  title: string;
+  body: string;
+  items?: string[];
+  table?: LegalSectionTable;
+  highlighted?: boolean;
+  link?: LegalSectionLink;
+  tail?: string;
+}
+
 export interface MobileStickyBarContent {
   copy: string;
   ctaLabel: string;
@@ -145,10 +166,13 @@ export const WHATSAPP_DUVIDAS_URL =
 export const CHECKOUT_URL_MENSAL = 'https://pay.kiwify.com.br/mPlGcoa';
 export const CHECKOUT_URL_TRIMESTRAL = 'https://pay.kiwify.com.br/IAG8RlG';
 export const CHECKOUT_URL_ANUAL = 'https://pay.kiwify.com.br/UrnUAXi';
-export const CONTACT_EMAIL = 'contato@limateixeira.com.br';
+export const CONTACT_EMAIL = 'contato@mecontrola.app.br';
 export const INSTAGRAM_URL = 'https://www.instagram.com/mecontrola/';
 export const CNPJ = '52.162.759/0001-74';
 export const LEGAL_NAME = 'Lima Teixeira Desenvolvimento e Tecnologia LTDA';
+export const CONTROLLER_ADDRESS =
+  'R. José Pontes Zé Buraco, 156, Casa 03 — Parque Fernão Dias, Santana de Parnaíba/SP — CEP 06503-015';
+export const LEGAL_DOCS_VERSION = 'v0.9';
 
 // ---------------------------------------------------------------------------
 // HEADER — <header> / .nav · data-track="cta_header_ver_planos"
@@ -391,7 +415,7 @@ export const finalCta: FinalCtaContent = {
 // ---------------------------------------------------------------------------
 export const footer: FooterContent = {
   tagline: 'Menos caos. Mais conquistas.',
-  legalLine: `CNPJ ${CNPJ} · ${CONTACT_EMAIL}`,
+  legalLine: `${LEGAL_NAME} · CNPJ ${CNPJ} · ${CONTACT_EMAIL} · ${CONTROLLER_ADDRESS}`,
 };
 
 // ---------------------------------------------------------------------------
