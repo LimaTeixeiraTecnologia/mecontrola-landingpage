@@ -28,7 +28,7 @@ async function measureVitals(
   viewport: { width: number; height: number },
   baseURL: string | undefined,
 ) {
-  const samples: { lcp: number; cls: number }[] = [];
+  const samples: { lcp: number; cls: number; sources: { value: number; el: string }[] }[] = [];
   for (let i = 0; i < VITALS_SAMPLES; i++) {
     // Contexto NOVO a cada amostra. Reusar a mesma page mediria carga quente: da
     // segunda em diante o cache serve tudo de uma vez, o CLS cai para zero e o teste
@@ -44,9 +44,23 @@ async function measureVitals(
           (window as any).__lcpValue = (entry as any).startTime;
         }
       }).observe({ type: 'largest-contentful-paint', buffered: true });
+      (window as any).__clsSources = [];
       new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
           (window as any).__clsValue += (entry as any).value;
+          for (const src of (entry as any).sources ?? []) {
+            const el = src.node as Element | null;
+            (window as any).__clsSources.push({
+              value: (entry as any).value,
+              el: el
+                ? `${el.tagName?.toLowerCase()}${el.id ? '#' + el.id : ''}${
+                    el.className && typeof el.className === 'string'
+                      ? '.' + el.className.trim().split(/\s+/).slice(0, 3).join('.')
+                      : ''
+                  }`
+                : 'desconhecido',
+            });
+          }
         }
       }).observe({ type: 'layout-shift', buffered: true });
     });
@@ -55,6 +69,7 @@ async function measureVitals(
     samples.push({
       lcp: await page.evaluate(() => (window as any).__lcpValue ?? 0),
       cls: await page.evaluate(() => (window as any).__clsValue ?? 0),
+      sources: await page.evaluate(() => (window as any).__clsSources ?? []),
     });
     await context.close();
   }
@@ -87,7 +102,12 @@ test.describe('Performance', () => {
     );
 
     expect(lcp, `LCP ${lcp}ms deve ser ≤ ${BUDGETS.lcp}ms`).toBeLessThanOrEqual(BUDGETS.lcp);
-    expect(cls, `CLS ${cls} deve ser ≤ ${BUDGETS.cls}`).toBeLessThanOrEqual(BUDGETS.cls);
+    expect(
+      cls,
+      `CLS ${cls} deve ser ≤ ${BUDGETS.cls}. Elementos que deslocaram: ${JSON.stringify(
+        samples[0]?.sources?.slice(0, 8) ?? [],
+      )}`,
+    ).toBeLessThanOrEqual(BUDGETS.cls);
   });
 
   test('transferência de JS dentro do budget (≤200 KB)', async ({ page }) => {
@@ -149,6 +169,11 @@ test.describe('Performance (desktop)', () => {
 
     // Desktop budgets (more lenient on LCP, same CLS)
     expect(lcp, `LCP ${lcp}ms deve ser ≤ ${BUDGETS.lcp}ms`).toBeLessThanOrEqual(BUDGETS.lcp);
-    expect(cls, `CLS ${cls} deve ser ≤ ${BUDGETS.cls}`).toBeLessThanOrEqual(BUDGETS.cls);
+    expect(
+      cls,
+      `CLS ${cls} deve ser ≤ ${BUDGETS.cls}. Elementos que deslocaram: ${JSON.stringify(
+        samples[0]?.sources?.slice(0, 8) ?? [],
+      )}`,
+    ).toBeLessThanOrEqual(BUDGETS.cls);
   });
 });
