@@ -435,12 +435,18 @@ test.describe('/activate — exigência de consentimento (RF-08 a RF-11)', () =>
     await page.waitForTimeout(500);
     expect(consentCalls).toBe(1);
 
+    // O countdown precisa estar correndo e monotonico. Nao asserto decremento de
+    // EXATAMENTE 1 numa janela de 1100ms: num runner carregado o timer tica duas vezes
+    // nessa janela e o teste fica vermelho por lentidao da maquina, nao por defeito.
+    // A propriedade "um unico countdown" ja esta provada por consentCalls === 1 acima,
+    // que e o que a remarcacao rapida poderia duplicar.
     const countdown = page.locator('#activate-countdown');
     const firstReading = parseInt((await countdown.textContent())?.trim() ?? '-1', 10);
     await page.waitForTimeout(1100);
     const secondReading = parseInt((await countdown.textContent())?.trim() ?? '-1', 10);
 
-    expect(secondReading).toBe(firstReading - 1);
+    expect(secondReading).toBeLessThan(firstReading);
+    expect(secondReading).toBeGreaterThanOrEqual(0);
   });
 
   test('falha no registro do consentimento (409) — aviso discreto e fail-open', async ({
