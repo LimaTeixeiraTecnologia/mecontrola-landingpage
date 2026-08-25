@@ -170,8 +170,6 @@ export const CONTACT_EMAIL = 'contato@mecontrola.app.br';
 export const INSTAGRAM_URL = 'https://www.instagram.com/mecontrola/';
 export const CNPJ = '52.162.759/0001-74';
 export const LEGAL_NAME = 'Lima Teixeira Desenvolvimento e Tecnologia LTDA';
-export const CONTROLLER_ADDRESS =
-  'R. José Pontes Zé Buraco, 156, Casa 03 — Parque Fernão Dias, Santana de Parnaíba/SP — CEP 06503-015';
 export const LEGAL_DOCS_VERSION = 'v0.9';
 
 // ---------------------------------------------------------------------------
@@ -415,7 +413,7 @@ export const finalCta: FinalCtaContent = {
 // ---------------------------------------------------------------------------
 export const footer: FooterContent = {
   tagline: 'Menos caos. Mais conquistas.',
-  legalLine: `${LEGAL_NAME} · CNPJ ${CNPJ} · ${CONTACT_EMAIL} · ${CONTROLLER_ADDRESS}`,
+  legalLine: `${LEGAL_NAME} · CNPJ ${CNPJ} · ${CONTACT_EMAIL}`,
 };
 
 // ---------------------------------------------------------------------------

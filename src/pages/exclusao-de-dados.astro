@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { CNPJ, CONTACT_EMAIL, CONTROLLER_ADDRESS, LEGAL_NAME } from '../lib/content';
+import { CNPJ, CONTACT_EMAIL, LEGAL_NAME } from '../lib/content';
 
 const lastUpdated = '10 de agosto de 2026';
 
@@ -63,7 +63,6 @@ const sections = [
         </p>
         <div class="mt-4 space-y-1 text-sm leading-relaxed text-muted-foreground">
           <p class="font-semibold text-foreground">{LEGAL_NAME}</p>
-          <p>{CONTROLLER_ADDRESS}</p>
           <p>CNPJ: {CNPJ}</p>
           <p>
             Solicitação de exclusão: <a

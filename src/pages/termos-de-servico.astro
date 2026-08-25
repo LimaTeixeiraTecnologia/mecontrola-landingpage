@@ -1,14 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import type { LegalSection } from '../lib/content';
-import {
-  CNPJ,
-  CONTACT_EMAIL,
-  CONTROLLER_ADDRESS,
-  LEGAL_DOCS_VERSION,
-  LEGAL_NAME,
-  plans,
-} from '../lib/content';
+import { CNPJ, CONTACT_EMAIL, LEGAL_DOCS_VERSION, LEGAL_NAME, plans } from '../lib/content';
 
 const lastUpdated = '22 de agosto de 2026';
 
@@ -105,7 +98,6 @@ const sections: LegalSection[] = [
         </p>
         <div class="mt-4 space-y-1 text-sm leading-relaxed text-muted-foreground">
           <p class="font-semibold text-foreground">{LEGAL_NAME}</p>
-          <p>{CONTROLLER_ADDRESS}</p>
           <p>CNPJ: {CNPJ}</p>
           <p>
             Contato: <a

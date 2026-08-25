@@ -1,32 +1,32 @@
 {
-  "lcp": 123,
+  "lcp": 172,
   "cls": 0,
   "samples": [
     {
-      "lcp": 116,
+      "lcp": 178,
       "cls": 0,
       "sources": []
     },
     {
-      "lcp": 151,
+      "lcp": 163,
       "cls": 0,
       "sources": []
     },
     {
-      "lcp": 123,
+      "lcp": 175.00000000000003,
       "cls": 0,
       "sources": []
     },
     {
-      "lcp": 115,
+      "lcp": 172,
       "cls": 0,
       "sources": []
     },
     {
-      "lcp": 171,
+      "lcp": 144.00000000000003,
       "cls": 0,
       "sources": []
     }
   ],
-  "timestamp": "2026-08-23T20:44:00.231Z"
+  "timestamp": "2026-08-25T16:46:31.882Z"
 }
