@@ -15,17 +15,17 @@ const gaId = import.meta.env.PUBLIC_GA_ID as string | undefined;
 >
   <div class="flex-1 flex flex-col gap-2">
     <p class="text-foreground text-xs md:text-sm font-medium">
-      Usamos cookies de medição para entender como o site é utilizado e aprimorar sua experiência. A
-      escolha é sua: você pode aceitar ou recusar quando quiser.
+      <strong>Nós valorizamos sua privacidade.</strong> Com sua autorização, usamos cookies de medição
+      para entender como o site é utilizado e continuar melhorando sua experiência. Você pode aceitar
+      ou recusar — o site continua funcionando normalmente.
     </p>
     <p
       id="cookie-intl-transfer"
       class="border-2 border-primary rounded-lg bg-background px-3 py-2 text-foreground text-xs md:text-sm font-bold"
     >
-      Transferência internacional de dados — uma finalidade separada das demais: ao aceitar, dados
-      de navegação são compartilhados com o Google LLC, nos Estados Unidos, para a medição de
-      audiência pelo Google Analytics 4. Se preferir recusar, você continua usando o site
-      normalmente.
+      <strong>Sobre a medição de audiência</strong><br />Ao aceitar, você autoriza o envio de dados
+      de navegação ao Google Analytics 4, operado pelo Google LLC, nos Estados Unidos. Essa é uma
+      finalidade separada das demais.
     </p>
   </div>
   <div class="flex gap-3 flex-none">
@@ -34,14 +34,14 @@ const gaId = import.meta.env.PUBLIC_GA_ID as string | undefined;
       type="button"
       class="bg-primary text-primary-foreground font-bold rounded-full px-5 py-2 text-sm cursor-pointer border-none transition-all hover:shadow-glow-primary"
     >
-      Aceitar
+      Permitir medição
     </button>
     <button
       id="consent-decline"
       type="button"
       class="border border-border text-foreground font-bold rounded-full px-5 py-2 text-sm cursor-pointer bg-transparent transition-all hover:bg-surface"
     >
-      Recusar
+      Continuar sem medição
     </button>
   </div>
 </aside>

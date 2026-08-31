@@ -8,7 +8,6 @@ import { test, expect } from '@playwright/test';
  */
 
 const REQUIRED_DISCLOSURES = [
-  'Transferência internacional de dados',
   'Google LLC',
   'Estados Unidos',
   'Google Analytics 4',
@@ -16,7 +15,7 @@ const REQUIRED_DISCLOSURES = [
 ];
 
 test.describe('Consentimento de transferência internacional no banner (art. 33, VIII)', () => {
-  test('banner informa previamente e em destaque a transferência ao Google LLC nos EUA', async ({
+  test('banner informa previamente e em destaque a medição pelo Google LLC nos EUA', async ({
     page,
   }) => {
     const trackingRequests: string[] = [];
@@ -59,8 +58,8 @@ test.describe('Consentimento de transferência internacional no banner (art. 33,
       'destaque visual: peso tipográfico maior',
     ).toBeGreaterThanOrEqual(700);
 
-    await expect(page.locator('#consent-accept')).toBeVisible();
-    await expect(page.locator('#consent-decline')).toBeVisible();
+    await expect(page.locator('#consent-accept')).toHaveText('Permitir medição');
+    await expect(page.locator('#consent-decline')).toHaveText('Continuar sem medição');
 
     expect(
       trackingRequests,

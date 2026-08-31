@@ -319,6 +319,9 @@ test.describe('/activate — exigência de consentimento (RF-08 a RF-11)', () =>
   });
 
   test('clicar no CTA desabilitado não navega e mostra erro perceptível', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.setItem('mecontrola_consent', 'declined');
+    });
     await routeLegalRequirements(page, {
       consent_required: true,
       terms_version: 'v0.9',
