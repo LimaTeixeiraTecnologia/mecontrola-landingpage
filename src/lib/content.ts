@@ -319,7 +319,7 @@ export const plans: Plan[] = [
     equiv: 'Equivale a R$ 24,99/mês',
     savings: 'Economize R$ 178,90',
     support: 'A escolha de quem quer economizar mais o ano todo.',
-    ctaLabel: 'Quero economizar mais',
+    ctaLabel: 'Quero o anual',
     ctaHref: CHECKOUT_URL_ANUAL,
     planId: 'ANNUAL',
     trackId: 'plan_yearly_select',

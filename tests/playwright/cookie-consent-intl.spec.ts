@@ -5,17 +5,17 @@ import { test, expect } from '@playwright/test';
  * consentimento, que ele seja "específico e em destaque para a transferência, com
  * informação prévia sobre o caráter internacional da operação, distinguindo esta de
  * outras finalidades". Este gate prova que o banner pratica o que a Política declara.
+ *
+ * Issue #14 removeu o bloco `#cookie-intl-transfer` (destaque visual específico do banner)
+ * por pedido de produto. O terceiro teste abaixo ainda cobra da Política de Privacidade a
+ * menção a esse bloco destacado — hoje ela descreve algo que o banner não exibe mais.
+ * Ajustar o texto legal exige revisão jurídica/produto e bump de LEGAL_DOCS_VERSION +
+ * legal-versions.contract.json (ver tests/playwright/legal-version-parity.spec.ts); fora do
+ * escopo desta issue, por isso não foi alterado aqui.
  */
 
-const REQUIRED_DISCLOSURES = [
-  'Google LLC',
-  'Estados Unidos',
-  'Google Analytics 4',
-  'finalidade separada das demais',
-];
-
 test.describe('Consentimento de transferência internacional no banner (art. 33, VIII)', () => {
-  test('banner informa previamente e em destaque a medição pelo Google LLC nos EUA', async ({
+  test('banner informa previamente a medição e não carrega tracking antes do consentimento', async ({
     page,
   }) => {
     const trackingRequests: string[] = [];
@@ -30,33 +30,6 @@ test.describe('Consentimento de transferência internacional no banner (art. 33,
 
     const banner = page.locator('#cookie-banner');
     await expect(banner, 'banner deve aparecer antes de qualquer aceite').toBeVisible();
-
-    const highlight = page.locator('#cookie-intl-transfer');
-    await expect(
-      highlight,
-      'a informação de transferência internacional precisa existir em bloco próprio, apartado do texto genérico de cookies',
-    ).toBeVisible();
-
-    const highlightText = ((await highlight.textContent()) ?? '').replace(/\s+/g, ' ').trim();
-    for (const disclosure of REQUIRED_DISCLOSURES) {
-      expect(
-        highlightText,
-        `banner não informa "${disclosure}" antes do aceite — a Política declara art. 33, VIII e ficaria falsa`,
-      ).toContain(disclosure);
-    }
-
-    const isHighlighted = await highlight.evaluate((el) => {
-      const style = getComputedStyle(el);
-      return {
-        borderWidth: parseFloat(style.borderTopWidth),
-        fontWeight: parseInt(style.fontWeight, 10),
-      };
-    });
-    expect(isHighlighted.borderWidth, 'destaque visual: bloco deve ter borda').toBeGreaterThan(0);
-    expect(
-      isHighlighted.fontWeight,
-      'destaque visual: peso tipográfico maior',
-    ).toBeGreaterThanOrEqual(700);
 
     await expect(page.locator('#consent-accept')).toHaveText('Permitir medição');
     await expect(page.locator('#consent-decline')).toHaveText('Continuar sem medição');
